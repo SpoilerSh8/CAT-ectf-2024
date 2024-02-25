@@ -36,6 +36,8 @@
 #include <stdio.h>
 #endif
 
+
+
 // Includes from containerized build
 #include "ectf_params.h"
 #include "global_secrets.h"
@@ -329,7 +331,7 @@ int attest_component(uint32_t component_id) {
 // Boot message is customized through the AP_BOOT_MSG macro
 void boot() {
     // Example of how to utilize included simple_crypto.h
-    #ifdef CRYPTO_EXAMPLE
+    //#ifdef CRYPTO_EXAMPLE
     // This string is 16 bytes long including null terminator
     // This is the block size of included symmetric encryption
     char* data = "Crypto Example!";
@@ -356,7 +358,7 @@ void boot() {
     uint8_t decrypted[BLOCK_SIZE];
     decrypt_sym(ciphertext, BLOCK_SIZE, key, decrypted);
     print_debug("Decrypted message: %s\r\n", decrypted);
-    #endif
+   // #endif
 
     // POST BOOT FUNCTIONALITY
     // DO NOT REMOVE IN YOUR DESIGN
