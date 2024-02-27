@@ -1,16 +1,3 @@
-/**
- * @file component.c
- * @author Jacob Doll 
- * @brief eCTF Component Example Design Implementation
- * @date 2024
- *
- * This source file is part of an example system for MITRE's 2024 Embedded System CTF (eCTF).
- * This code is being provided only for educational purposes for the 2024 MITRE eCTF competition,
- * and may not meet MITRE standards for quality. Use this code at your own risk!
- *
- * @copyright Copyright (c) 2024 The MITRE Corporation
- */
-
 #include "board.h"
 #include "i2c.h"
 #include "led.h"
@@ -35,17 +22,6 @@
 #include <string.h>
 #endif
 
-/********************************* CONSTANTS **********************************/
-
-// Passed in through ectf-params.h
-// Example of format of ectf-params.h shown here
-/*
-#define COMPONENT_ID 0x11111124
-#define COMPONENT_BOOT_MSG "Component boot"
-#define ATTESTATION_LOC "McLean"
-#define ATTESTATION_DATE "08/08/08"
-#define ATTESTATION_CUSTOMER "Fritz"
-*/
 
 /******************************** TYPE DEFINITIONS ********************************/
 // Commands received by Component using 32 bit integer
@@ -205,8 +181,7 @@ void process_attest() {
 /*********************************** MAIN *************************************/
 
 int main(void) {
-    printf("Component Started\n");
-    
+    //comp started
     // Enable Global Interrupts
     __enable_irq();
     
