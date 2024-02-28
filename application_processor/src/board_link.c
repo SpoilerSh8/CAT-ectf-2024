@@ -1,7 +1,19 @@
 #include <string.h>
 
+
 #include "board_link.h"
 #include "mxc_delay.h"
+
+// #ifdef CRYPTO_EXAMPLE
+// #include "simple_crypto.h"
+// #endif
+
+// Hash example encryption results 
+    // uint8_t hash_out[16];
+    // hash(receive_buffer, 16, hash_out);
+
+    // // Output hash result
+    // print_info("%08x", hash_out);
 
 /******************************** FUNCTION DEFINITIONS ********************************/
 /**
@@ -36,8 +48,9 @@ i2c_addr_t component_id_to_i2c_addr(uint32_t component_id) {
  * Function sends an arbitrary packet over i2c to a specified component
 */
 int send_packet(i2c_addr_t address, uint8_t len, uint8_t* packet) {
-
-    int result;
+    if (len <= MAX_I2C_MESSAGE_LEN)
+    {
+        int result;
     result = i2c_simple_write_receive_len(address, len);
     if (result < SUCCESS_RETURN) {
         return ERROR_RETURN;
@@ -52,6 +65,7 @@ int send_packet(i2c_addr_t address, uint8_t len, uint8_t* packet) {
     }
 
     return SUCCESS_RETURN;
+    }   
 }
 
 /**
@@ -63,7 +77,6 @@ int send_packet(i2c_addr_t address, uint8_t len, uint8_t* packet) {
  * @return int: size of data received, ERROR_RETURN if error
 */
 int poll_and_receive_packet(i2c_addr_t address, uint8_t* packet) {
-
     int result = SUCCESS_RETURN;
     while (true) {
         result = i2c_simple_read_transmit_done(address);
@@ -77,17 +90,19 @@ int poll_and_receive_packet(i2c_addr_t address, uint8_t* packet) {
     }
 
     int len = i2c_simple_read_transmit_len(address);
-    if (len < SUCCESS_RETURN) {
-        return ERROR_RETURN;
-    }
-    result = i2c_simple_read_data_generic(address, TRANSMIT, (uint8_t)len, packet);
-    if (result < SUCCESS_RETURN) {
-        return ERROR_RETURN;
-    }
-    result = i2c_simple_write_transmit_done(address, true);
-    if (result < SUCCESS_RETURN) {
-        return ERROR_RETURN;
-    }
-
+    if (len <= MAX_I2C_MESSAGE_LEN)
+        {
+            if (len < SUCCESS_RETURN) {
+            return ERROR_RETURN;
+        }
+        result = i2c_simple_read_data_generic(address, TRANSMIT, (uint8_t)len, packet);
+        if (result < SUCCESS_RETURN) {
+            return ERROR_RETURN;
+        }
+        result = i2c_simple_write_transmit_done(address, true);
+        if (result < SUCCESS_RETURN) {
+            return ERROR_RETURN;
+        }
+    } 
     return len;
 }

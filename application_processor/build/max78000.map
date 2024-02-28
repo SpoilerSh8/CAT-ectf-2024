@@ -14973,7 +14973,7 @@ LOAD /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/
  *(.rom_vector)
  *(.rom_handlers*)
 
-.text           0x1000e000    0x17bd4
+.text           0x1000e000    0x17bdc
                 0x1000e000                        _text = .
  *(.isr_vector)
  .isr_vector    0x1000e000      0x1e0 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/startup_firmware.o
@@ -15037,632 +15037,632 @@ LOAD /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/
                 0x1000ea6c       0x34 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board_link.o
                 0x1000ea6c                send_packet
  .text.poll_and_receive_packet
-                0x1000eaa0       0x50 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board_link.o
+                0x1000eaa0       0x58 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board_link.o
                 0x1000eaa0                poll_and_receive_packet
  .text.recv_input
-                0x1000eaf0       0x64 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/host_messaging.o
-                0x1000eaf0                recv_input
+                0x1000eaf8       0x64 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/host_messaging.o
+                0x1000eaf8                recv_input
  .text.flash_simple_irq
-                0x1000eb54       0x30 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_flash.o
-                0x1000eb54                flash_simple_irq
+                0x1000eb5c       0x30 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_flash.o
+                0x1000eb5c                flash_simple_irq
  .text.flash_simple_init
-                0x1000eb84       0x30 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_flash.o
-                0x1000eb84                flash_simple_init
+                0x1000eb8c       0x30 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_flash.o
+                0x1000eb8c                flash_simple_init
  .text.flash_simple_erase_page
-                0x1000ebb4        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_flash.o
-                0x1000ebb4                flash_simple_erase_page
+                0x1000ebbc        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_flash.o
+                0x1000ebbc                flash_simple_erase_page
  .text.flash_simple_read
-                0x1000ebb8        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_flash.o
-                0x1000ebb8                flash_simple_read
+                0x1000ebc0        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_flash.o
+                0x1000ebc0                flash_simple_read
  .text.flash_simple_write
-                0x1000ebbc        0xc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_flash.o
-                0x1000ebbc                flash_simple_write
+                0x1000ebc4        0xc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_flash.o
+                0x1000ebc4                flash_simple_write
  .text.I2C_Handler
-                0x1000ebc8        0xc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
+                0x1000ebd0        0xc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
  .text.i2c_simple_controller_init
-                0x1000ebd4       0x48 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
-                0x1000ebd4                i2c_simple_controller_init
+                0x1000ebdc       0x48 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
+                0x1000ebdc                i2c_simple_controller_init
  .text.i2c_simple_read_transmit_done
-                0x1000ec1c       0x44 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
-                0x1000ec1c                i2c_simple_read_transmit_done
+                0x1000ec24       0x44 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
+                0x1000ec24                i2c_simple_read_transmit_done
  .text.i2c_simple_read_transmit_len
-                0x1000ec60       0x44 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
-                0x1000ec60                i2c_simple_read_transmit_len
+                0x1000ec68       0x44 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
+                0x1000ec68                i2c_simple_read_transmit_len
  .text.i2c_simple_write_receive_done
-                0x1000eca4       0x38 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
-                0x1000eca4                i2c_simple_write_receive_done
+                0x1000ecac       0x38 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
+                0x1000ecac                i2c_simple_write_receive_done
  .text.i2c_simple_write_receive_len
-                0x1000ecdc       0x34 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
-                0x1000ecdc                i2c_simple_write_receive_len
+                0x1000ece4       0x34 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
+                0x1000ece4                i2c_simple_write_receive_len
  .text.i2c_simple_write_transmit_done
-                0x1000ed10       0x38 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
-                0x1000ed10                i2c_simple_write_transmit_done
+                0x1000ed18       0x38 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
+                0x1000ed18                i2c_simple_write_transmit_done
  .text.i2c_simple_read_data_generic
-                0x1000ed48       0x30 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
-                0x1000ed48                i2c_simple_read_data_generic
+                0x1000ed50       0x30 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
+                0x1000ed50                i2c_simple_read_data_generic
  .text.i2c_simple_write_data_generic
-                0x1000ed78       0x40 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
-                0x1000ed78                i2c_simple_write_data_generic
+                0x1000ed80       0x40 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
+                0x1000ed80                i2c_simple_write_data_generic
  .text.mxc_assert
-                0x1000edb8       0x10 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
-                0x1000edb8                mxc_assert
+                0x1000edc0       0x10 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
+                0x1000edc0                mxc_assert
  .text.GPIO0_IRQHandler
-                0x1000edc8        0x8 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
-                0x1000edc8                GPIO0_IRQHandler
- .text.GPIO1_IRQHandler
                 0x1000edd0        0x8 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
-                0x1000edd0                GPIO1_IRQHandler
+                0x1000edd0                GPIO0_IRQHandler
+ .text.GPIO1_IRQHandler
+                0x1000edd8        0x8 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
+                0x1000edd8                GPIO1_IRQHandler
  .text.Board_Init
-                0x1000edd8       0x6c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
-                0x1000edd8                Board_Init
+                0x1000ede0       0x6c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
+                0x1000ede0                Board_Init
  .text.NMI_Handler
-                0x1000ee44        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
-                0x1000ee44                NMI_Handler
- .text._close   0x1000ee48        0x8 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/stdio.o
-                0x1000ee48                _close
- .text._isatty  0x1000ee50        0x8 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/stdio.o
-                0x1000ee50                _isatty
- .text._lseek   0x1000ee58        0x8 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/stdio.o
-                0x1000ee58                _lseek
- .text._fstat   0x1000ee60        0x8 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/stdio.o
-                0x1000ee60                _fstat
- .text._read    0x1000ee68       0x50 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/stdio.o
-                0x1000ee68                _read
- .text._write   0x1000eeb8       0x60 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/stdio.o
-                0x1000eeb8                _write
+                0x1000ee4c        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
+                0x1000ee4c                NMI_Handler
+ .text._close   0x1000ee50        0x8 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/stdio.o
+                0x1000ee50                _close
+ .text._isatty  0x1000ee58        0x8 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/stdio.o
+                0x1000ee58                _isatty
+ .text._lseek   0x1000ee60        0x8 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/stdio.o
+                0x1000ee60                _lseek
+ .text._fstat   0x1000ee68        0x8 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/stdio.o
+                0x1000ee68                _fstat
+ .text._read    0x1000ee70       0x50 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/stdio.o
+                0x1000ee70                _read
+ .text._write   0x1000eec0       0x60 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/stdio.o
+                0x1000eec0                _write
  .text.LED_Init
-                0x1000ef18       0x40 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/led.o
-                0x1000ef18                LED_Init
- .text.LED_On   0x1000ef58       0x40 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/led.o
-                0x1000ef58                LED_On
- .text.LED_Off  0x1000ef98       0x40 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/led.o
-                0x1000ef98                LED_Off
- .text.PB_Init  0x1000efd8       0x38 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/pb.o
-                0x1000efd8                PB_Init
- .text          0x1000f010      0x148 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/startup_firmware.o
-                0x1000f010                Reset_Handler
-                0x1000f04e                HardFault_Handler
-                0x1000f050                MemManage_Handler
-                0x1000f052                BusFault_Handler
-                0x1000f054                UsageFault_Handler
-                0x1000f056                SVC_Handler
-                0x1000f058                DebugMon_Handler
-                0x1000f05a                PendSV_Handler
-                0x1000f05c                SysTick_Handler
-                0x1000f05e                Default_Handler
-                0x1000f060                PF_IRQHandler
-                0x1000f062                WDT0_IRQHandler
-                0x1000f064                RSV02_IRQHandler
-                0x1000f066                RTC_IRQHandler
-                0x1000f068                TRNG_IRQHandler
-                0x1000f06a                TMR0_IRQHandler
-                0x1000f06c                TMR1_IRQHandler
-                0x1000f06e                TMR2_IRQHandler
-                0x1000f070                TMR3_IRQHandler
-                0x1000f072                TMR4_IRQHandler
-                0x1000f074                TMR5_IRQHandler
-                0x1000f076                RSV11_IRQHandler
-                0x1000f078                RSV12_IRQHandler
-                0x1000f07a                I2C0_IRQHandler
-                0x1000f07c                UART0_IRQHandler
-                0x1000f07e                UART1_IRQHandler
-                0x1000f080                SPI1_IRQHandler
-                0x1000f082                RSV17_IRQHandler
-                0x1000f084                RSV18_IRQHandler
-                0x1000f086                RSV19_IRQHandler
-                0x1000f088                ADC_IRQHandler
-                0x1000f08a                RSV21_IRQHandler
-                0x1000f08c                RSV22_IRQHandler
-                0x1000f08e                FLC0_IRQHandler
-                0x1000f094                GPIO2_IRQHandler
-                0x1000f096                RSV27_IRQHandler
-                0x1000f098                DMA0_IRQHandler
-                0x1000f09a                DMA1_IRQHandler
-                0x1000f09c                DMA2_IRQHandler
-                0x1000f09e                DMA3_IRQHandler
-                0x1000f0a0                RSV32_IRQHandler
-                0x1000f0a2                RSV33_IRQHandler
-                0x1000f0a4                UART2_IRQHandler
-                0x1000f0a6                RSV35_IRQHandler
-                0x1000f0a8                I2C1_IRQHandler
-                0x1000f0aa                RSV37_IRQHandler
-                0x1000f0ac                RSV38_IRQHandler
-                0x1000f0ae                RSV39_IRQHandler
-                0x1000f0b0                RSV40_IRQHandler
-                0x1000f0b2                RSV41_IRQHandler
-                0x1000f0b4                RSV42_IRQHandler
-                0x1000f0b6                RSV43_IRQHandler
-                0x1000f0b8                RSV44_IRQHandler
-                0x1000f0ba                RSV45_IRQHandler
-                0x1000f0bc                RSV46_IRQHandler
-                0x1000f0be                RSV47_IRQHandler
-                0x1000f0c0                RSV48_IRQHandler
-                0x1000f0c2                RSV49_IRQHandler
-                0x1000f0c4                RSV50_IRQHandler
-                0x1000f0c6                RSV51_IRQHandler
-                0x1000f0c8                RSV52_IRQHandler
-                0x1000f0ca                WUT_IRQHandler
-                0x1000f0cc                GPIOWAKE_IRQHandler
-                0x1000f0ce                RSV55_IRQHandler
-                0x1000f0d0                SPI0_IRQHandler
-                0x1000f0d2                WDT1_IRQHandler
-                0x1000f0d4                RSV58_IRQHandler
-                0x1000f0d6                PT_IRQHandler
-                0x1000f0d8                RSV60_IRQHandler
-                0x1000f0da                RSV61_IRQHandler
-                0x1000f0dc                I2C2_IRQHandler
-                0x1000f0de                RISCV_IRQHandler
-                0x1000f0e0                RSV64_IRQHandler
-                0x1000f0e2                RSV65_IRQHandler
-                0x1000f0e4                RSV66_IRQHandler
-                0x1000f0e6                OWM_IRQHandler
-                0x1000f0e8                RSV68_IRQHandler
-                0x1000f0ea                RSV69_IRQHandler
-                0x1000f0ec                RSV70_IRQHandler
-                0x1000f0ee                RSV71_IRQHandler
-                0x1000f0f0                RSV72_IRQHandler
-                0x1000f0f2                RSV73_IRQHandler
-                0x1000f0f4                RSV74_IRQHandler
-                0x1000f0f6                RSV75_IRQHandler
-                0x1000f0f8                RSV76_IRQHandler
-                0x1000f0fa                RSV77_IRQHandler
-                0x1000f0fc                RSV78_IRQHandler
-                0x1000f0fe                RSV79_IRQHandler
-                0x1000f100                RSV80_IRQHandler
-                0x1000f102                RSV81_IRQHandler
-                0x1000f104                ECC_IRQHandler
-                0x1000f106                DVS_IRQHandler
-                0x1000f108                SIMO_IRQHandler
-                0x1000f10a                RSV85_IRQHandler
-                0x1000f10c                RSV86_IRQHandler
-                0x1000f10e                RSV87_IRQHandler
-                0x1000f110                UART3_IRQHandler
-                0x1000f112                RSV89_IRQHandler
-                0x1000f114                RSV90_IRQHandler
-                0x1000f116                PCIF_IRQHandler
-                0x1000f118                RSV92_IRQHandler
-                0x1000f11a                RSV93_IRQHandler
-                0x1000f11c                RSV94_IRQHandler
-                0x1000f11e                RSV95_IRQHandler
-                0x1000f120                RSV96_IRQHandler
-                0x1000f122                AES_IRQHandler
-                0x1000f124                RSV98_IRQHandler
-                0x1000f126                I2S_IRQHandler
-                0x1000f128                CNN_FIFO_IRQHandler
-                0x1000f12a                CNN_IRQHandler
-                0x1000f12c                RSV102_IRQHandler
-                0x1000f12e                LPCMP_IRQHandler
- .text._sbrk    0x1000f158       0x3c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/heap.o
-                0x1000f158                _sbrk
+                0x1000ef20       0x40 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/led.o
+                0x1000ef20                LED_Init
+ .text.LED_On   0x1000ef60       0x40 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/led.o
+                0x1000ef60                LED_On
+ .text.LED_Off  0x1000efa0       0x40 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/led.o
+                0x1000efa0                LED_Off
+ .text.PB_Init  0x1000efe0       0x38 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/pb.o
+                0x1000efe0                PB_Init
+ .text          0x1000f018      0x148 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/startup_firmware.o
+                0x1000f018                Reset_Handler
+                0x1000f056                HardFault_Handler
+                0x1000f058                MemManage_Handler
+                0x1000f05a                BusFault_Handler
+                0x1000f05c                UsageFault_Handler
+                0x1000f05e                SVC_Handler
+                0x1000f060                DebugMon_Handler
+                0x1000f062                PendSV_Handler
+                0x1000f064                SysTick_Handler
+                0x1000f066                Default_Handler
+                0x1000f068                PF_IRQHandler
+                0x1000f06a                WDT0_IRQHandler
+                0x1000f06c                RSV02_IRQHandler
+                0x1000f06e                RTC_IRQHandler
+                0x1000f070                TRNG_IRQHandler
+                0x1000f072                TMR0_IRQHandler
+                0x1000f074                TMR1_IRQHandler
+                0x1000f076                TMR2_IRQHandler
+                0x1000f078                TMR3_IRQHandler
+                0x1000f07a                TMR4_IRQHandler
+                0x1000f07c                TMR5_IRQHandler
+                0x1000f07e                RSV11_IRQHandler
+                0x1000f080                RSV12_IRQHandler
+                0x1000f082                I2C0_IRQHandler
+                0x1000f084                UART0_IRQHandler
+                0x1000f086                UART1_IRQHandler
+                0x1000f088                SPI1_IRQHandler
+                0x1000f08a                RSV17_IRQHandler
+                0x1000f08c                RSV18_IRQHandler
+                0x1000f08e                RSV19_IRQHandler
+                0x1000f090                ADC_IRQHandler
+                0x1000f092                RSV21_IRQHandler
+                0x1000f094                RSV22_IRQHandler
+                0x1000f096                FLC0_IRQHandler
+                0x1000f09c                GPIO2_IRQHandler
+                0x1000f09e                RSV27_IRQHandler
+                0x1000f0a0                DMA0_IRQHandler
+                0x1000f0a2                DMA1_IRQHandler
+                0x1000f0a4                DMA2_IRQHandler
+                0x1000f0a6                DMA3_IRQHandler
+                0x1000f0a8                RSV32_IRQHandler
+                0x1000f0aa                RSV33_IRQHandler
+                0x1000f0ac                UART2_IRQHandler
+                0x1000f0ae                RSV35_IRQHandler
+                0x1000f0b0                I2C1_IRQHandler
+                0x1000f0b2                RSV37_IRQHandler
+                0x1000f0b4                RSV38_IRQHandler
+                0x1000f0b6                RSV39_IRQHandler
+                0x1000f0b8                RSV40_IRQHandler
+                0x1000f0ba                RSV41_IRQHandler
+                0x1000f0bc                RSV42_IRQHandler
+                0x1000f0be                RSV43_IRQHandler
+                0x1000f0c0                RSV44_IRQHandler
+                0x1000f0c2                RSV45_IRQHandler
+                0x1000f0c4                RSV46_IRQHandler
+                0x1000f0c6                RSV47_IRQHandler
+                0x1000f0c8                RSV48_IRQHandler
+                0x1000f0ca                RSV49_IRQHandler
+                0x1000f0cc                RSV50_IRQHandler
+                0x1000f0ce                RSV51_IRQHandler
+                0x1000f0d0                RSV52_IRQHandler
+                0x1000f0d2                WUT_IRQHandler
+                0x1000f0d4                GPIOWAKE_IRQHandler
+                0x1000f0d6                RSV55_IRQHandler
+                0x1000f0d8                SPI0_IRQHandler
+                0x1000f0da                WDT1_IRQHandler
+                0x1000f0dc                RSV58_IRQHandler
+                0x1000f0de                PT_IRQHandler
+                0x1000f0e0                RSV60_IRQHandler
+                0x1000f0e2                RSV61_IRQHandler
+                0x1000f0e4                I2C2_IRQHandler
+                0x1000f0e6                RISCV_IRQHandler
+                0x1000f0e8                RSV64_IRQHandler
+                0x1000f0ea                RSV65_IRQHandler
+                0x1000f0ec                RSV66_IRQHandler
+                0x1000f0ee                OWM_IRQHandler
+                0x1000f0f0                RSV68_IRQHandler
+                0x1000f0f2                RSV69_IRQHandler
+                0x1000f0f4                RSV70_IRQHandler
+                0x1000f0f6                RSV71_IRQHandler
+                0x1000f0f8                RSV72_IRQHandler
+                0x1000f0fa                RSV73_IRQHandler
+                0x1000f0fc                RSV74_IRQHandler
+                0x1000f0fe                RSV75_IRQHandler
+                0x1000f100                RSV76_IRQHandler
+                0x1000f102                RSV77_IRQHandler
+                0x1000f104                RSV78_IRQHandler
+                0x1000f106                RSV79_IRQHandler
+                0x1000f108                RSV80_IRQHandler
+                0x1000f10a                RSV81_IRQHandler
+                0x1000f10c                ECC_IRQHandler
+                0x1000f10e                DVS_IRQHandler
+                0x1000f110                SIMO_IRQHandler
+                0x1000f112                RSV85_IRQHandler
+                0x1000f114                RSV86_IRQHandler
+                0x1000f116                RSV87_IRQHandler
+                0x1000f118                UART3_IRQHandler
+                0x1000f11a                RSV89_IRQHandler
+                0x1000f11c                RSV90_IRQHandler
+                0x1000f11e                PCIF_IRQHandler
+                0x1000f120                RSV92_IRQHandler
+                0x1000f122                RSV93_IRQHandler
+                0x1000f124                RSV94_IRQHandler
+                0x1000f126                RSV95_IRQHandler
+                0x1000f128                RSV96_IRQHandler
+                0x1000f12a                AES_IRQHandler
+                0x1000f12c                RSV98_IRQHandler
+                0x1000f12e                I2S_IRQHandler
+                0x1000f130                CNN_FIFO_IRQHandler
+                0x1000f132                CNN_IRQHandler
+                0x1000f134                RSV102_IRQHandler
+                0x1000f136                LPCMP_IRQHandler
+ .text._sbrk    0x1000f160       0x3c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/heap.o
+                0x1000f160                _sbrk
  .text.SystemCoreClockUpdate
-                0x1000f194       0x68 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/system_max78000.o
-                0x1000f194                SystemCoreClockUpdate
- .text.PreInit  0x1000f1fc        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/system_max78000.o
-                0x1000f1fc                PreInit
+                0x1000f19c       0x68 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/system_max78000.o
+                0x1000f19c                SystemCoreClockUpdate
+ .text.PreInit  0x1000f204        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/system_max78000.o
+                0x1000f204                PreInit
  .text.SystemInit
-                0x1000f200       0x38 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/system_max78000.o
-                0x1000f200                SystemInit
+                0x1000f208       0x38 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/system_max78000.o
+                0x1000f208                SystemInit
  .text.MXC_DelayInit
-                0x1000f238       0x7c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(mxc_delay.o)
+                0x1000f240       0x7c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(mxc_delay.o)
  .text.MXC_DelayAsync
-                0x1000f2b4       0x3c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(mxc_delay.o)
-                0x1000f2b4                MXC_DelayAsync
+                0x1000f2bc       0x3c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(mxc_delay.o)
+                0x1000f2bc                MXC_DelayAsync
  .text.MXC_DelayCheck
-                0x1000f2f0       0x70 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(mxc_delay.o)
-                0x1000f2f0                MXC_DelayCheck
+                0x1000f2f8       0x70 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(mxc_delay.o)
+                0x1000f2f8                MXC_DelayCheck
  .text.MXC_DelayAbort
-                0x1000f360       0x34 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(mxc_delay.o)
-                0x1000f360                MXC_DelayAbort
+                0x1000f368       0x34 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(mxc_delay.o)
+                0x1000f368                MXC_DelayAbort
  .text.MXC_Delay
-                0x1000f394       0x74 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(mxc_delay.o)
-                0x1000f394                MXC_Delay
+                0x1000f39c       0x74 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(mxc_delay.o)
+                0x1000f39c                MXC_Delay
  .text.MXC_NVIC_SetVector
-                0x1000f408       0x50 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(nvic_table.o)
-                0x1000f408                MXC_NVIC_SetVector
+                0x1000f410       0x50 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(nvic_table.o)
+                0x1000f410                MXC_NVIC_SetVector
  .text.MXC_SYS_ClockDisable
-                0x1000f458       0x40 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(sys_ai85.o)
-                0x1000f458                MXC_SYS_ClockDisable
+                0x1000f460       0x40 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(sys_ai85.o)
+                0x1000f460                MXC_SYS_ClockDisable
  .text.MXC_SYS_ClockEnable
-                0x1000f498       0x44 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(sys_ai85.o)
-                0x1000f498                MXC_SYS_ClockEnable
+                0x1000f4a0       0x44 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(sys_ai85.o)
+                0x1000f4a0                MXC_SYS_ClockEnable
  .text.MXC_SYS_ClockSourceEnable
-                0x1000f4dc       0xf4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(sys_ai85.o)
-                0x1000f4dc                MXC_SYS_ClockSourceEnable
+                0x1000f4e4       0xf4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(sys_ai85.o)
+                0x1000f4e4                MXC_SYS_ClockSourceEnable
  .text.MXC_SYS_Reset_Periph
-                0x1000f5d0       0x48 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(sys_ai85.o)
-                0x1000f5d0                MXC_SYS_Reset_Periph
+                0x1000f5d8       0x48 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(sys_ai85.o)
+                0x1000f5d8                MXC_SYS_Reset_Periph
  .text.MXC_FLC_Write32
-                0x1000f618       0x80 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_me17.o)
-                0x1000f618                MXC_FLC_Write32
+                0x1000f620       0x80 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_me17.o)
+                0x1000f620                MXC_FLC_Write32
  .text.MXC_FLC_Write
-                0x1000f698        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_me17.o)
-                0x1000f698                MXC_FLC_Write
- .text.MXC_FLC_Read
-                0x1000f69c        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_me17.o)
-                0x1000f69c                MXC_FLC_Read
- .text.MXC_FLC_EnableInt
                 0x1000f6a0        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_me17.o)
-                0x1000f6a0                MXC_FLC_EnableInt
+                0x1000f6a0                MXC_FLC_Write
+ .text.MXC_FLC_Read
+                0x1000f6a4        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_me17.o)
+                0x1000f6a4                MXC_FLC_Read
+ .text.MXC_FLC_EnableInt
+                0x1000f6a8        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_me17.o)
+                0x1000f6a8                MXC_FLC_EnableInt
  .text.MXC_FLC_RevA_EnableInt
-                0x1000f6a4       0x20 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_reva.o)
-                0x1000f6a4                MXC_FLC_RevA_EnableInt
+                0x1000f6ac       0x20 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_reva.o)
+                0x1000f6ac                MXC_FLC_RevA_EnableInt
  .text.MXC_GPIO_Init
-                0x1000f6c4       0x40 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_ai85.o)
-                0x1000f6c4                MXC_GPIO_Init
+                0x1000f6cc       0x40 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_ai85.o)
+                0x1000f6cc                MXC_GPIO_Init
  .text.MXC_GPIO_Config
-                0x1000f704      0x20c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_ai85.o)
-                0x1000f704                MXC_GPIO_Config
+                0x1000f70c      0x20c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_ai85.o)
+                0x1000f70c                MXC_GPIO_Config
  .text.MXC_GPIO_OutSet
-                0x1000f910       0x2c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_ai85.o)
-                0x1000f910                MXC_GPIO_OutSet
+                0x1000f918       0x2c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_ai85.o)
+                0x1000f918                MXC_GPIO_OutSet
  .text.MXC_GPIO_OutClr
-                0x1000f93c       0x30 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_ai85.o)
-                0x1000f93c                MXC_GPIO_OutClr
+                0x1000f944       0x30 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_ai85.o)
+                0x1000f944                MXC_GPIO_OutClr
  .text.MXC_GPIO_Handler
-                0x1000f96c        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_ai85.o)
-                0x1000f96c                MXC_GPIO_Handler
+                0x1000f974        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_ai85.o)
+                0x1000f974                MXC_GPIO_Handler
  .text.MXC_GPIO_ClearFlags
-                0x1000f970       0x18 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_ai85.o)
-                0x1000f970                MXC_GPIO_ClearFlags
+                0x1000f978       0x18 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_ai85.o)
+                0x1000f978                MXC_GPIO_ClearFlags
  .text.MXC_GPIO_GetFlags
-                0x1000f988       0x18 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_ai85.o)
-                0x1000f988                MXC_GPIO_GetFlags
+                0x1000f990       0x18 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_ai85.o)
+                0x1000f990                MXC_GPIO_GetFlags
  .text.MXC_GPIO_RevA_OutSet
-                0x1000f9a0        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_reva.o)
-                0x1000f9a0                MXC_GPIO_RevA_OutSet
- .text.MXC_GPIO_RevA_OutClr
-                0x1000f9a4        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_reva.o)
-                0x1000f9a4                MXC_GPIO_RevA_OutClr
- .text.MXC_GPIO_RevA_ClearFlags
                 0x1000f9a8        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_reva.o)
-                0x1000f9a8                MXC_GPIO_RevA_ClearFlags
- .text.MXC_GPIO_RevA_GetFlags
+                0x1000f9a8                MXC_GPIO_RevA_OutSet
+ .text.MXC_GPIO_RevA_OutClr
                 0x1000f9ac        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_reva.o)
-                0x1000f9ac                MXC_GPIO_RevA_GetFlags
+                0x1000f9ac                MXC_GPIO_RevA_OutClr
+ .text.MXC_GPIO_RevA_ClearFlags
+                0x1000f9b0        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_reva.o)
+                0x1000f9b0                MXC_GPIO_RevA_ClearFlags
+ .text.MXC_GPIO_RevA_GetFlags
+                0x1000f9b4        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_reva.o)
+                0x1000f9b4                MXC_GPIO_RevA_GetFlags
  .text.MXC_GPIO_RevA_SetVSSEL
-                0x1000f9b0       0x2c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_reva.o)
-                0x1000f9b0                MXC_GPIO_RevA_SetVSSEL
+                0x1000f9b8       0x2c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_reva.o)
+                0x1000f9b8                MXC_GPIO_RevA_SetVSSEL
  .text.MXC_GPIO_RevA_SetAF
-                0x1000f9dc       0x6c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_reva.o)
-                0x1000f9dc                MXC_GPIO_RevA_SetAF
+                0x1000f9e4       0x6c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_reva.o)
+                0x1000f9e4                MXC_GPIO_RevA_SetAF
  .text.MXC_I2C_SetSlaveAddr
-                0x1000fa48        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
-                0x1000fa48                MXC_I2C_SetSlaveAddr
+                0x1000fa50        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
+                0x1000fa50                MXC_I2C_SetSlaveAddr
  .text.MXC_I2C_Shutdown
-                0x1000fa4c       0x54 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
-                0x1000fa4c                MXC_I2C_Shutdown
+                0x1000fa54       0x54 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
+                0x1000fa54                MXC_I2C_Shutdown
  .text.MXC_I2C_Init
-                0x1000faa0       0x94 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
-                0x1000faa0                MXC_I2C_Init
+                0x1000faa8       0x94 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
+                0x1000faa8                MXC_I2C_Init
  .text.MXC_I2C_SetFrequency
-                0x1000fb34        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
-                0x1000fb34                MXC_I2C_SetFrequency
- .text.MXC_I2C_GetFrequency
-                0x1000fb38        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
-                0x1000fb38                MXC_I2C_GetFrequency
- .text.MXC_I2C_Start
                 0x1000fb3c        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
-                0x1000fb3c                MXC_I2C_Start
- .text.MXC_I2C_Stop
+                0x1000fb3c                MXC_I2C_SetFrequency
+ .text.MXC_I2C_GetFrequency
                 0x1000fb40        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
-                0x1000fb40                MXC_I2C_Stop
- .text.MXC_I2C_ReadRXFIFO
+                0x1000fb40                MXC_I2C_GetFrequency
+ .text.MXC_I2C_Start
                 0x1000fb44        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
-                0x1000fb44                MXC_I2C_ReadRXFIFO
- .text.MXC_I2C_WriteTXFIFO
+                0x1000fb44                MXC_I2C_Start
+ .text.MXC_I2C_Stop
                 0x1000fb48        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
-                0x1000fb48                MXC_I2C_WriteTXFIFO
- .text.MXC_I2C_ClearRXFIFO
+                0x1000fb48                MXC_I2C_Stop
+ .text.MXC_I2C_ReadRXFIFO
                 0x1000fb4c        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
-                0x1000fb4c                MXC_I2C_ClearRXFIFO
- .text.MXC_I2C_ClearTXFIFO
+                0x1000fb4c                MXC_I2C_ReadRXFIFO
+ .text.MXC_I2C_WriteTXFIFO
                 0x1000fb50        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
-                0x1000fb50                MXC_I2C_ClearTXFIFO
- .text.MXC_I2C_ClearFlags
+                0x1000fb50                MXC_I2C_WriteTXFIFO
+ .text.MXC_I2C_ClearRXFIFO
                 0x1000fb54        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
-                0x1000fb54                MXC_I2C_ClearFlags
- .text.MXC_I2C_Recover
+                0x1000fb54                MXC_I2C_ClearRXFIFO
+ .text.MXC_I2C_ClearTXFIFO
                 0x1000fb58        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
-                0x1000fb58                MXC_I2C_Recover
- .text.MXC_I2C_MasterTransaction
+                0x1000fb58                MXC_I2C_ClearTXFIFO
+ .text.MXC_I2C_ClearFlags
                 0x1000fb5c        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
-                0x1000fb5c                MXC_I2C_MasterTransaction
- .text.MXC_I2C_SetRXThreshold
+                0x1000fb5c                MXC_I2C_ClearFlags
+ .text.MXC_I2C_Recover
                 0x1000fb60        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
-                0x1000fb60                MXC_I2C_SetRXThreshold
- .text.MXC_I2C_SetTXThreshold
+                0x1000fb60                MXC_I2C_Recover
+ .text.MXC_I2C_MasterTransaction
                 0x1000fb64        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
-                0x1000fb64                MXC_I2C_SetTXThreshold
+                0x1000fb64                MXC_I2C_MasterTransaction
+ .text.MXC_I2C_SetRXThreshold
+                0x1000fb68        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
+                0x1000fb68                MXC_I2C_SetRXThreshold
+ .text.MXC_I2C_SetTXThreshold
+                0x1000fb6c        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
+                0x1000fb6c                MXC_I2C_SetTXThreshold
  .text.MXC_I2C_AsyncHandler
-                0x1000fb68        0xc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
-                0x1000fb68                MXC_I2C_AsyncHandler
+                0x1000fb70        0xc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
+                0x1000fb70                MXC_I2C_AsyncHandler
  .text.MXC_I2C_RevA_Init
-                0x1000fb74       0xcc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
-                0x1000fb74                MXC_I2C_RevA_Init
+                0x1000fb7c       0xcc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
+                0x1000fb7c                MXC_I2C_RevA_Init
  .text.MXC_I2C_RevA_SetSlaveAddr
-                0x1000fc40       0x34 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
-                0x1000fc40                MXC_I2C_RevA_SetSlaveAddr
+                0x1000fc48       0x34 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
+                0x1000fc48                MXC_I2C_RevA_SetSlaveAddr
  .text.MXC_I2C_RevA_SetFrequency
-                0x1000fc74       0xa0 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
-                0x1000fc74                MXC_I2C_RevA_SetFrequency
+                0x1000fc7c       0xa0 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
+                0x1000fc7c                MXC_I2C_RevA_SetFrequency
  .text.MXC_I2C_RevA_GetFrequency
-                0x1000fd14       0x20 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
-                0x1000fd14                MXC_I2C_RevA_GetFrequency
+                0x1000fd1c       0x20 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
+                0x1000fd1c                MXC_I2C_RevA_GetFrequency
  .text.MXC_I2C_RevA_Start
-                0x1000fd34       0x28 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
-                0x1000fd34                MXC_I2C_RevA_Start
+                0x1000fd3c       0x28 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
+                0x1000fd3c                MXC_I2C_RevA_Start
  .text.MXC_I2C_RevA_Stop
-                0x1000fd5c       0x1c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
-                0x1000fd5c                MXC_I2C_RevA_Stop
+                0x1000fd64       0x1c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
+                0x1000fd64                MXC_I2C_RevA_Stop
  .text.MXC_I2C_RevA_ReadRXFIFO
-                0x1000fd78       0x3c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
-                0x1000fd78                MXC_I2C_RevA_ReadRXFIFO
+                0x1000fd80       0x3c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
+                0x1000fd80                MXC_I2C_RevA_ReadRXFIFO
  .text.MXC_I2C_RevA_WriteTXFIFO
-                0x1000fdb4       0x30 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
-                0x1000fdb4                MXC_I2C_RevA_WriteTXFIFO
+                0x1000fdbc       0x30 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
+                0x1000fdbc                MXC_I2C_RevA_WriteTXFIFO
  .text.MXC_I2C_RevA_ClearRXFIFO
-                0x1000fde4       0x10 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
-                0x1000fde4                MXC_I2C_RevA_ClearRXFIFO
+                0x1000fdec       0x10 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
+                0x1000fdec                MXC_I2C_RevA_ClearRXFIFO
  .text.MXC_I2C_RevA_ClearTXFIFO
-                0x1000fdf4       0x10 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
-                0x1000fdf4                MXC_I2C_RevA_ClearTXFIFO
+                0x1000fdfc       0x10 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
+                0x1000fdfc                MXC_I2C_RevA_ClearTXFIFO
  .text.MXC_I2C_RevA_ClearFlags
-                0x1000fe04        0x8 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
-                0x1000fe04                MXC_I2C_RevA_ClearFlags
+                0x1000fe0c        0x8 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
+                0x1000fe0c                MXC_I2C_RevA_ClearFlags
  .text.MXC_I2C_RevA_Recover
-                0x1000fe0c       0xd8 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
-                0x1000fe0c                MXC_I2C_RevA_Recover
+                0x1000fe14       0xd8 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
+                0x1000fe14                MXC_I2C_RevA_Recover
  .text.MXC_I2C_RevA_MasterTransaction
-                0x1000fee4      0x1a0 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
-                0x1000fee4                MXC_I2C_RevA_MasterTransaction
+                0x1000feec      0x1a0 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
+                0x1000feec                MXC_I2C_RevA_MasterTransaction
  .text.MXC_I2C_RevA_SetRXThreshold
-                0x10010084       0x20 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
-                0x10010084                MXC_I2C_RevA_SetRXThreshold
+                0x1001008c       0x20 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
+                0x1001008c                MXC_I2C_RevA_SetRXThreshold
  .text.MXC_I2C_RevA_SetTXThreshold
-                0x100100a4       0x24 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
-                0x100100a4                MXC_I2C_RevA_SetTXThreshold
+                0x100100ac       0x24 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
+                0x100100ac                MXC_I2C_RevA_SetTXThreshold
  .text.MXC_I2C_RevA_MasterAsyncHandler
-                0x100100c8      0x338 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
-                0x100100c8                MXC_I2C_RevA_MasterAsyncHandler
+                0x100100d0      0x338 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
+                0x100100d0                MXC_I2C_RevA_MasterAsyncHandler
  .text.MXC_I2C_RevA_SlaveAsyncHandler
-                0x10010400      0x380 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
-                0x10010400                MXC_I2C_RevA_SlaveAsyncHandler
+                0x10010408      0x380 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
+                0x10010408                MXC_I2C_RevA_SlaveAsyncHandler
  .text.MXC_I2C_RevA_AsyncHandler
-                0x10010780       0x68 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
-                0x10010780                MXC_I2C_RevA_AsyncHandler
+                0x10010788       0x68 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
+                0x10010788                MXC_I2C_RevA_AsyncHandler
  .text.MXC_ICC_Enable
-                0x100107e8        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_me17.o)
-                0x100107e8                MXC_ICC_Enable
+                0x100107f0        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_me17.o)
+                0x100107f0                MXC_ICC_Enable
  .text.MXC_ICC_Disable
-                0x100107ec        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_me17.o)
-                0x100107ec                MXC_ICC_Disable
+                0x100107f4        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_me17.o)
+                0x100107f4                MXC_ICC_Disable
  .text.MXC_ICC_RevA_Enable
-                0x100107f0       0x30 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_reva.o)
-                0x100107f0                MXC_ICC_RevA_Enable
+                0x100107f8       0x30 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_reva.o)
+                0x100107f8                MXC_ICC_RevA_Enable
  .text.MXC_ICC_RevA_Disable
-                0x10010820       0x10 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_reva.o)
-                0x10010820                MXC_ICC_RevA_Disable
+                0x10010828       0x10 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_reva.o)
+                0x10010828                MXC_ICC_RevA_Disable
  .text.MXC_UART_Shutdown
-                0x10010830       0x6c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
-                0x10010830                MXC_UART_Shutdown
+                0x10010838       0x6c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
+                0x10010838                MXC_UART_Shutdown
  .text.MXC_UART_Init
-                0x1001089c       0xb8 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
-                0x1001089c                MXC_UART_Init
+                0x100108a4       0xb8 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
+                0x100108a4                MXC_UART_Init
  .text.MXC_UART_SetFrequency
-                0x10010954       0xd0 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
-                0x10010954                MXC_UART_SetFrequency
+                0x1001095c       0xd0 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
+                0x1001095c                MXC_UART_SetFrequency
  .text.MXC_UART_GetFrequency
-                0x10010a24       0x54 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
-                0x10010a24                MXC_UART_GetFrequency
+                0x10010a2c       0x54 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
+                0x10010a2c                MXC_UART_GetFrequency
  .text.MXC_UART_SetDataSize
-                0x10010a78        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
-                0x10010a78                MXC_UART_SetDataSize
- .text.MXC_UART_SetStopBits
-                0x10010a7c        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
-                0x10010a7c                MXC_UART_SetStopBits
- .text.MXC_UART_SetParity
                 0x10010a80        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
-                0x10010a80                MXC_UART_SetParity
- .text.MXC_UART_ReadCharacterRaw
+                0x10010a80                MXC_UART_SetDataSize
+ .text.MXC_UART_SetStopBits
                 0x10010a84        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
-                0x10010a84                MXC_UART_ReadCharacterRaw
- .text.MXC_UART_WriteCharacterRaw
+                0x10010a84                MXC_UART_SetStopBits
+ .text.MXC_UART_SetParity
                 0x10010a88        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
-                0x10010a88                MXC_UART_WriteCharacterRaw
- .text.MXC_UART_ReadCharacter
+                0x10010a88                MXC_UART_SetParity
+ .text.MXC_UART_ReadCharacterRaw
                 0x10010a8c        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
-                0x10010a8c                MXC_UART_ReadCharacter
- .text.MXC_UART_WriteCharacter
+                0x10010a8c                MXC_UART_ReadCharacterRaw
+ .text.MXC_UART_WriteCharacterRaw
                 0x10010a90        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
-                0x10010a90                MXC_UART_WriteCharacter
- .text.MXC_UART_GetRXFIFOAvailable
+                0x10010a90                MXC_UART_WriteCharacterRaw
+ .text.MXC_UART_ReadCharacter
                 0x10010a94        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
-                0x10010a94                MXC_UART_GetRXFIFOAvailable
- .text.MXC_UART_GetTXFIFOAvailable
+                0x10010a94                MXC_UART_ReadCharacter
+ .text.MXC_UART_WriteCharacter
                 0x10010a98        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
-                0x10010a98                MXC_UART_GetTXFIFOAvailable
- .text.MXC_UART_SetRXThreshold
+                0x10010a98                MXC_UART_WriteCharacter
+ .text.MXC_UART_GetRXFIFOAvailable
                 0x10010a9c        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
-                0x10010a9c                MXC_UART_SetRXThreshold
+                0x10010a9c                MXC_UART_GetRXFIFOAvailable
+ .text.MXC_UART_GetTXFIFOAvailable
+                0x10010aa0        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
+                0x10010aa0                MXC_UART_GetTXFIFOAvailable
+ .text.MXC_UART_SetRXThreshold
+                0x10010aa4        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
+                0x10010aa4                MXC_UART_SetRXThreshold
  .text.MXC_UART_Common_ReadCharacter
-                0x10010aa0       0x18 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_common.o)
-                0x10010aa0                MXC_UART_Common_ReadCharacter
+                0x10010aa8       0x18 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_common.o)
+                0x10010aa8                MXC_UART_Common_ReadCharacter
  .text.MXC_UART_Common_WriteCharacter
-                0x10010ab8       0x1c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_common.o)
-                0x10010ab8                MXC_UART_Common_WriteCharacter
+                0x10010ac0       0x1c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_common.o)
+                0x10010ac0                MXC_UART_Common_WriteCharacter
  .text.MXC_UART_RevB_Init
-                0x10010ad4       0x70 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
-                0x10010ad4                MXC_UART_RevB_Init
+                0x10010adc       0x70 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
+                0x10010adc                MXC_UART_RevB_Init
  .text.MXC_UART_RevB_SetFrequency
-                0x10010b44       0x98 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
-                0x10010b44                MXC_UART_RevB_SetFrequency
+                0x10010b4c       0x98 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
+                0x10010b4c                MXC_UART_RevB_SetFrequency
  .text.MXC_UART_RevB_GetFrequency
-                0x10010bdc       0x80 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
-                0x10010bdc                MXC_UART_RevB_GetFrequency
+                0x10010be4       0x80 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
+                0x10010be4                MXC_UART_RevB_GetFrequency
  .text.MXC_UART_RevB_SetDataSize
-                0x10010c5c       0x40 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
-                0x10010c5c                MXC_UART_RevB_SetDataSize
+                0x10010c64       0x40 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
+                0x10010c64                MXC_UART_RevB_SetDataSize
  .text.MXC_UART_RevB_SetStopBits
-                0x10010c9c       0x48 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
-                0x10010c9c                MXC_UART_RevB_SetStopBits
+                0x10010ca4       0x48 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
+                0x10010ca4                MXC_UART_RevB_SetStopBits
  .text.MXC_UART_RevB_SetParity
-                0x10010ce4       0xac /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
-                0x10010ce4                MXC_UART_RevB_SetParity
+                0x10010cec       0xac /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
+                0x10010cec                MXC_UART_RevB_SetParity
  .text.MXC_UART_RevB_ReadCharacterRaw
-                0x10010d90       0x38 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
-                0x10010d90                MXC_UART_RevB_ReadCharacterRaw
+                0x10010d98       0x38 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
+                0x10010d98                MXC_UART_RevB_ReadCharacterRaw
  .text.MXC_UART_RevB_WriteCharacterRaw
-                0x10010dc8       0x3c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
-                0x10010dc8                MXC_UART_RevB_WriteCharacterRaw
+                0x10010dd0       0x3c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
+                0x10010dd0                MXC_UART_RevB_WriteCharacterRaw
  .text.MXC_UART_RevB_GetRXFIFOAvailable
-                0x10010e04        0x8 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
-                0x10010e04                MXC_UART_RevB_GetRXFIFOAvailable
+                0x10010e0c        0x8 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
+                0x10010e0c                MXC_UART_RevB_GetRXFIFOAvailable
  .text.MXC_UART_RevB_GetTXFIFOAvailable
-                0x10010e0c        0xc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
-                0x10010e0c                MXC_UART_RevB_GetTXFIFOAvailable
+                0x10010e14        0xc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
+                0x10010e14                MXC_UART_RevB_GetTXFIFOAvailable
  .text.MXC_UART_RevB_SetRXThreshold
-                0x10010e18       0x40 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
-                0x10010e18                MXC_UART_RevB_SetRXThreshold
+                0x10010e20       0x40 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
+                0x10010e20                MXC_UART_RevB_SetRXThreshold
  .text.MXC_GPIO_Common_Init
-                0x10010e58       0x24 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_common.o)
-                0x10010e58                MXC_GPIO_Common_Init
+                0x10010e60       0x24 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_common.o)
+                0x10010e60                MXC_GPIO_Common_Init
  .text.MXC_GPIO_Common_Handler
-                0x10010e7c       0x74 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_common.o)
-                0x10010e7c                MXC_GPIO_Common_Handler
- .text.malloc   0x10010ef0       0x10 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-malloc.o)
-                0x10010ef0                malloc
- .text.free     0x10010f00       0x10 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-malloc.o)
-                0x10010f00                free
+                0x10010e84       0x74 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_common.o)
+                0x10010e84                MXC_GPIO_Common_Handler
+ .text.malloc   0x10010ef8       0x10 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-malloc.o)
+                0x10010ef8                malloc
+ .text.free     0x10010f08       0x10 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-malloc.o)
+                0x10010f08                free
  .text._malloc_r
-                0x10010f10      0x574 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-mallocr.o)
-                0x10010f10                _malloc_r
- .text.printf   0x10011484       0x28 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-printf.o)
-                0x10011484                printf
+                0x10010f18      0x574 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-mallocr.o)
+                0x10010f18                _malloc_r
+ .text.printf   0x1001148c       0x28 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-printf.o)
+                0x1001148c                printf
  .text._vfprintf_r
-                0x100114ac     0x1c48 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-vfprintf.o)
-                0x100114ac                _vfprintf_r
+                0x100114b4     0x1c48 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-vfprintf.o)
+                0x100114b4                _vfprintf_r
  .text.__sbprintf
-                0x100130f4       0x80 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-vfprintf.o)
+                0x100130fc       0x80 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-vfprintf.o)
  .text.__sprint_r.part.0
-                0x10013174       0x78 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-vfiprintf.o)
+                0x1001317c       0x78 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-vfiprintf.o)
  .text.__sprint_r
-                0x100131ec       0x14 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-vfiprintf.o)
-                0x100131ec                __sprint_r
+                0x100131f4       0x14 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-vfiprintf.o)
+                0x100131f4                __sprint_r
  .text._vfiprintf_r
-                0x10013200      0xfac /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-vfiprintf.o)
-                0x10013200                _vfiprintf_r
+                0x10013208      0xfac /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-vfiprintf.o)
+                0x10013208                _vfiprintf_r
  .text.__sbprintf
-                0x100141ac       0x80 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-vfiprintf.o)
+                0x100141b4       0x80 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-vfiprintf.o)
  .text.__malloc_lock
-                0x1001422c        0xc /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-mlock.o)
-                0x1001422c                __malloc_lock
+                0x10014234        0xc /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-mlock.o)
+                0x10014234                __malloc_lock
  .text.__malloc_unlock
-                0x10014238        0xc /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-mlock.o)
-                0x10014238                __malloc_unlock
- .text._puts_r  0x10014244       0x98 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-puts.o)
-                0x10014244                _puts_r
- .text.puts     0x100142dc       0x10 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-puts.o)
-                0x100142dc                puts
- .text.realloc  0x100142ec       0x18 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-realloc.o)
-                0x100142ec                realloc
+                0x10014240        0xc /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-mlock.o)
+                0x10014240                __malloc_unlock
+ .text._puts_r  0x1001424c       0x98 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-puts.o)
+                0x1001424c                _puts_r
+ .text.puts     0x100142e4       0x10 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-puts.o)
+                0x100142e4                puts
+ .text.realloc  0x100142f4       0x18 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-realloc.o)
+                0x100142f4                realloc
  .text._fclose_r
-                0x10014304       0xc0 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-fclose.o)
-                0x10014304                _fclose_r
+                0x1001430c       0xc0 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-fclose.o)
+                0x1001430c                _fclose_r
  .text._realloc_r
-                0x100143c4      0x344 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-reallocr.o)
-                0x100143c4                _realloc_r
+                0x100143cc      0x344 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-reallocr.o)
+                0x100143cc                _realloc_r
  .text.__sflush_r
-                0x10014708      0x128 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-fflush.o)
-                0x10014708                __sflush_r
+                0x10014710      0x128 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-fflush.o)
+                0x10014710                __sflush_r
  .text._fflush_r
-                0x10014830       0x54 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-fflush.o)
-                0x10014830                _fflush_r
- .text.fflush   0x10014884       0x74 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-fflush.o)
-                0x10014884                fflush
+                0x10014838       0x54 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-fflush.o)
+                0x10014838                _fflush_r
+ .text.fflush   0x1001488c       0x74 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-fflush.o)
+                0x1001488c                fflush
  .text._fgets_r
-                0x100148f8       0xe0 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-fgets.o)
-                0x100148f8                _fgets_r
- .text.fgets    0x100149d8       0x18 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-fgets.o)
-                0x100149d8                fgets
- .text.sscanf   0x100149f0       0x54 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-sscanf.o)
-                0x100149f0                sscanf
- .text.__sread  0x10014a44       0x24 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-stdio.o)
-                0x10014a44                __sread
+                0x10014900       0xe0 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-fgets.o)
+                0x10014900                _fgets_r
+ .text.fgets    0x100149e0       0x18 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-fgets.o)
+                0x100149e0                fgets
+ .text.sscanf   0x100149f8       0x54 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-sscanf.o)
+                0x100149f8                sscanf
+ .text.__sread  0x10014a4c       0x24 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-stdio.o)
+                0x10014a4c                __sread
  .text.__seofread
-                0x10014a68        0x4 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-stdio.o)
-                0x10014a68                __seofread
+                0x10014a70        0x4 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-stdio.o)
+                0x10014a70                __seofread
  .text.__swrite
-                0x10014a6c       0x40 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-stdio.o)
-                0x10014a6c                __swrite
- .text.__sseek  0x10014aac       0x24 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-stdio.o)
-                0x10014aac                __sseek
+                0x10014a74       0x40 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-stdio.o)
+                0x10014a74                __swrite
+ .text.__sseek  0x10014ab4       0x24 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-stdio.o)
+                0x10014ab4                __sseek
  .text.__sclose
-                0x10014ad0        0x8 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-stdio.o)
-                0x10014ad0                __sclose
+                0x10014ad8        0x8 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-stdio.o)
+                0x10014ad8                __sclose
  .text.stdio_exit_handler
-                0x10014ad8       0x18 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-findfp.o)
+                0x10014ae0       0x18 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-findfp.o)
  .text.cleanup_stdio
-                0x10014af0       0x40 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-findfp.o)
+                0x10014af8       0x40 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-findfp.o)
  .text.global_stdio_init.part.0
-                0x10014b30       0xf0 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-findfp.o)
- .text.__sinit  0x10014c20       0x3c /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-findfp.o)
-                0x10014c20                __sinit
+                0x10014b38       0xf0 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-findfp.o)
+ .text.__sinit  0x10014c28       0x3c /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-findfp.o)
+                0x10014c28                __sinit
  .text.__sfp_lock_acquire
-                0x10014c5c        0xc /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-findfp.o)
-                0x10014c5c                __sfp_lock_acquire
+                0x10014c64        0xc /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-findfp.o)
+                0x10014c64                __sfp_lock_acquire
  .text.__sfp_lock_release
-                0x10014c68        0xc /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-findfp.o)
-                0x10014c68                __sfp_lock_release
+                0x10014c70        0xc /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-findfp.o)
+                0x10014c70                __sfp_lock_release
  .text.__sfvwrite_r
-                0x10014c74      0x2f8 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-fvwrite.o)
-                0x10014c74                __sfvwrite_r
+                0x10014c7c      0x2f8 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-fvwrite.o)
+                0x10014c7c                __sfvwrite_r
  .text._fwalk_sglue
-                0x10014f6c       0x48 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-fwalk.o)
-                0x10014f6c                _fwalk_sglue
+                0x10014f74       0x48 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-fwalk.o)
+                0x10014f74                _fwalk_sglue
  .text.__swsetup_r
-                0x10014fb4       0xc0 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-wsetup.o)
-                0x10014fb4                __swsetup_r
+                0x10014fbc       0xc0 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-wsetup.o)
+                0x10014fbc                __swsetup_r
  .text.__fputwc
-                0x10015074       0x7c /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-fputwc.o)
-                0x10015074                __fputwc
+                0x1001507c       0x7c /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-fputwc.o)
+                0x1001507c                __fputwc
  .text._fputwc_r
-                0x100150f0       0x60 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-fputwc.o)
-                0x100150f0                _fputwc_r
- .text.memmove  0x10015150      0x100 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-memmove.o)
-                0x10015150                memmove
- .text.memset   0x10015250       0xa4 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-memset.o)
-                0x10015250                memset
- .text.strcspn  0x100152f4       0x44 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-strcspn.o)
-                0x100152f4                strcspn
- .text.strncpy  0x10015338       0x68 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-strncpy.o)
-                0x10015338                strncpy
+                0x100150f8       0x60 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-fputwc.o)
+                0x100150f8                _fputwc_r
+ .text.memmove  0x10015158      0x100 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-memmove.o)
+                0x10015158                memmove
+ .text.memset   0x10015258       0xa4 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-memset.o)
+                0x10015258                memset
+ .text.strcspn  0x100152fc       0x44 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-strcspn.o)
+                0x100152fc                strcspn
+ .text.strncpy  0x10015340       0x68 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-strncpy.o)
+                0x10015340                strncpy
  .text.__locale_mb_cur_max
-                0x100153a0        0xc /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-locale.o)
-                0x100153a0                __locale_mb_cur_max
+                0x100153a8        0xc /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-locale.o)
+                0x100153a8                __locale_mb_cur_max
  .text._localeconv_r
-                0x100153ac        0x8 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-localeconv.o)
-                0x100153ac                _localeconv_r
+                0x100153b4        0x8 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-localeconv.o)
+                0x100153b4                _localeconv_r
  .text._close_r
-                0x100153b4       0x24 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-closer.o)
-                0x100153b4                _close_r
+                0x100153bc       0x24 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-closer.o)
+                0x100153bc                _close_r
  .text._fstat_r
-                0x100153d8       0x2c /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-fstatr.o)
-                0x100153d8                _fstat_r
+                0x100153e0       0x2c /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-fstatr.o)
+                0x100153e0                _fstat_r
  .text._lseek_r
-                0x10015404       0x2c /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-lseekr.o)
-                0x10015404                _lseek_r
- .text._read_r  0x10015430       0x2c /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-readr.o)
-                0x10015430                _read_r
- .text._sbrk_r  0x1001545c       0x24 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-sbrkr.o)
-                0x1001545c                _sbrk_r
+                0x1001540c       0x2c /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-lseekr.o)
+                0x1001540c                _lseek_r
+ .text._read_r  0x10015438       0x2c /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-readr.o)
+                0x10015438                _read_r
+ .text._sbrk_r  0x10015464       0x24 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-sbrkr.o)
+                0x10015464                _sbrk_r
  .text._write_r
-                0x10015480       0x2c /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-writer.o)
-                0x10015480                _write_r
- .text.__errno  0x100154ac        0xc /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-errno.o)
-                0x100154ac                __errno
- .text.sysconf  0x100154b8       0x1c /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-sysconf.o)
-                0x100154b8                sysconf
- *fill*         0x100154d4        0xc 
+                0x10015488       0x2c /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-writer.o)
+                0x10015488                _write_r
+ .text.__errno  0x100154b4        0xc /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-errno.o)
+                0x100154b4                __errno
+ .text.sysconf  0x100154c0       0x1c /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-sysconf.o)
+                0x100154c0                sysconf
+ *fill*         0x100154dc        0x4 
  .text          0x100154e0      0x2e0 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-strcmp.o)
                 0x100154e0                strcmp
  .text.__libc_init_array
@@ -15991,197 +15991,197 @@ LOAD /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/
                 0x1001e764       0x10 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/application_processor.o
                                  0x12 (size before relaxing)
  .rodata.str1.4
-                0x1001e774       0x17 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/application_processor.o
- *fill*         0x1001e78b        0x1 
- .rodata        0x1001e78c       0x20 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/application_processor.o
+                0x1001e774       0x1f /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/application_processor.o
+ *fill*         0x1001e793        0x1 
+ .rodata        0x1001e794       0x20 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/application_processor.o
  .rodata.recv_input.str1.4
-                0x1001e7ac        0x9 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/host_messaging.o
+                0x1001e7b4        0x9 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/host_messaging.o
                                  0x1d (size before relaxing)
- *fill*         0x1001e7b5        0x3 
+ *fill*         0x1001e7bd        0x3 
  .rodata.flash_simple_irq.str1.4
-                0x1001e7b8       0x27 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_flash.o
- *fill*         0x1001e7df        0x1 
+                0x1001e7c0       0x27 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_flash.o
+ *fill*         0x1001e7e7        0x1 
  .rodata.i2c_simple_controller_init.str1.4
-                0x1001e7e0       0x1a /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
- *fill*         0x1001e7fa        0x2 
+                0x1001e7e8       0x1a /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
+ *fill*         0x1001e802        0x2 
  .rodata.mxc_assert.str1.4
-                0x1001e7fc       0x19 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
- *fill*         0x1001e815        0x3 
+                0x1001e804       0x19 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
+ *fill*         0x1001e81d        0x3 
  .rodata.Board_Init.str1.4
-                0x1001e818       0x6d /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
- *fill*         0x1001e885        0x3 
+                0x1001e820       0x6d /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
+ *fill*         0x1001e88d        0x3 
  .rodata.num_leds
-                0x1001e888        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
-                0x1001e888                num_leds
+                0x1001e890        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
+                0x1001e890                num_leds
  .rodata.led_pin
-                0x1001e88c       0x24 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
-                0x1001e88c                led_pin
+                0x1001e894       0x24 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
+                0x1001e894                led_pin
  .rodata.num_pbs
-                0x1001e8b0        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
-                0x1001e8b0                num_pbs
+                0x1001e8b8        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
+                0x1001e8b8                num_pbs
  .rodata.pb_pin
-                0x1001e8b4       0x18 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
-                0x1001e8b4                pb_pin
+                0x1001e8bc       0x18 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
+                0x1001e8bc                pb_pin
  .rodata.LED_On.str1.4
-                0x1001e8cc       0x63 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/led.o
- *fill*         0x1001e92f        0x1 
+                0x1001e8d4       0x63 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/led.o
+ *fill*         0x1001e937        0x1 
  .rodata.gpio_cfg_uart3
-                0x1001e930        0xc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(pins_ai85.o)
-                0x1001e930                gpio_cfg_uart3
+                0x1001e938        0xc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(pins_ai85.o)
+                0x1001e938                gpio_cfg_uart3
  .rodata.gpio_cfg_uart2
-                0x1001e93c        0xc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(pins_ai85.o)
-                0x1001e93c                gpio_cfg_uart2
+                0x1001e944        0xc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(pins_ai85.o)
+                0x1001e944                gpio_cfg_uart2
  .rodata.gpio_cfg_uart1
-                0x1001e948        0xc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(pins_ai85.o)
-                0x1001e948                gpio_cfg_uart1
+                0x1001e950        0xc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(pins_ai85.o)
+                0x1001e950                gpio_cfg_uart1
  .rodata.gpio_cfg_uart0
-                0x1001e954        0xc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(pins_ai85.o)
-                0x1001e954                gpio_cfg_uart0
+                0x1001e95c        0xc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(pins_ai85.o)
+                0x1001e95c                gpio_cfg_uart0
  .rodata.gpio_cfg_i2c2
-                0x1001e960        0xc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(pins_ai85.o)
-                0x1001e960                gpio_cfg_i2c2
+                0x1001e968        0xc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(pins_ai85.o)
+                0x1001e968                gpio_cfg_i2c2
  .rodata.gpio_cfg_i2c1
-                0x1001e96c        0xc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(pins_ai85.o)
-                0x1001e96c                gpio_cfg_i2c1
+                0x1001e974        0xc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(pins_ai85.o)
+                0x1001e974                gpio_cfg_i2c1
  .rodata.gpio_cfg_i2c0
-                0x1001e978        0xc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(pins_ai85.o)
-                0x1001e978                gpio_cfg_i2c0
+                0x1001e980        0xc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(pins_ai85.o)
+                0x1001e980                gpio_cfg_i2c0
  .rodata.gpio_cfg_extclk
-                0x1001e984        0xc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(pins_ai85.o)
-                0x1001e984                gpio_cfg_extclk
+                0x1001e98c        0xc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(pins_ai85.o)
+                0x1001e98c                gpio_cfg_extclk
  .rodata.MXC_GPIO_Common_Handler.str1.4
-                0x1001e990       0x8e /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_common.o)
- *fill*         0x1001ea1e        0x2 
+                0x1001e998       0x8e /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_common.o)
+ *fill*         0x1001ea26        0x2 
  .rodata.CSWTCH.16
-                0x1001ea20        0xc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_common.o)
+                0x1001ea28        0xc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_common.o)
  .rodata._vfprintf_r.str1.4
-                0x1001ea2c       0x2e /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-vfprintf.o)
+                0x1001ea34       0x2e /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-vfprintf.o)
                                  0x42 (size before relaxing)
- *fill*         0x1001ea5a        0x2 
+ *fill*         0x1001ea62        0x2 
  .rodata.zeroes.0
-                0x1001ea5c       0x10 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-vfprintf.o)
+                0x1001ea64       0x10 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-vfprintf.o)
  .rodata.blanks.1
-                0x1001ea6c       0x10 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-vfprintf.o)
+                0x1001ea74       0x10 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-vfprintf.o)
  .rodata._vfiprintf_r.str1.4
-                0x1001ea7c       0x2f /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-vfiprintf.o)
+                0x1001ea84       0x2f /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-vfiprintf.o)
  .rodata.zeroes.0
-                0x1001ea7c       0x10 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-vfiprintf.o)
+                0x1001ea84       0x10 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-vfiprintf.o)
  .rodata.blanks.1
-                0x1001ea8c       0x10 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-vfiprintf.o)
+                0x1001ea94       0x10 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-vfiprintf.o)
  .rodata._puts_r.str1.4
-                0x1001ea9c        0x2 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-puts.o)
+                0x1001eaa4        0x2 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-puts.o)
  .rodata.str1.4
-                0x1001ea9c       0x44 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-locale.o)
+                0x1001eaa4       0x44 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-locale.o)
                                  0x4c (size before relaxing)
  .rodata._ctype_
-                0x1001eae0      0x101 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-ctype_.o)
-                0x1001eae0                _ctype_
- *fill*         0x1001ebe1        0x3 
+                0x1001eae8      0x101 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-ctype_.o)
+                0x1001eae8                _ctype_
+ *fill*         0x1001ebe9        0x3 
  .rodata._dtoa_r.str1.4
-                0x1001ebe4       0x85 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-dtoa.o)
+                0x1001ebec       0x85 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-dtoa.o)
                                  0x89 (size before relaxing)
  .rodata._svfprintf_r.str1.4
-                0x1001ec69       0x42 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-svfprintf.o)
- *fill*         0x1001ec69        0x3 
+                0x1001ec71       0x42 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-svfprintf.o)
+ *fill*         0x1001ec71        0x3 
  .rodata.zeroes.0
-                0x1001ec6c       0x10 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-svfprintf.o)
+                0x1001ec74       0x10 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-svfprintf.o)
  .rodata.blanks.1
-                0x1001ec7c       0x10 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-svfprintf.o)
+                0x1001ec84       0x10 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-svfprintf.o)
  .rodata.__ssvfscanf_r.str1.4
-                0x1001ec8c        0x5 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-svfscanf.o)
+                0x1001ec94        0x5 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-svfscanf.o)
                                   0x9 (size before relaxing)
- *fill*         0x1001ec91        0x3 
+ *fill*         0x1001ec99        0x3 
  .rodata.basefix.0
-                0x1001ec94       0x22 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-svfscanf.o)
- *fill*         0x1001ecb6        0x2 
+                0x1001ec9c       0x22 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-svfscanf.o)
+ *fill*         0x1001ecbe        0x2 
  .rodata.__multadd.str1.4
-                0x1001ecb8       0x62 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-mprec.o)
+                0x1001ecc0       0x62 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-mprec.o)
                                  0x76 (size before relaxing)
- *fill*         0x1001ed1a        0x2 
- .rodata.p05.0  0x1001ed1c        0xc /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-mprec.o)
+ *fill*         0x1001ed22        0x2 
+ .rodata.p05.0  0x1001ed24        0xc /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-mprec.o)
  .rodata.__mprec_bigtens
-                0x1001ed28       0x28 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-mprec.o)
-                0x1001ed28                __mprec_bigtens
+                0x1001ed30       0x28 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-mprec.o)
+                0x1001ed30                __mprec_bigtens
  .rodata.__mprec_tens
-                0x1001ed50       0xc8 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-mprec.o)
-                0x1001ed50                __mprec_tens
+                0x1001ed58       0xc8 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-mprec.o)
+                0x1001ed58                __mprec_tens
  .rodata._strtod_l.str1.4
-                0x1001ee18        0xf /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-strtod.o)
+                0x1001ee20        0xf /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-strtod.o)
                                  0x15 (size before relaxing)
- *fill*         0x1001ee27        0x1 
+ *fill*         0x1001ee2f        0x1 
  .rodata.fpinan.0
-                0x1001ee28       0x14 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-strtod.o)
- .rodata.fpi.1  0x1001ee3c       0x14 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-strtod.o)
+                0x1001ee30       0x14 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-strtod.o)
+ .rodata.fpi.1  0x1001ee44       0x14 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-strtod.o)
  .rodata.tinytens
-                0x1001ee50       0x28 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-strtod.o)
+                0x1001ee58       0x28 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-strtod.o)
  .rodata._mbrtowc_r.str1.4
-                0x1001ee78        0x1 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-mbrtowc.o)
+                0x1001ee80        0x1 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-mbrtowc.o)
  .rodata.__assert_func.str1.4
-                0x1001ee78       0x3f /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-assert.o)
+                0x1001ee80       0x3f /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-assert.o)
                                  0x43 (size before relaxing)
- *fill*         0x1001eeb7        0x1 
+ *fill*         0x1001eebf        0x1 
  .rodata._jp2uc_l.str1.4
-                0x1001eeb8       0x12 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-jp2uc.o)
- *fill*         0x1001eeca        0x2 
- .rodata.d02f4  0x1001eecc     0x1a7c /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-jp2uc.o)
- .rodata.b02cf  0x10020948     0x172a /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-jp2uc.o)
- *fill*         0x10022072        0x2 
- .rodata.a8     0x10022074       0x40 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-jp2uc.o)
- .rodata.a7     0x100220b4       0xa2 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-jp2uc.o)
- *fill*         0x10022156        0x2 
- .rodata.a6     0x10022158       0x70 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-jp2uc.o)
- .rodata.a3     0x100221c8       0x5b /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-jp2uc.o)
- *fill*         0x10022223        0x1 
- .rodata.a2     0x10022224       0xbc /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-jp2uc.o)
- .rodata.a1     0x100222e0       0xbc /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-jp2uc.o)
+                0x1001eec0       0x12 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-jp2uc.o)
+ *fill*         0x1001eed2        0x2 
+ .rodata.d02f4  0x1001eed4     0x1a7c /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-jp2uc.o)
+ .rodata.b02cf  0x10020950     0x172a /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-jp2uc.o)
+ *fill*         0x1002207a        0x2 
+ .rodata.a8     0x1002207c       0x40 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-jp2uc.o)
+ .rodata.a7     0x100220bc       0xa2 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-jp2uc.o)
+ *fill*         0x1002215e        0x2 
+ .rodata.a6     0x10022160       0x70 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-jp2uc.o)
+ .rodata.a3     0x100221d0       0x5b /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-jp2uc.o)
+ *fill*         0x1002222b        0x1 
+ .rodata.a2     0x1002222c       0xbc /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-jp2uc.o)
+ .rodata.a1     0x100222e8       0xbc /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-jp2uc.o)
  .rodata.categories
-                0x1002239c     0x35dc /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-categories.o)
+                0x100223a4     0x35dc /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-categories.o)
  .rodata.__gethex.str1.4
-                0x10025978       0x69 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-gdtoa-gethex.o)
+                0x10025980       0x69 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-gdtoa-gethex.o)
                                  0x81 (size before relaxing)
- *fill*         0x100259e1        0x3 
+ *fill*         0x100259e9        0x3 
  .rodata.__hexdig
-                0x100259e4      0x100 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-gdtoa-gethex.o)
-                0x100259e4                __hexdig
+                0x100259ec      0x100 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-gdtoa-gethex.o)
+                0x100259ec                __hexdig
  *(.init)
- .init          0x10025ae4        0x4 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m/nofp/crti.o
-                0x10025ae4                _init
- .init          0x10025ae8        0x8 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m/nofp/crtn.o
+ .init          0x10025aec        0x4 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m/nofp/crti.o
+                0x10025aec                _init
+ .init          0x10025af0        0x8 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m/nofp/crtn.o
  *(.fini)
- .fini          0x10025af0        0x4 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m/nofp/crti.o
-                0x10025af0                _fini
- .fini          0x10025af4        0x8 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m/nofp/crtn.o
- *fill*         0x10025afc        0x4 
- .fini.__stub   0x10025b00       0x20 linker stubs
+ .fini          0x10025af8        0x4 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m/nofp/crti.o
+                0x10025af8                _fini
+ .fini          0x10025afc        0x8 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m/nofp/crtn.o
+ *fill*         0x10025b04        0x4 
+ .fini.__stub   0x10025b08       0x20 linker stubs
  *(.eh_frame*)
- .eh_frame      0x10025b20        0x0 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m/nofp/crtbegin.o
- .eh_frame      0x10025b20       0x50 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-memchr.o)
- .eh_frame      0x10025b70       0x2c /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-memcpy.o)
- .eh_frame      0x10025b9c       0x34 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-strlen.o)
- .eh_frame      0x10025bd0        0x4 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m/nofp/crtend.o
-                0x10025bd4                        _etext = .
+ .eh_frame      0x10025b28        0x0 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m/nofp/crtbegin.o
+ .eh_frame      0x10025b28       0x50 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-memchr.o)
+ .eh_frame      0x10025b78       0x2c /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-memcpy.o)
+ .eh_frame      0x10025ba4       0x34 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a(libc_a-strlen.o)
+ .eh_frame      0x10025bd8        0x4 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m/nofp/crtend.o
+                0x10025bdc                        _etext = .
 
-.glue_7         0x10025bd4        0x0
- .glue_7        0x10025bd4        0x0 linker stubs
+.glue_7         0x10025bdc        0x0
+ .glue_7        0x10025bdc        0x0 linker stubs
 
-.glue_7t        0x10025bd4        0x0
- .glue_7t       0x10025bd4        0x0 linker stubs
+.glue_7t        0x10025bdc        0x0
+ .glue_7t       0x10025bdc        0x0 linker stubs
 
-.vfp11_veneer   0x10025bd4        0x0
- .vfp11_veneer  0x10025bd4        0x0 linker stubs
+.vfp11_veneer   0x10025bdc        0x0
+ .vfp11_veneer  0x10025bdc        0x0 linker stubs
 
-.v4_bx          0x10025bd4        0x0
- .v4_bx         0x10025bd4        0x0 linker stubs
+.v4_bx          0x10025bdc        0x0
+ .v4_bx         0x10025bdc        0x0 linker stubs
 
-.iplt           0x10025bd4        0x0
- .iplt          0x10025bd4        0x0 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m/nofp/crtbegin.o
+.iplt           0x10025bdc        0x0
+ .iplt          0x10025bdc        0x0 /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m/nofp/crtbegin.o
 
-.bin_storage    0x10025bd4        0x0
+.bin_storage    0x10025bdc        0x0
  FILL mask 0xff
-                0x10025bd4                        _bin_start_ = .
+                0x10025bdc                        _bin_start_ = .
  *(.bin_storage_img)
-                0x10025bd4                        _bin_end_ = .
-                0x10025bd4                        . = ALIGN (0x4)
+                0x10025bdc                        _bin_end_ = .
+                0x10025bdc                        . = ALIGN (0x4)
 
 .rom_code       0x00000000        0x0
                 0x00000000                        . = ALIGN (0x10)
@@ -16189,9 +16189,9 @@ LOAD /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/bin/
  *(.rom_code_section)
                 0x20000000                        _esran_code = .
 
-.flash_code     0x10025bd4        0xc
+.flash_code     0x10025bdc        0x4
                 0x10025be0                        . = ALIGN (0x10)
- *fill*         0x10025bd4        0xc 
+ *fill*         0x10025bdc        0x4 
                 0x20000000                        _sran_code = .
  *(.flash_code_section)
                 0x20000000                        _esran_code = .
@@ -16715,65 +16715,65 @@ LOAD linker stubs
  .comment       0x00000045       0x46 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_common.o)
  .comment       0x00000045       0x46 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_common.o)
 
-.debug_info     0x00000000    0x1768a
+.debug_info     0x00000000    0x1768c
  .debug_info    0x00000000     0x20c2 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/application_processor.o
- .debug_info    0x000020c2      0x405 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board_link.o
- .debug_info    0x000024c7      0x930 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/host_messaging.o
- .debug_info    0x00002df7      0x991 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_flash.o
- .debug_info    0x00003788     0x10a3 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
- .debug_info    0x0000482b      0xf6c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
- .debug_info    0x00005797      0x6bd /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/stdio.o
- .debug_info    0x00005e54      0x64c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/led.o
- .debug_info    0x000064a0      0xdba /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/pb.o
- .debug_info    0x0000725a      0x10f /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/heap.o
- .debug_info    0x00007369      0x5e7 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/system_max78000.o
- .debug_info    0x00007950      0x3de /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(mxc_delay.o)
- .debug_info    0x00007d2e      0x7d3 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(nvic_table.o)
- .debug_info    0x00008501      0x8c6 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(pins_ai85.o)
- .debug_info    0x00008dc7     0x125f /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(sys_ai85.o)
- .debug_info    0x0000a026      0xf06 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_me17.o)
- .debug_info    0x0000af2c      0xa4b /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_reva.o)
- .debug_info    0x0000b977     0x1457 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_ai85.o)
- .debug_info    0x0000cdce      0x9c4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_reva.o)
- .debug_info    0x0000d792     0x23e6 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
- .debug_info    0x0000fb78     0x25c1 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
- .debug_info    0x00012139      0x3b6 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_me17.o)
- .debug_info    0x000124ef      0x28c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_reva.o)
- .debug_info    0x0001277b     0x20d0 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
- .debug_info    0x0001484b      0x2d9 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_common.o)
- .debug_info    0x00014b24     0x2167 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
- .debug_info    0x00016c8b      0x3c4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_common.o)
- .debug_info    0x0001704f      0x63b /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_common.o)
+ .debug_info    0x000020c2      0x407 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board_link.o
+ .debug_info    0x000024c9      0x930 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/host_messaging.o
+ .debug_info    0x00002df9      0x991 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_flash.o
+ .debug_info    0x0000378a     0x10a3 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
+ .debug_info    0x0000482d      0xf6c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
+ .debug_info    0x00005799      0x6bd /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/stdio.o
+ .debug_info    0x00005e56      0x64c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/led.o
+ .debug_info    0x000064a2      0xdba /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/pb.o
+ .debug_info    0x0000725c      0x10f /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/heap.o
+ .debug_info    0x0000736b      0x5e7 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/system_max78000.o
+ .debug_info    0x00007952      0x3de /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(mxc_delay.o)
+ .debug_info    0x00007d30      0x7d3 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(nvic_table.o)
+ .debug_info    0x00008503      0x8c6 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(pins_ai85.o)
+ .debug_info    0x00008dc9     0x125f /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(sys_ai85.o)
+ .debug_info    0x0000a028      0xf06 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_me17.o)
+ .debug_info    0x0000af2e      0xa4b /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_reva.o)
+ .debug_info    0x0000b979     0x1457 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_ai85.o)
+ .debug_info    0x0000cdd0      0x9c4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_reva.o)
+ .debug_info    0x0000d794     0x23e6 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
+ .debug_info    0x0000fb7a     0x25c1 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
+ .debug_info    0x0001213b      0x3b6 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_me17.o)
+ .debug_info    0x000124f1      0x28c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_reva.o)
+ .debug_info    0x0001277d     0x20d0 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
+ .debug_info    0x0001484d      0x2d9 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_common.o)
+ .debug_info    0x00014b26     0x2167 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
+ .debug_info    0x00016c8d      0x3c4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_common.o)
+ .debug_info    0x00017051      0x63b /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_common.o)
 
-.debug_abbrev   0x00000000     0x4898
+.debug_abbrev   0x00000000     0x489e
  .debug_abbrev  0x00000000      0x588 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/application_processor.o
- .debug_abbrev  0x00000588      0x182 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board_link.o
- .debug_abbrev  0x0000070a      0x245 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/host_messaging.o
- .debug_abbrev  0x0000094f      0x2b7 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_flash.o
- .debug_abbrev  0x00000c06      0x3c7 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
- .debug_abbrev  0x00000fcd      0x2ec /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
- .debug_abbrev  0x000012b9      0x1e6 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/stdio.o
- .debug_abbrev  0x0000149f      0x21f /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/led.o
- .debug_abbrev  0x000016be      0x32b /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/pb.o
- .debug_abbrev  0x000019e9       0xcc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/heap.o
- .debug_abbrev  0x00001ab5      0x23c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/system_max78000.o
- .debug_abbrev  0x00001cf1      0x21f /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(mxc_delay.o)
- .debug_abbrev  0x00001f10      0x247 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(nvic_table.o)
- .debug_abbrev  0x00002157       0xd8 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(pins_ai85.o)
- .debug_abbrev  0x0000222f      0x415 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(sys_ai85.o)
- .debug_abbrev  0x00002644      0x326 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_me17.o)
- .debug_abbrev  0x0000296a      0x305 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_reva.o)
- .debug_abbrev  0x00002c6f      0x2f7 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_ai85.o)
- .debug_abbrev  0x00002f66      0x15d /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_reva.o)
- .debug_abbrev  0x000030c3      0x2ec /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
- .debug_abbrev  0x000033af      0x4b6 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
- .debug_abbrev  0x00003865      0x212 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_me17.o)
- .debug_abbrev  0x00003a77      0x1a9 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_reva.o)
- .debug_abbrev  0x00003c20      0x351 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
- .debug_abbrev  0x00003f71      0x135 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_common.o)
- .debug_abbrev  0x000040a6      0x427 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
- .debug_abbrev  0x000044cd      0x1ac /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_common.o)
- .debug_abbrev  0x00004679      0x21f /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_common.o)
+ .debug_abbrev  0x00000588      0x188 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board_link.o
+ .debug_abbrev  0x00000710      0x245 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/host_messaging.o
+ .debug_abbrev  0x00000955      0x2b7 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_flash.o
+ .debug_abbrev  0x00000c0c      0x3c7 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
+ .debug_abbrev  0x00000fd3      0x2ec /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
+ .debug_abbrev  0x000012bf      0x1e6 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/stdio.o
+ .debug_abbrev  0x000014a5      0x21f /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/led.o
+ .debug_abbrev  0x000016c4      0x32b /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/pb.o
+ .debug_abbrev  0x000019ef       0xcc /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/heap.o
+ .debug_abbrev  0x00001abb      0x23c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/system_max78000.o
+ .debug_abbrev  0x00001cf7      0x21f /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(mxc_delay.o)
+ .debug_abbrev  0x00001f16      0x247 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(nvic_table.o)
+ .debug_abbrev  0x0000215d       0xd8 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(pins_ai85.o)
+ .debug_abbrev  0x00002235      0x415 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(sys_ai85.o)
+ .debug_abbrev  0x0000264a      0x326 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_me17.o)
+ .debug_abbrev  0x00002970      0x305 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_reva.o)
+ .debug_abbrev  0x00002c75      0x2f7 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_ai85.o)
+ .debug_abbrev  0x00002f6c      0x15d /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_reva.o)
+ .debug_abbrev  0x000030c9      0x2ec /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
+ .debug_abbrev  0x000033b5      0x4b6 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
+ .debug_abbrev  0x0000386b      0x212 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_me17.o)
+ .debug_abbrev  0x00003a7d      0x1a9 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_reva.o)
+ .debug_abbrev  0x00003c26      0x351 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
+ .debug_abbrev  0x00003f77      0x135 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_common.o)
+ .debug_abbrev  0x000040ac      0x427 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
+ .debug_abbrev  0x000044d3      0x1ac /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_common.o)
+ .debug_abbrev  0x0000467f      0x21f /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_common.o)
 
 .debug_loclists
                 0x00000000     0x6b92
@@ -16891,61 +16891,61 @@ LOAD linker stubs
                 0x00000e30       0x30 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_common.o)
 
 .debug_rnglists
-                0x00000000      0xeb7
+                0x00000000      0xec6
  .debug_rnglists
                 0x00000000      0x168 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/application_processor.o
  .debug_rnglists
-                0x00000168       0x25 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board_link.o
+                0x00000168       0x34 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board_link.o
  .debug_rnglists
-                0x0000018d       0x25 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/host_messaging.o
+                0x0000019c       0x25 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/host_messaging.o
  .debug_rnglists
-                0x000001b2       0x2b /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_flash.o
+                0x000001c1       0x2b /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_flash.o
  .debug_rnglists
-                0x000001dd       0xfd /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
+                0x000001ec       0xfd /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
  .debug_rnglists
-                0x000002da       0x4f /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
+                0x000002e9       0x4f /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
  .debug_rnglists
-                0x00000329       0x37 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/stdio.o
+                0x00000338       0x37 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/stdio.o
  .debug_rnglists
-                0x00000360       0x25 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/led.o
+                0x0000036f       0x25 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/led.o
  .debug_rnglists
-                0x00000385       0x4b /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/pb.o
+                0x00000394       0x4b /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/pb.o
  .debug_rnglists
-                0x000003d0       0x13 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/heap.o
+                0x000003df       0x13 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/heap.o
  .debug_rnglists
-                0x000003e3       0x25 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/system_max78000.o
+                0x000003f2       0x25 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/system_max78000.o
  .debug_rnglists
-                0x00000408       0x79 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(mxc_delay.o)
+                0x00000417       0x79 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(mxc_delay.o)
  .debug_rnglists
-                0x00000481       0x2b /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(nvic_table.o)
+                0x00000490       0x2b /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(nvic_table.o)
  .debug_rnglists
-                0x000004ac       0xa8 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(sys_ai85.o)
+                0x000004bb       0xa8 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(sys_ai85.o)
  .debug_rnglists
-                0x00000554      0x11f /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_me17.o)
+                0x00000563      0x11f /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_me17.o)
  .debug_rnglists
-                0x00000673       0xfa /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_reva.o)
+                0x00000682       0xfa /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_reva.o)
  .debug_rnglists
-                0x0000076d       0x9f /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_ai85.o)
+                0x0000077c       0x9f /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_ai85.o)
  .debug_rnglists
-                0x0000080c       0x6d /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_reva.o)
+                0x0000081b       0x6d /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_reva.o)
  .debug_rnglists
-                0x00000879      0x12e /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
+                0x00000888      0x12e /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
  .debug_rnglists
-                0x000009a7      0x21b /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
+                0x000009b6      0x21b /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
  .debug_rnglists
-                0x00000bc2       0x31 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_me17.o)
+                0x00000bd1       0x31 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_me17.o)
  .debug_rnglists
-                0x00000bf3       0x1f /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_reva.o)
+                0x00000c02       0x1f /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_reva.o)
  .debug_rnglists
-                0x00000c12      0x11d /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
+                0x00000c21      0x11d /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
  .debug_rnglists
-                0x00000d2f       0x19 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_common.o)
+                0x00000d3e       0x19 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_common.o)
  .debug_rnglists
-                0x00000d48      0x130 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
+                0x00000d57      0x130 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
  .debug_rnglists
-                0x00000e78       0x20 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_common.o)
+                0x00000e87       0x20 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_common.o)
  .debug_rnglists
-                0x00000e98       0x1f /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_common.o)
+                0x00000ea7       0x1f /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_common.o)
 
 .debug_macro    0x00000000     0xe090
  .debug_macro   0x00000000      0x508 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/application_processor.o
@@ -17103,92 +17103,92 @@ LOAD linker stubs
  .debug_macro   0x0000dd21      0x248 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_common.o)
  .debug_macro   0x0000df69      0x127 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_common.o)
 
-.debug_line     0x00000000    0x12932
+.debug_line     0x00000000    0x12947
  .debug_line    0x00000000     0x10a4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/application_processor.o
- .debug_line    0x000010a4      0x878 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board_link.o
- .debug_line    0x0000191c      0x36e /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/host_messaging.o
- .debug_line    0x00001c8a      0x600 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_flash.o
- .debug_line    0x0000228a      0xcc8 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
- .debug_line    0x00002f52      0x9c9 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
- .debug_line    0x0000391b      0xa17 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/stdio.o
- .debug_line    0x00004332      0x841 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/led.o
- .debug_line    0x00004b73      0xa1e /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/pb.o
- .debug_line    0x00005591      0x422 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/heap.o
- .debug_line    0x000059b3      0x661 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/system_max78000.o
- .debug_line    0x00006014      0x8c1 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(mxc_delay.o)
- .debug_line    0x000068d5      0x616 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(nvic_table.o)
- .debug_line    0x00006eeb      0x46a /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(pins_ai85.o)
- .debug_line    0x00007355      0xe38 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(sys_ai85.o)
- .debug_line    0x0000818d      0xbb7 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_me17.o)
- .debug_line    0x00008d44      0xdde /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_reva.o)
- .debug_line    0x00009b22      0xc80 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_ai85.o)
- .debug_line    0x0000a7a2      0x860 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_reva.o)
- .debug_line    0x0000b002      0xb3d /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
- .debug_line    0x0000bb3f     0x28b6 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
- .debug_line    0x0000e3f5      0x556 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_me17.o)
- .debug_line    0x0000e94b      0x5e5 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_reva.o)
- .debug_line    0x0000ef30      0xc4c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
- .debug_line    0x0000fb7c      0x536 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_common.o)
- .debug_line    0x000100b2     0x1b3e /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
- .debug_line    0x00011bf0      0x72e /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_common.o)
- .debug_line    0x0001231e      0x614 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_common.o)
+ .debug_line    0x000010a4      0x88d /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board_link.o
+ .debug_line    0x00001931      0x36e /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/host_messaging.o
+ .debug_line    0x00001c9f      0x600 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_flash.o
+ .debug_line    0x0000229f      0xcc8 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
+ .debug_line    0x00002f67      0x9c9 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
+ .debug_line    0x00003930      0xa17 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/stdio.o
+ .debug_line    0x00004347      0x841 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/led.o
+ .debug_line    0x00004b88      0xa1e /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/pb.o
+ .debug_line    0x000055a6      0x422 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/heap.o
+ .debug_line    0x000059c8      0x661 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/system_max78000.o
+ .debug_line    0x00006029      0x8c1 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(mxc_delay.o)
+ .debug_line    0x000068ea      0x616 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(nvic_table.o)
+ .debug_line    0x00006f00      0x46a /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(pins_ai85.o)
+ .debug_line    0x0000736a      0xe38 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(sys_ai85.o)
+ .debug_line    0x000081a2      0xbb7 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_me17.o)
+ .debug_line    0x00008d59      0xdde /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_reva.o)
+ .debug_line    0x00009b37      0xc80 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_ai85.o)
+ .debug_line    0x0000a7b7      0x860 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_reva.o)
+ .debug_line    0x0000b017      0xb3d /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
+ .debug_line    0x0000bb54     0x28b6 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
+ .debug_line    0x0000e40a      0x556 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_me17.o)
+ .debug_line    0x0000e960      0x5e5 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_reva.o)
+ .debug_line    0x0000ef45      0xc4c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
+ .debug_line    0x0000fb91      0x536 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_common.o)
+ .debug_line    0x000100c7     0x1b3e /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
+ .debug_line    0x00011c05      0x72e /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_common.o)
+ .debug_line    0x00012333      0x614 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_common.o)
 
-.debug_str      0x00000000    0x3d2e0
- .debug_str     0x00000000    0x23a62 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/application_processor.o
-                              0x23e89 (size before relaxing)
- .debug_str     0x00023a62      0x142 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board_link.o
+.debug_str      0x00000000    0x3d2e3
+ .debug_str     0x00000000    0x23a65 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/application_processor.o
+                              0x23e8c (size before relaxing)
+ .debug_str     0x00023a65      0x142 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board_link.o
                               0x1ea79 (size before relaxing)
- .debug_str     0x00023ba4       0x31 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/host_messaging.o
+ .debug_str     0x00023ba7       0x31 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/host_messaging.o
                                0x7970 (size before relaxing)
- .debug_str     0x00023bd5     0x1442 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_flash.o
+ .debug_str     0x00023bd8     0x1442 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_flash.o
                               0x19f43 (size before relaxing)
- .debug_str     0x00025017      0x210 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
+ .debug_str     0x0002501a      0x210 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/simple_i2c_controller.o
                               0x1f11d (size before relaxing)
- .debug_str     0x00025227     0x3a28 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
+ .debug_str     0x0002522a     0x3a28 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/board.o
                               0x22279 (size before relaxing)
- .debug_str     0x00028c4f      0xab7 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/stdio.o
+ .debug_str     0x00028c52      0xab7 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/stdio.o
                               0x1fed7 (size before relaxing)
- .debug_str     0x00029706       0xa8 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/led.o
+ .debug_str     0x00029709       0xa8 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/led.o
                               0x1bd0c (size before relaxing)
- .debug_str     0x000297ae      0x1d0 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/pb.o
+ .debug_str     0x000297b1      0x1d0 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/pb.o
                               0x1c3dc (size before relaxing)
- .debug_str     0x0002997e       0xc0 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/heap.o
+ .debug_str     0x00029981       0xc0 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/heap.o
                                0x8a40 (size before relaxing)
- .debug_str     0x00029a3e      0x208 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/system_max78000.o
+ .debug_str     0x00029a41      0x208 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/system_max78000.o
                               0x18d6f (size before relaxing)
- .debug_str     0x00029c46      0x14c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(mxc_delay.o)
+ .debug_str     0x00029c49      0x14c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(mxc_delay.o)
                               0x1562e (size before relaxing)
- .debug_str     0x00029d92       0xb9 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(nvic_table.o)
+ .debug_str     0x00029d95       0xb9 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(nvic_table.o)
                               0x17fec (size before relaxing)
- .debug_str     0x00029e4b      0x460 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(pins_ai85.o)
+ .debug_str     0x00029e4e      0x460 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(pins_ai85.o)
                               0x15122 (size before relaxing)
- .debug_str     0x0002a2ab     0x3baf /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(sys_ai85.o)
+ .debug_str     0x0002a2ae     0x3baf /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(sys_ai85.o)
                               0x1d180 (size before relaxing)
- .debug_str     0x0002de5a     0x102a /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_me17.o)
+ .debug_str     0x0002de5d     0x102a /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_me17.o)
                               0x1aa9a (size before relaxing)
- .debug_str     0x0002ee84      0x10c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_reva.o)
+ .debug_str     0x0002ee87      0x10c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_reva.o)
                               0x19de8 (size before relaxing)
- .debug_str     0x0002ef90     0x3e8a /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_ai85.o)
+ .debug_str     0x0002ef93     0x3e8a /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_ai85.o)
                               0x1ba3e (size before relaxing)
- .debug_str     0x00032e1a       0x6c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_reva.o)
+ .debug_str     0x00032e1d       0x6c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_reva.o)
                               0x18ade (size before relaxing)
- .debug_str     0x00032e86     0x6bb0 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
+ .debug_str     0x00032e89     0x6bb0 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
                               0x22b82 (size before relaxing)
- .debug_str     0x00039a36      0x2a2 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
+ .debug_str     0x00039a39      0x2a2 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
                               0x220cd (size before relaxing)
- .debug_str     0x00039cd8      0x548 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_me17.o)
+ .debug_str     0x00039cdb      0x548 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_me17.o)
                               0x15b30 (size before relaxing)
- .debug_str     0x0003a220       0x78 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_reva.o)
+ .debug_str     0x0003a223       0x78 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_reva.o)
                               0x15e17 (size before relaxing)
- .debug_str     0x0003a298     0x2c3e /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
+ .debug_str     0x0003a29b     0x2c3e /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
                               0x1d472 (size before relaxing)
- .debug_str     0x0003ced6       0x6e /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_common.o)
+ .debug_str     0x0003ced9       0x6e /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_common.o)
                               0x170fe (size before relaxing)
- .debug_str     0x0003cf44      0x258 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
+ .debug_str     0x0003cf47      0x258 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
                               0x20594 (size before relaxing)
- .debug_str     0x0003d19c       0xb1 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_common.o)
+ .debug_str     0x0003d19f       0xb1 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(flc_common.o)
                               0x19003 (size before relaxing)
- .debug_str     0x0003d24d       0x93 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_common.o)
+ .debug_str     0x0003d250       0x93 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_common.o)
                               0x15266 (size before relaxing)
 
 .debug_frame    0x00000000     0x46fc

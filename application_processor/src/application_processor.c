@@ -14,6 +14,7 @@
 #include "board_link.h"
 #include "simple_flash.h"
 #include "host_messaging.h"
+//
 #ifdef CRYPTO_EXAMPLE
 #include "simple_crypto.h"
 #endif
@@ -290,12 +291,7 @@ int attest_component(uint32_t component_id) {
     print_info("C>0x%08x\n", component_id);
 
     print_info("%s", receive_buffer);
-    // Hash example encryption results 
-    // uint8_t hash_out[16];
-    // hash(receive_buffer, 16, hash_out);
-
-    // // Output hash result
-    // print_info("%08x", hash_out);
+    
 
     return SUCCESS_RETURN;
 }
@@ -420,7 +416,7 @@ void attempt_attest() {
         return;
     }
     uint32_t component_id;
-    recv_input("Component ID: ", buf,11);
+    recv_input("Component ID: ", buf, 11);
     sscanf(buf, "%x", &component_id);
     if (attest_component(component_id) == SUCCESS_RETURN) {
         print_success("Attest\n");
