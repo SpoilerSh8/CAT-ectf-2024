@@ -24,7 +24,7 @@ Prevent injection attacks, buffer overflows and other vulnerabilities.
 
 3.1 Application Processor (AP):
 Role: Manage communications, orchestrate MISC functionality, ensure integrity.
-Vulnerabilities: poor token and pin management, Buffer overflows ,lack of input validation 
+Vulnerabilities: *poor token and pin management*, Buffer overflows ,lack of input validation 
 Fixes: handle commands forever by creating a specified list of preboot command and remove newline character from input and fixe the buff's length included the recv_input() fonction 
 
 
@@ -47,6 +47,23 @@ Files: inc/board_link.h, src/board_link.c
 Role: Send arbitrary data messages between AP and components.
 Vulnerabilities: unchecked packet length, denial of service, I2C address spoofing.
 Fixes: verify if the length  packet didn't exceed the MAX_I2C_MESSAGE_LEN defined to 64.
+
+
+3.5 Simple Flash Library:
+Files: inc/simple_flash.h, src/simple_flash.c
+Role: Interface with MAX78000FTHR flash memory.
+Vulnerabilities: unvalidated inputs, insufficient error handling, unprevented buffer overflows, denial of service.
+Corrections : Input validation, improved error handling, overflow protection, transaction limiting.
+
+3.6 Components and ap "ectf_params.h" management: 
+Files: Component.c and application_processor.c
+Role: Storage the informations about the Ap_pin, Ap_Token and the attestation_data, used to be included in both source files
+for comparison 
+Vulnerabilities: information are stored in clear, poor token and pin management 
+Fixes: manage this file generation by configuring the deployment/makefile
+
+
+
 
 
 
