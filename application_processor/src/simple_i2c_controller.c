@@ -207,7 +207,7 @@ int i2c_simple_read_data_generic(i2c_addr_t addr, ECTF_I2C_REGS reg, uint8_t len
  * Can be used to write the PARAMS or RESULT register
 */
 int i2c_simple_write_data_generic(i2c_addr_t addr, ECTF_I2C_REGS reg, uint8_t len, uint8_t* buf) {
-    uint8_t packet[257];
+    uint8_t packet[64];
     packet[0] = reg;
     memcpy(&packet[1], buf, len);
     
