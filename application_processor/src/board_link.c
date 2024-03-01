@@ -77,34 +77,72 @@ int send_packet(i2c_addr_t address, uint8_t len, uint8_t* packet) {
  * 
  * @return int: size of data received, ERROR_RETURN if error
 */
-int poll_and_receive_packet(i2c_addr_t address, uint8_t* packet) {
+// int poll_and_receive_packet(i2c_addr_t address, uint8_t* packet) {
 
+//     int result = SUCCESS_RETURN;
+//     while (true) {
+//         result = i2c_simple_read_transmit_done(address);
+//         if (result < SUCCESS_RETURN) {
+//             return ERROR_RETURN;
+//         }
+//         else if (result == SUCCESS_RETURN) {
+//             break;
+//         }
+//         MXC_Delay(50);
+//     }
+
+//     int len = i2c_simple_read_transmit_len(address);
+//     // if (len <= MAX_I2C_MESSAGE_LEN)
+//     //     {
+//             if (len < SUCCESS_RETURN) {
+//             return ERROR_RETURN;
+//         }
+//         result = i2c_simple_read_data_generic(address, TRANSMIT, (uint8_t)len, packet);
+//         if (result < SUCCESS_RETURN) {
+//             return ERROR_RETURN;
+//         }
+//         result = i2c_simple_write_transmit_done(address, true);
+//         if (result < SUCCESS_RETURN) {
+//             return ERROR_RETURN;
+//         }
+//     // } 
+//     return len;
+// }
+
+
+int poll_and_receive_packet(i2c_addr_t address, uint8_t* packet) {
     int result = SUCCESS_RETURN;
-    while (true) {
+    int retries = 3;
+
+    while (retries > 0) {
         result = i2c_simple_read_transmit_done(address);
         if (result < SUCCESS_RETURN) {
-            return ERROR_RETURN;
-        }
-        else if (result == SUCCESS_RETURN) {
+            retries--;
+            MXC_Delay(50);
+            continue;
+        } else if (result == SUCCESS_RETURN) {
             break;
         }
-        MXC_Delay(500);
+    }
+
+    if (retries == 0) {
+        return ERROR_RETURN;
     }
 
     int len = i2c_simple_read_transmit_len(address);
-    // if (len <= MAX_I2C_MESSAGE_LEN)
-    //     {
-            if (len < SUCCESS_RETURN) {
-            return ERROR_RETURN;
-        }
-        result = i2c_simple_read_data_generic(address, TRANSMIT, (uint8_t)len, packet);
-        if (result < SUCCESS_RETURN) {
-            return ERROR_RETURN;
-        }
-        result = i2c_simple_write_transmit_done(address, true);
-        if (result < SUCCESS_RETURN) {
-            return ERROR_RETURN;
-        }
-    // } 
+    if (len < SUCCESS_RETURN) {
+        return ERROR_RETURN;
+    }
+
+    result = i2c_simple_read_data_generic(address, TRANSMIT, (uint8_t)len, packet);
+    if (result < SUCCESS_RETURN) {
+        return ERROR_RETURN;
+    }
+
+    result = i2c_simple_write_transmit_done(address, true);
+    if (result < SUCCESS_RETURN) {
+        return ERROR_RETURN;
+    }
+
     return len;
 }
