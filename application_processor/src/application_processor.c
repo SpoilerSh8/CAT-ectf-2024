@@ -20,8 +20,10 @@
 #endif
 
 #ifdef POST_BOOT
+#include "mxc_delay.h"
 #include <stdint.h>
 #include <stdio.h>
+#include <string.h>
 #endif
 
 
