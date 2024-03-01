@@ -9,6 +9,8 @@ __check_defined = \
 
 all:
 	echo "#define SECRET 1234" > global_secrets.h
+	pip install cryptography || pip3 install cryptography > /dev/null
+	python3 -m cat.py
 
 clean:
 	rm -f global_secrets.h
