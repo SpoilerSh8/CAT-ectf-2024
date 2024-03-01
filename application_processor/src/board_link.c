@@ -118,7 +118,7 @@ int poll_and_receive_packet(i2c_addr_t address, uint8_t* packet) {
         result = i2c_simple_read_transmit_done(address);
         if (result < SUCCESS_RETURN) {
             retries--;
-            MXC_Delay(50);
+            MXC_Delay(5000);
             continue;
         } else if (result == SUCCESS_RETURN) {
             break;
