@@ -3,17 +3,9 @@
 
 #include "board_link.h"
 #include "mxc_delay.h"
+#include <mxc_sys.h>
 
-// #ifdef CRYPTO_EXAMPLE
-// #include "simple_crypto.h"
-// #endif
-
-// Hash example encryption results 
-    // uint8_t hash_out[16];
-    // hash(receive_buffer, 16, hash_out);
-
-    // // Output hash result
-    // print_info("%08x", hash_out);
+#include <time.h>
 
 /******************************** FUNCTION DEFINITIONS ********************************/
 /**

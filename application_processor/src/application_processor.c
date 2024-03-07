@@ -6,10 +6,14 @@
 #include "mxc_device.h"
 #include "nvic_table.h"
 
+
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+#include <tmr.h>
+
 
 #include "board_link.h"
 #include "simple_flash.h"
@@ -20,17 +24,17 @@
 #endif
 
 #ifdef POST_BOOT
-#include "mxc_delay.h"
 #include <stdint.h>
 #include <stdio.h>
-#include <string.h>
 #endif
+//
 
 
 
 // Includes from containerized build
 #include "ectf_params.h"
-#include "global_secrets.h"
+#include "hello.h"
+
 
 // Flash Macros
 #define FLASH_ADDR ((MXC_FLASH_MEM_BASE + MXC_FLASH_MEM_SIZE) - (2 * MXC_FLASH_PAGE_SIZE))
@@ -41,6 +45,36 @@
 #define ERROR_RETURN -1
 
 /******************************** TYPE DEFINITIONS ********************************/
+
+
+//  mxc_tmr_cfg_t timer_config = {
+//         .pres = MXC_TMR_PRES_1, // Pas de division du signal d'horloge
+//         .mode = MXC_TMR_MODE_ONESHOT, // Mode One-Shot
+//         .bitMode = MXC_TMR_BIT_MODE_32, // Compteur 32 bits
+//         .clock = MXC_TMR_APB_CLK, // Source d'horloge du périphérique
+//         .cmp_cnt = 0, // Valeur de comparaison
+//         .pol = 0 // Polarity
+//     };
+
+//     MXC_TMR_Init(&TMRn, &timer_config, true); // Initialise le timer
+
+//     // Démarrer le timer
+//     MXC_TMR_Start(&TMRn);
+
+//     // Code de tâche à mesurer
+//     // ...
+
+//     // Arrêter le timer
+//     MXC_TMR_Stop(&TMRn);
+
+//     // Obtenir la valeur du compteur du timer
+//     uint32_t count = MXC_TMR_GetCount(&TMRn);
+
+//     // Convertir la valeur du compteur en secondes
+//     double seconds = (double)count / CLOCK_FREQUENCY; // CLOCK_FREQUENCY est la fréquence du timer
+
+
+//------------////
 // Data structure for sending commands to component
 // Params allows for up to MAX_I2C_MESSAGE_LEN - 1 bytes to be send
 // along with the opcode through board_link. This is not utilized by the example
@@ -82,6 +116,14 @@ flash_entry flash_status;
 
 /******************************* POST BOOT FUNCTIONALITY *********************************/
 /**
+ * 
+ * // // Hash example encryption results 
+    // uint8_t hash_out[16];
+    // hash(packet, 16, hash_out);
+
+    // // Output hash result
+    // // print_info("%08x", hash_out);
+
  * @brief Secure Send 
  * 
  * @param address: i2c_addr_t, I2C address of recipient
@@ -93,6 +135,7 @@ flash_entry flash_status;
 
 */
 int secure_send(uint8_t address, uint8_t* buffer, uint8_t len) {
+
     return send_packet(address, len, buffer);
 }
 
@@ -108,6 +151,7 @@ int secure_send(uint8_t address, uint8_t* buffer, uint8_t len) {
  * This function must be implemented by your team to align with the security requirements.
 */
 int secure_receive(i2c_addr_t address, uint8_t* buffer) {
+
     return poll_and_receive_packet(address, buffer);
 }
 
@@ -170,6 +214,7 @@ int issue_cmd(i2c_addr_t addr, uint8_t* transmit, uint8_t* receive) {
     // Receive message
     int len = poll_and_receive_packet(addr, receive);
     if (len == ERROR_RETURN) {
+  
         return ERROR_RETURN;
     }
     return len;
@@ -201,12 +246,14 @@ int scan_components() {
         
         // Send out command and receive result
         int len = issue_cmd(addr, transmit_buffer, receive_buffer);
-
-        // Success, device is present
+        
+        struct timespec *start, *end;
+         
+        //Success, device is present
         if (len > 0) {
             scan_message* scan = (scan_message*) receive_buffer;
             print_info("F>0x%08x\n", scan->component_id);
-        }
+        } 
     }
     print_success("List\n");
     return SUCCESS_RETURN;
@@ -355,6 +402,7 @@ int validate_token() {
 
 // Boot the components and board if the components validate
 void attempt_boot() {
+    
     if (validate_components()) {
         print_error("Components could not be validated\n");
         return;
@@ -435,7 +483,7 @@ typedef struct {
 int main() {
     // Initialize board
     init();
-
+    
     // Handle commands forever
     char buf[8];
     while (1)

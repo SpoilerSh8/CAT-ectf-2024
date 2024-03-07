@@ -14,6 +14,8 @@
 #include <string.h>
 
 #include "board_link.h"
+#include "mxc_delay.h"
+
 
 /**
  * @brief Initialize the board link interface

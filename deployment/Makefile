@@ -5,10 +5,12 @@ check_defined = \
 		$(call __check_defined,$1)))
 __check_defined = \
 	$(if $(value $1),, \
-		$(error Undefined $1))
-
+		$(error Undefined $1))	
+		
 all:
-	echo "#define SECRET 1234" > global_secrets.h
-
+	poetry run python3 param.py
+	
 clean:
-	rm -f global_secrets.h
+	rm -f ../application_processor/inc/ectf_params.h
+	rm -f ../component/inc/ectf_params.h
+
