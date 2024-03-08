@@ -1,5 +1,5 @@
-/Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/component.o: \
- src/component.c \
+/Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/application_processor.o: \
+ src/application_processor.c \
  /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/Boards/MAX78000/FTHR_RevA/Include/board.h \
  /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/stdio.h \
  /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/_ansi.h \
@@ -51,21 +51,47 @@
  /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/MiscDrivers/PushButton/pb.h \
  /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Include/MAX78000/i2c.h \
  /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/CMSIS/Device/Maxim/MAX78000/Include/i2c_regs.h \
+ /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Include/MAX78000/icc.h \
+ /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/CMSIS/Device/Maxim/MAX78000/Include/icc_regs.h \
  /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Include/MAX78000/mxc_delay.h \
- /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Include/MAX78000/mxc_errors.h \
+ /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Include/MAX78000/mxc_device.h \
  /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Include/MAX78000/nvic_table.h \
  /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/string.h \
  /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/_locale.h \
  /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/strings.h \
  /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/string.h \
- inc/simple_i2c_peripheral.h \
- /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Source/I2C/i2c_reva_regs.h \
- /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Source/I2C/i2c_reva.h \
- /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Include/MAX78000/mxc_device.h \
- /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Include/MAX78000/mxc_lock.h \
- /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Include/MAX78000/mxc_sys.h \
- /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Source/I2C/i2c_reva_regs.h \
- /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Include/MAX78000/dma.h \
- /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/CMSIS/Device/Maxim/MAX78000/Include/dma_regs.h \
- inc/board_link.h inc/simple_i2c_peripheral.h inc/ectf_params.h \
- ../deployment/hello.h
+ /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/stdlib.h \
+ /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/machine/stdlib.h \
+ /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/alloca.h \
+ /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Include/MAX78000/tmr.h \
+ /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/CMSIS/Device/Maxim/MAX78000/Include/tmr_regs.h \
+ /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/CMSIS/Device/Maxim/MAX78000/Include/mcr_regs.h \
+ inc/board_link.h inc/simple_i2c_controller.h \
+ /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Include/MAX78000/mxc_errors.h \
+ inc/simple_flash.h inc/host_messaging.h inc/simple_crypto.h \
+ wolfssl/wolfssl/wolfcrypt/aes.h wolfssl/wolfssl/wolfcrypt/types.h \
+ wolfssl/wolfssl/wolfcrypt/settings.h \
+ wolfssl/wolfssl/wolfcrypt/visibility.h \
+ wolfssl/wolfssl/wolfcrypt/wc_port.h \
+ /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/pthread.h \
+ /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/unistd.h \
+ /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/unistd.h \
+ /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/types.h \
+ /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/machine/endian.h \
+ /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/machine/_endian.h \
+ /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/select.h \
+ /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/_sigset.h \
+ /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/_timeval.h \
+ /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/timespec.h \
+ /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/_timespec.h \
+ /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/_pthreadtypes.h \
+ /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/sched.h \
+ /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/machine/types.h \
+ /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/time.h \
+ /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/machine/time.h \
+ wolfssl/wolfssl/wolfcrypt/memory.h \
+ /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/ctype.h \
+ wolfssl/wolfssl/wolfcrypt/random.h wolfssl/wolfssl/wolfcrypt/sha256.h \
+ wolfssl/wolfssl/wolfcrypt/hash.h wolfssl/wolfssl/wolfcrypt/md5.h \
+ wolfssl/wolfssl/wolfcrypt/sha.h wolfssl/wolfssl/wolfcrypt/md4.h \
+ inc/ectf_params.h ../deployment/hello.h

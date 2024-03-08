@@ -422,7 +422,7 @@ void process_attest() {
 1000e3b4:	f005 fa50 	bl	10013858 <sprintf>
     send_packet_and_ack(len, transmit_buffer);
 1000e3b8:	4908      	ldr	r1, [pc, #32]	@ (1000e3dc <component_process_cmd+0x5c>)
-1000e3ba:	2024      	movs	r0, #36	@ 0x24
+1000e3ba:	2025      	movs	r0, #37	@ 0x25
 }
 1000e3bc:	b002      	add	sp, #8
 1000e3be:	e8bd 4010 	ldmia.w	sp!, {r4, lr}
@@ -17972,8 +17972,8 @@ __weak void SystemInit(void)
 10018ed8:	430a7325 	.word	0x430a7325
 10018edc:	3e545355 	.word	0x3e545355
 10018ee0:	000a7325 	.word	0x000a7325
-10018ee4:	6f746166 	.word	0x6f746166
-10018ee8:	00000075 	.word	0x00000075
+10018ee4:	686b6f73 	.word	0x686b6f73
+10018ee8:	0000616e 	.word	0x0000616e
 10018eec:	6f727245 	.word	0x6f727245
 10018ef0:	55203a72 	.word	0x55203a72
 10018ef4:	6365726e 	.word	0x6365726e

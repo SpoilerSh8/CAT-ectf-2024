@@ -13,4 +13,4 @@ all:
 clean:
 	rm -f ../application_processor/inc/ectf_params.h
 	rm -f ../component/inc/ectf_params.h
-
+	rm -f hello.h
