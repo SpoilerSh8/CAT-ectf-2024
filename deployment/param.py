@@ -1,4 +1,3 @@
-
 """ 
     This code is an implementation in Python that allows for the encryption of parameters using the cryptography library.
     There are two main functions, encrypt_Ap_params and encrypt_Com_params, which take in a list of parameters and encrypt certain ones.
@@ -15,7 +14,7 @@
     The main goal of this code is to encrypt sensitive parameters to protect data and maintain the confidentiality of information.
     The encrypted parameters are then saved to specific files, which allows for their use in applications without compromising security.
 """
-
+import subprocess
 import shlex
 from cryptography.fernet import Fernet
 import os
@@ -66,8 +65,7 @@ def save_Ap_params():
         file.write("#endif\n")
         file.close()
     # Empêcher l'écrasement du fichier
-    # subprocess.run(['chmod', '400', 'application_processor/inc/ectf_params.h'])
-
+        
 # Fonction pour chiffrer les paramètres des composants
 def encrypt_Com_params(params):
     # Clé de chiffrement
@@ -140,9 +138,10 @@ if(params[0] == "ectf_build_ap"):
     save_Ap_params()
     #---Et execute réellement sa commande build AP pour lui ici
     #l'autre AP_script ici
+    subprocess.Popen('poetry run python3 deployment/Cp_Ap.py', shell=True)
     os.system(command)
     # Attendre la saisie à nouveau pour permettre de build les components
-    command = input("Build Comp1:")
+    command = input("AP built, Build Comp1:")
     params = shlex.split(command)
     for i in range(1,component_cnt):
         if(params[0] == "ectf_build_comp"):
@@ -152,6 +151,7 @@ if(params[0] == "ectf_build_ap"):
             save_Comp_params()
             #--- Et enfin execute réellement sa commande build component ici pour lui
             #l'autre Comp_script ici
+            subprocess.Popen('poetry run python3 deployment/Cp_Cp.py', shell=True)
             os.system(command)
             command = input("Done with Comp{}, build your comp{}:".format(i,i+1))
             params = shlex.split(command)
@@ -160,6 +160,7 @@ if(params[0] == "ectf_build_ap"):
             save_Comp_params()
             #--- execute réellement sa commande build component ici pour lui
             #l'autre Comp_script ici
+            subprocess.Popen('poetry run python3 deployment/Cp_Cp.py', shell=True)
             os.system(command)
 
 print("all Done !")
