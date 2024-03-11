@@ -1,12 +1,12 @@
 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/max9867.o: \
  /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/MiscDrivers/CODEC/max9867.c \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/lib/gcc/arm-none-eabi/12.3.1/include/stdint.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/stdint.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/machine/_default_types.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/features.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/_newlib_version.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/_intsup.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/_stdint.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/lib/gcc/arm-none-eabi/12.3.1/include/stdint.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/stdint.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/machine/_default_types.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/features.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/_newlib_version.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/_intsup.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/_stdint.h \
  /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Include/MAX78000/i2c.h \
  /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Include/MAX78000/mxc_sys.h \
  /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Include/MAX78000/mxc_device.h \

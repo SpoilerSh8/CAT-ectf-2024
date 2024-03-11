@@ -1,13 +1,13 @@
 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/max20303.o: \
  /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/MiscDrivers/PMIC/max20303.c \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/lib/gcc/arm-none-eabi/12.3.1/include/stdint.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/stdint.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/machine/_default_types.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/features.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/_newlib_version.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/_intsup.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/_stdint.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/lib/gcc/arm-none-eabi/12.3.1/include/stddef.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/lib/gcc/arm-none-eabi/12.3.1/include/stdint.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/stdint.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/machine/_default_types.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/features.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/_newlib_version.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/_intsup.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/_stdint.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/lib/gcc/arm-none-eabi/12.3.1/include/stddef.h \
  /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Include/MAX78000/mxc_device.h \
  /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/CMSIS/Device/Maxim/MAX78000/Include/max78000.h \
  /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/CMSIS/5.9.0/Core/Include/core_cm4.h \

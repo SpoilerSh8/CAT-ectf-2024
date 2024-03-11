@@ -54,10 +54,9 @@ def encrypt_Ap_params(params):
             
     return encrypted_params, key
 
-
 # Fonction pour enregistrer les paramètres chiffrés dans le fichier ectf_params.h
 def save_Ap_params():
-    with open("application_processor/inc/ectf_params.h", "w") as file:
+    with open("application_processor/ectf_params.h", "w") as file:
         file.write("#ifndef __ECTF_PARAMS__\n")
         file.write("#define AP_PIN \"{}\"\n".format(pin))
         file.write("#define AP_TOKEN \"{}\"\n".format(token))

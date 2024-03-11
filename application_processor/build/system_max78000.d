@@ -1,34 +1,34 @@
 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/application_processor/build/system_max78000.o: \
  /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/CMSIS/Device/Maxim/MAX78000/Source/system_max78000.c \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/string.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/_ansi.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/newlib.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/_newlib_version.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/config.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/machine/ieeefp.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/features.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/reent.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/_ansi.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/lib/gcc/arm-none-eabi/12.3.1/include/stddef.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/_types.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/machine/_types.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/machine/_default_types.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/lock.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/cdefs.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/_locale.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/strings.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/string.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/stdio.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/lib/gcc/arm-none-eabi/12.3.1/include/stdarg.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/stdio.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/stdlib.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/machine/stdlib.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/alloca.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/string.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/_ansi.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/newlib.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/_newlib_version.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/config.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/machine/ieeefp.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/features.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/reent.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/_ansi.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/lib/gcc/arm-none-eabi/12.3.1/include/stddef.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/_types.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/machine/_types.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/machine/_default_types.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/lock.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/cdefs.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/_locale.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/strings.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/string.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/stdio.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/lib/gcc/arm-none-eabi/12.3.1/include/stdarg.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/stdio.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/stdlib.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/machine/stdlib.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/alloca.h \
  /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/CMSIS/Device/Maxim/MAX78000/Include/max78000.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/lib/gcc/arm-none-eabi/12.3.1/include/stdint.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/stdint.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/_intsup.h \
- /nix/store/jmsyx8pljg2viz3vw4xljl54qxb8w2m2-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/_stdint.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/lib/gcc/arm-none-eabi/12.3.1/include/stdint.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/stdint.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/_intsup.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/_stdint.h \
  /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/CMSIS/5.9.0/Core/Include/core_cm4.h \
  /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/CMSIS/5.9.0/Core/Include/cmsis_version.h \
  /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/CMSIS/5.9.0/Core/Include/cmsis_compiler.h \
