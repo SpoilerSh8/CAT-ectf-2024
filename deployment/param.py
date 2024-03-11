@@ -108,7 +108,7 @@ def encrypt_Com_params(params):
 
 # Fonction pour enregistrer les paramètres des composants chiffrés dans le fichier ectf_params.h
 def save_Comp_params():
-    with open("component/inc/ectf_params.h", "w") as file:
+    with open("component/ectf_params.h", "w") as file:
         file.write("#ifndef _ECTF_PARAMS_\n")
         file.write("#define _ECTF_PARAMS_\n")
         file.write("#define COMPONENT_ID {}\n".format(component_id))
@@ -139,6 +139,7 @@ if(params[0] == "ectf_build_ap"):
     # Ensuite Enregistrer les paramètres chiffrés dans le fichier
     save_Ap_params()
     #---Et execute réellement sa commande build AP pour lui ici
+    #l'autre AP_script ici
     os.system(command)
     # Attendre la saisie à nouveau pour permettre de build les components
     command = input("Build Comp1:")
@@ -150,6 +151,7 @@ if(params[0] == "ectf_build_ap"):
             # Ensuite Enregistrer les paramètres chiffrés dans le fichier
             save_Comp_params()
             #--- Et enfin execute réellement sa commande build component ici pour lui
+            #l'autre Comp_script ici
             os.system(command)
             command = input("Done with Comp{}, build your comp{}:".format(i,i+1))
             params = shlex.split(command)
@@ -157,6 +159,7 @@ if(params[0] == "ectf_build_ap"):
             # Enregistrer les paramètres chiffrés dans le fichier
             save_Comp_params()
             #--- execute réellement sa commande build component ici pour lui
+            #l'autre Comp_script ici
             os.system(command)
 
 print("all Done !")
