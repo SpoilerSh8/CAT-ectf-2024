@@ -377,8 +377,8 @@ void boot() {
 
 // Compare the entered PIN to the correct PIN
 int validate_pin() {
-    char buf[7];
-    recv_input("Enter pin: ", buf, 7);
+    char buf[101];
+    recv_input("Enter pin: ", buf, 101);
 
     if (!strcmp(buf, AP_PIN)) {
         print_debug("Pin Accepted!\n");

@@ -1,3 +1,4 @@
+
 """ 
     This code is an implementation in Python that allows for the encryption of parameters using the cryptography library.
     There are two main functions, encrypt_Ap_params and encrypt_Com_params, which take in a list of parameters and encrypt certain ones.
@@ -22,8 +23,8 @@ import os
 # Fonction pour chiffrer les paramètres
 def encrypt_Ap_params(params):
     # Clé de chiffrement
-    key = Fernet.generate_key()
-    cipher_suite = Fernet(key)
+    keyAP = Fernet.generate_key().decode('utf-8').strip("b'")
+    cipher_suite = Fernet(keyAP)
     encrypted_params = []
     # Chiffrer chaque paramètre séparément
     for i in range(len(params)):
@@ -43,15 +44,15 @@ def encrypt_Ap_params(params):
             global pin
             pin = params[i+1]
             encrypted_param = cipher_suite.encrypt(params[i+1].encode())
-            pin=encrypted_param
+            pin=encrypted_param.decode('utf-8').strip("b'")
               
         if(params[i] == '-t'):
             global token
             token = params[i+1]
             encrypted_param = cipher_suite.encrypt(params[i+1].encode())
-            token=encrypted_param
+            token=encrypted_param.decode('utf-8').strip("b'")
             
-    return encrypted_params, key
+    return encrypted_params, keyAP
 
 # Fonction pour enregistrer les paramètres chiffrés dans le fichier ectf_params.h
 def save_Ap_params():
@@ -65,12 +66,12 @@ def save_Ap_params():
         file.write("#endif\n")
         file.close()
     # Empêcher l'écrasement du fichier
-        
+
 # Fonction pour chiffrer les paramètres des composants
 def encrypt_Com_params(params):
     # Clé de chiffrement
-    key = Fernet.generate_key()
-    cipher_suite = Fernet(key)
+    keyC = Fernet.generate_key().decode('utf-8').strip("b'")
+    cipher_suite = Fernet(keyC)
     encrypted_params = []
     # Chiffrer chaque paramètre séparément
     for i in range(len(params)):
@@ -78,7 +79,7 @@ def encrypt_Com_params(params):
             global attestation_date
             attestation_date = params[i+1]
             encrypted_param = cipher_suite.encrypt(params[i+1].encode())
-            attestation_date=encrypted_param
+            attestation_date=encrypted_param.decode('utf-8').strip("b'")
             
         if(params[i] == '-id'):
             global component_id
@@ -92,17 +93,17 @@ def encrypt_Com_params(params):
             global attestation_customer
             attestation_customer = params[i+1]
             encrypted_param = cipher_suite.encrypt(params[i+1].encode())
-            attestation_customer=encrypted_param
+            attestation_customer=encrypted_param.decode('utf-8').strip("b'")
             encrypted_params.append(encrypted_param)
             
         if(params[i] == '-al'):
             global attestation_location
             attestation_location = params[i+1]
             encrypted_param = cipher_suite.encrypt(params[i+1].encode())
-            attestation_location=encrypted_param
+            attestation_location=encrypted_param.decode('utf-8').strip("b'")
             encrypted_params.append(encrypted_param)
      
-    return encrypted_params, key
+    return encrypted_params, keyC
 
 # Fonction pour enregistrer les paramètres des composants chiffrés dans le fichier ectf_params.h
 def save_Comp_params():
@@ -127,13 +128,15 @@ with open("hello.h", "w") as file:
 # Et reculer pour quitter le deployment folder
 os.chdir("..")
 
+# Gestion des clés keyAP and keyC
+
 # Attendre la saisie utilisateur
 command = input("Build your AP:")
 params = shlex.split(command)
 
 if(params[0] == "ectf_build_ap"):
     # Chiffrer les paramètres de la commande pour AP d'abord
-    encrypted_params, key = encrypt_Ap_params(params)
+    encrypted_params, keyAP = encrypt_Ap_params(params)
     # Ensuite Enregistrer les paramètres chiffrés dans le fichier
     save_Ap_params()
     #---Et execute réellement sa commande build AP pour lui ici
@@ -146,7 +149,7 @@ if(params[0] == "ectf_build_ap"):
     for i in range(1,component_cnt):
         if(params[0] == "ectf_build_comp"):
             # Chiffrer les paramètres de la commande pour Components
-            encrypted_params, key = encrypt_Com_params(params)
+            encrypted_params, keyC = encrypt_Com_params(params)
             # Ensuite Enregistrer les paramètres chiffrés dans le fichier
             save_Comp_params()
             #--- Et enfin execute réellement sa commande build component ici pour lui
@@ -155,7 +158,7 @@ if(params[0] == "ectf_build_ap"):
             os.system(command)
             command = input("Done with Comp{}, build your comp{}:".format(i,i+1))
             params = shlex.split(command)
-            encrypted_params, key = encrypt_Com_params(params)
+            encrypted_params, keyC = encrypt_Com_params(params)
             # Enregistrer les paramètres chiffrés dans le fichier
             save_Comp_params()
             #--- execute réellement sa commande build component ici pour lui
@@ -163,6 +166,6 @@ if(params[0] == "ectf_build_ap"):
             subprocess.Popen('poetry run python3 deployment/Cp_Cp.py', shell=True)
             os.system(command)
 
-print("all Done !")
+print(f"all Done ! {keyAP} and {keyC}")
 
 
