@@ -30,7 +30,7 @@
 // Last register for out-of-bounds checking
 #define MAX_REG TRANSMIT_LEN 
 // Maximum length of an I2C register
-#define MAX_I2C_MESSAGE_LEN 256
+#define MAX_I2C_MESSAGE_LEN 64
 
 /******************************** TYPE DEFINITIONS ********************************/
 /* ECTF_I2C_REGS

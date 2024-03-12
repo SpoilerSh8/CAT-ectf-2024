@@ -203,7 +203,7 @@ int scan_components() {
 1000e29c:	4e37      	ldr	r6, [pc, #220]	@ (1000e37c <scan_components+0xe8>)
 1000e29e:	f8da 3004 	ldr.w	r3, [sl, #4]
 int scan_components() {
-1000e2a2:	f5ad 7d00 	sub.w	sp, sp, #512	@ 0x200
+1000e2a2:	f5ad 6d80 	sub.w	sp, sp, #1024	@ 0x400
     for (unsigned i = 0; i < flash_status.component_cnt; i++) {
 1000e2a6:	b1db      	cbz	r3, 1000e2e0 <scan_components+0x4c>
         print_info("P>0x%08x\n", flash_status.component_ids[i]);
@@ -242,7 +242,7 @@ int scan_components() {
 1000e2e8:	2408      	movs	r4, #8
 1000e2ea:	e01f      	b.n	1000e32c <scan_components+0x98>
         command->opcode = COMPONENT_CMD_SCAN;
-1000e2ec:	f88d e100 	strb.w	lr, [sp, #256]	@ 0x100
+1000e2ec:	f88d e200 	strb.w	lr, [sp, #512]	@ 0x200
     int result = send_packet(addr, sizeof(uint8_t), transmit);
 1000e2f0:	f000 fba0 	bl	1000ea34 <send_packet>
 1000e2f4:	4603      	mov	r3, r0
@@ -284,7 +284,7 @@ int scan_components() {
 1000e336:	f04f 0e01 	mov.w	lr, #1
 1000e33a:	2b1e      	cmp	r3, #30
     int result = send_packet(addr, sizeof(uint8_t), transmit);
-1000e33c:	aa40      	add	r2, sp, #256	@ 0x100
+1000e33c:	aa80      	add	r2, sp, #512	@ 0x200
 1000e33e:	4671      	mov	r1, lr
 1000e340:	4620      	mov	r0, r4
 1000e342:	fa2c fc03 	lsr.w	ip, ip, r3
@@ -310,7 +310,7 @@ int scan_components() {
     return SUCCESS_RETURN;
 }
 1000e36e:	2000      	movs	r0, #0
-1000e370:	f50d 7d00 	add.w	sp, sp, #512	@ 0x200
+1000e370:	f50d 6d80 	add.w	sp, sp, #1024	@ 0x400
 1000e374:	e8bd 87f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, pc}
 1000e378:	20000c20 	.word	0x20000c20
 1000e37c:	20000598 	.word	0x20000598
@@ -400,7 +400,7 @@ int validate_components() {
 1000e430:	4f24      	ldr	r7, [pc, #144]	@ (1000e4c4 <validate_components+0x98>)
 1000e432:	687b      	ldr	r3, [r7, #4]
 int validate_components() {
-1000e434:	f5ad 7d00 	sub.w	sp, sp, #512	@ 0x200
+1000e434:	f5ad 6d80 	sub.w	sp, sp, #1024	@ 0x400
     for (unsigned i = 0; i < flash_status.component_cnt; i++) {
 1000e438:	2b00      	cmp	r3, #0
 1000e43a:	d037      	beq.n	1000e4ac <validate_components+0x80>
@@ -424,11 +424,11 @@ int validate_components() {
 1000e452:	f000 faed 	bl	1000ea30 <component_id_to_i2c_addr>
     int result = send_packet(addr, sizeof(uint8_t), transmit);
 1000e456:	2101      	movs	r1, #1
-1000e458:	aa40      	add	r2, sp, #256	@ 0x100
+1000e458:	aa80      	add	r2, sp, #512	@ 0x200
         i2c_addr_t addr = component_id_to_i2c_addr(flash_status.component_ids[i]);
 1000e45a:	4604      	mov	r4, r0
         command->opcode = COMPONENT_CMD_VALIDATE;
-1000e45c:	f88d 8100 	strb.w	r8, [sp, #256]	@ 0x100
+1000e45c:	f88d 8200 	strb.w	r8, [sp, #512]	@ 0x200
     int result = send_packet(addr, sizeof(uint8_t), transmit);
 1000e460:	f000 fae8 	bl	1000ea34 <send_packet>
 1000e464:	4603      	mov	r3, r0
@@ -474,12 +474,12 @@ int validate_components() {
     }
     return SUCCESS_RETURN;
 }
-1000e4a4:	f50d 7d00 	add.w	sp, sp, #512	@ 0x200
+1000e4a4:	f50d 6d80 	add.w	sp, sp, #1024	@ 0x400
 1000e4a8:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
     return SUCCESS_RETURN;
 1000e4ac:	2000      	movs	r0, #0
 }
-1000e4ae:	f50d 7d00 	add.w	sp, sp, #512	@ 0x200
+1000e4ae:	f50d 6d80 	add.w	sp, sp, #1024	@ 0x400
 1000e4b2:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
             print_error("Could not validate component\n");
 1000e4b6:	4804      	ldr	r0, [pc, #16]	@ (1000e4c8 <validate_components+0x9c>)
@@ -507,7 +507,7 @@ int boot_components() {
 1000e4e0:	4f29      	ldr	r7, [pc, #164]	@ (1000e588 <boot_components+0xac>)
 1000e4e2:	687b      	ldr	r3, [r7, #4]
 int boot_components() {
-1000e4e4:	f5ad 7d01 	sub.w	sp, sp, #516	@ 0x204
+1000e4e4:	f2ad 4d04 	subw	sp, sp, #1028	@ 0x404
     for (unsigned i = 0; i < flash_status.component_cnt; i++) {
 1000e4e8:	b3a3      	cbz	r3, 1000e554 <boot_components+0x78>
 1000e4ea:	f8df 80a0 	ldr.w	r8, [pc, #160]	@ 1000e58c <boot_components+0xb0>
@@ -530,11 +530,11 @@ int boot_components() {
 1000e506:	2303      	movs	r3, #3
     int result = send_packet(addr, sizeof(uint8_t), transmit);
 1000e508:	2101      	movs	r1, #1
-1000e50a:	aa40      	add	r2, sp, #256	@ 0x100
+1000e50a:	aa80      	add	r2, sp, #512	@ 0x200
         i2c_addr_t addr = component_id_to_i2c_addr(flash_status.component_ids[i]);
 1000e50c:	4604      	mov	r4, r0
         command->opcode = COMPONENT_CMD_BOOT;
-1000e50e:	f88d 3100 	strb.w	r3, [sp, #256]	@ 0x100
+1000e50e:	f88d 3200 	strb.w	r3, [sp, #512]	@ 0x200
     int result = send_packet(addr, sizeof(uint8_t), transmit);
 1000e512:	f000 fa8f 	bl	1000ea34 <send_packet>
 1000e516:	4603      	mov	r3, r0
@@ -575,7 +575,7 @@ int boot_components() {
     return SUCCESS_RETURN;
 1000e554:	2000      	movs	r0, #0
 }
-1000e556:	f50d 7d01 	add.w	sp, sp, #516	@ 0x204
+1000e556:	f20d 4d04 	addw	sp, sp, #1028	@ 0x404
 1000e55a:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
             print_error("Could not boot component\n");
 1000e55e:	480f      	ldr	r0, [pc, #60]	@ (1000e59c <boot_components+0xc0>)
@@ -590,7 +590,7 @@ int boot_components() {
             return ERROR_RETURN;
 1000e57a:	f04f 30ff 	mov.w	r0, #4294967295	@ 0xffffffff
 }
-1000e57e:	f50d 7d01 	add.w	sp, sp, #516	@ 0x204
+1000e57e:	f20d 4d04 	addw	sp, sp, #1028	@ 0x404
 1000e582:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
 1000e586:	bf00      	nop
 1000e588:	20000c20 	.word	0x20000c20
@@ -605,7 +605,7 @@ int boot_components() {
 
 int attest_component(uint32_t component_id) {
 1000e5a4:	b530      	push	{r4, r5, lr}
-1000e5a6:	f5ad 7d01 	sub.w	sp, sp, #516	@ 0x204
+1000e5a6:	f2ad 4d04 	subw	sp, sp, #1028	@ 0x404
 1000e5aa:	4604      	mov	r4, r0
     // Buffers for board link communication
     uint8_t receive_buffer[MAX_I2C_MESSAGE_LEN];
@@ -620,12 +620,12 @@ int attest_component(uint32_t component_id) {
     command->opcode = COMPONENT_CMD_ATTEST;
 1000e5b0:	2304      	movs	r3, #4
     int result = send_packet(addr, sizeof(uint8_t), transmit);
-1000e5b2:	aa40      	add	r2, sp, #256	@ 0x100
+1000e5b2:	aa80      	add	r2, sp, #512	@ 0x200
 1000e5b4:	2101      	movs	r1, #1
     i2c_addr_t addr = component_id_to_i2c_addr(component_id);
 1000e5b6:	4605      	mov	r5, r0
     command->opcode = COMPONENT_CMD_ATTEST;
-1000e5b8:	f88d 3100 	strb.w	r3, [sp, #256]	@ 0x100
+1000e5b8:	f88d 3200 	strb.w	r3, [sp, #512]	@ 0x200
     int result = send_packet(addr, sizeof(uint8_t), transmit);
 1000e5bc:	f000 fa3a 	bl	1000ea34 <send_packet>
     if (result == ERROR_RETURN) {
@@ -672,7 +672,7 @@ int attest_component(uint32_t component_id) {
     return SUCCESS_RETURN;
 1000e60a:	2000      	movs	r0, #0
 }
-1000e60c:	f50d 7d01 	add.w	sp, sp, #516	@ 0x204
+1000e60c:	f20d 4d04 	addw	sp, sp, #1028	@ 0x404
 1000e610:	bd30      	pop	{r4, r5, pc}
         print_error("Could not attest component\n");
 1000e612:	480d      	ldr	r0, [pc, #52]	@ (1000e648 <attest_component+0xa4>)
@@ -1309,7 +1309,7 @@ int poll_and_receive_packet(i2c_addr_t address, uint8_t* packet) {
 1000ea8c:	4620      	mov	r0, r4
 1000ea8e:	f000 f8cf 	bl	1000ec30 <i2c_simple_read_transmit_len>
     if (len <= MAX_I2C_MESSAGE_LEN)
-1000ea92:	f5b0 7f80 	cmp.w	r0, #256	@ 0x100
+1000ea92:	f5b0 7f00 	cmp.w	r0, #512	@ 0x200
     int len = i2c_simple_read_transmit_len(address);
 1000ea96:	4605      	mov	r5, r0
     if (len <= MAX_I2C_MESSAGE_LEN)
@@ -26535,29 +26535,29 @@ __weak void SystemInit(void)
 1001e590:	00203a6e 	.word	0x00203a6e
 1001e594:	41414167 	.word	0x41414167
 1001e598:	6c424141 	.word	0x6c424141
-1001e59c:	75324838 	.word	0x75324838
-1001e5a0:	7a33426a 	.word	0x7a33426a
-1001e5a4:	74335734 	.word	0x74335734
-1001e5a8:	57694a30 	.word	0x57694a30
-1001e5ac:	7976664e 	.word	0x7976664e
-1001e5b0:	6d737344 	.word	0x6d737344
-1001e5b4:	4670484e 	.word	0x4670484e
-1001e5b8:	50553757 	.word	0x50553757
-1001e5bc:	47307a76 	.word	0x47307a76
-1001e5c0:	574e594a 	.word	0x574e594a
-1001e5c4:	56735073 	.word	0x56735073
-1001e5c8:	73393549 	.word	0x73393549
-1001e5cc:	35717842 	.word	0x35717842
-1001e5d0:	42755658 	.word	0x42755658
-1001e5d4:	4d626f39 	.word	0x4d626f39
-1001e5d8:	7a4d7a51 	.word	0x7a4d7a51
-1001e5dc:	364e5546 	.word	0x364e5546
-1001e5e0:	634c5558 	.word	0x634c5558
-1001e5e4:	775a416b 	.word	0x775a416b
-1001e5e8:	69326e64 	.word	0x69326e64
-1001e5ec:	576a4b6d 	.word	0x576a4b6d
-1001e5f0:	6c71396f 	.word	0x6c71396f
-1001e5f4:	3d3d5166 	.word	0x3d3d5166
+1001e59c:	32424a38 	.word	0x32424a38
+1001e5a0:	6d546945 	.word	0x6d546945
+1001e5a4:	45753952 	.word	0x45753952
+1001e5a8:	30645342 	.word	0x30645342
+1001e5ac:	49616f6e 	.word	0x49616f6e
+1001e5b0:	62493368 	.word	0x62493368
+1001e5b4:	7a476956 	.word	0x7a476956
+1001e5b8:	33484664 	.word	0x33484664
+1001e5bc:	4d2d6654 	.word	0x4d2d6654
+1001e5c0:	756d6454 	.word	0x756d6454
+1001e5c4:	2d485933 	.word	0x2d485933
+1001e5c8:	2d74454e 	.word	0x2d74454e
+1001e5cc:	6c4e7564 	.word	0x6c4e7564
+1001e5d0:	5a796a54 	.word	0x5a796a54
+1001e5d4:	5967784a 	.word	0x5967784a
+1001e5d8:	744a4b4b 	.word	0x744a4b4b
+1001e5dc:	77494e78 	.word	0x77494e78
+1001e5e0:	594d3342 	.word	0x594d3342
+1001e5e4:	4b527861 	.word	0x4b527861
+1001e5e8:	4c545862 	.word	0x4c545862
+1001e5ec:	56373633 	.word	0x56373633
+1001e5f0:	33315949 	.word	0x33315949
+1001e5f4:	3d3d4159 	.word	0x3d3d4159
 1001e5f8:	00000000 	.word	0x00000000
 1001e5fc:	206e6950 	.word	0x206e6950
 1001e600:	65636341 	.word	0x65636341

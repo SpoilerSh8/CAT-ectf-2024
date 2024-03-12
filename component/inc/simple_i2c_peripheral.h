@@ -28,7 +28,7 @@
 #define I2C_FREQ 100000
 #define I2C_INTERFACE MXC_I2C1
 #define MAX_REG TRANSMIT_LEN
-#define MAX_I2C_MESSAGE_LEN 257
+#define MAX_I2C_MESSAGE_LEN 64
 
 /******************************** EXTERN DEFINITIONS ********************************/
 // Extern definition to make I2C_REGS and I2C_REGS_LEN 
