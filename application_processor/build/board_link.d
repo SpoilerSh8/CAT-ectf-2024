@@ -59,17 +59,4 @@
  /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Include/MAX78000/i2c.h \
  /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/CMSIS/Device/Maxim/MAX78000/Include/i2c_regs.h \
  /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Include/MAX78000/mxc_delay.h \
- /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Include/MAX78000/mxc_sys.h \
- /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/time.h \
- /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/machine/time.h \
- /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/types.h \
- /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/machine/endian.h \
- /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/machine/_endian.h \
- /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/select.h \
- /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/_sigset.h \
- /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/_timeval.h \
- /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/timespec.h \
- /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/_timespec.h \
- /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/_pthreadtypes.h \
- /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/sys/sched.h \
- /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/machine/types.h
+ /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Include/MAX78000/mxc_sys.h

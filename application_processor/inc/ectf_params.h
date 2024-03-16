@@ -1,0 +1,8 @@
+#ifndef __ECTF_PARAMS__
+#define __ECTF_PARAMS__
+#define AP_PIN "4aa0393c79ab114e791c27347f81e6378d82e239"
+#define AP_TOKEN "312c26b47865b94bf295cdca9226c21720d0d2b1"
+#define COMPONENT_IDS 0x11111111, 0x11111112
+#define COMPONENT_CNT 2
+#define AP_BOOT_MSG "boot ap"
+#endif

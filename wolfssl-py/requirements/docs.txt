@@ -1,3 +1,0 @@
--r prod.txt
-Sphinx
-sphinx_rtd_theme

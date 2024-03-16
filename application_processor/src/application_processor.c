@@ -12,7 +12,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <tmr.h>
 
 
 #include "board_link.h"
@@ -45,34 +44,6 @@
 #define ERROR_RETURN -1
 
 /******************************** TYPE DEFINITIONS ********************************/
-
-
-//  mxc_tmr_cfg_t timer_config = {
-//         .pres = MXC_TMR_PRES_1, // Pas de division du signal d'horloge
-//         .mode = MXC_TMR_MODE_ONESHOT, // Mode One-Shot
-//         .bitMode = MXC_TMR_BIT_MODE_32, // Compteur 32 bits
-//         .clock = MXC_TMR_APB_CLK, // Source d'horloge du périphérique
-//         .cmp_cnt = 0, // Valeur de comparaison
-//         .pol = 0 // Polarity
-//     };
-
-//     MXC_TMR_Init(&TMRn, &timer_config, true); // Initialise le timer
-
-//     // Démarrer le timer
-//     MXC_TMR_Start(&TMRn);
-
-//     // Code de tâche à mesurer
-//     // ...
-
-//     // Arrêter le timer
-//     MXC_TMR_Stop(&TMRn);
-
-//     // Obtenir la valeur du compteur du timer
-//     uint32_t count = MXC_TMR_GetCount(&TMRn);
-
-//     // Convertir la valeur du compteur en secondes
-//     double seconds = (double)count / CLOCK_FREQUENCY; // CLOCK_FREQUENCY est la fréquence du timer
-
 
 //------------////
 // Data structure for sending commands to component
@@ -214,7 +185,6 @@ int issue_cmd(i2c_addr_t addr, uint8_t* transmit, uint8_t* receive) {
     // Receive message
     int len = poll_and_receive_packet(addr, receive);
     if (len == ERROR_RETURN) {
-  
         return ERROR_RETURN;
     }
     return len;
@@ -246,8 +216,6 @@ int scan_components() {
         
         // Send out command and receive result
         int len = issue_cmd(addr, transmit_buffer, receive_buffer);
-        
-        struct timespec *start, *end;
          
         //Success, device is present
         if (len > 0) {
@@ -337,7 +305,7 @@ int attest_component(uint32_t component_id) {
     }
 
     // Print out attestation data 
-    print_info("C>0x%08x\n", component_id);
+    print_info("C>0x%x\n", component_id);
 
     print_info("%s", receive_buffer);
     
@@ -377,8 +345,8 @@ void boot() {
 
 // Compare the entered PIN to the correct PIN
 int validate_pin() {
-    char buf[101];
-    recv_input("Enter pin: ", buf, 101);
+    char buf[41];
+    recv_input("Enter pin: ", buf, 41);
 
     if (!strcmp(buf, AP_PIN)) {
         print_debug("Pin Accepted!\n");
@@ -433,9 +401,9 @@ void attempt_replace() {
     uint32_t component_id_out = 0;
 
     recv_input("Component ID In: ", buf, 11);
-    sscanf(buf, "%x", &component_id_in);
+    sscanf(buf, "%08x", &component_id_in);
     recv_input("Component ID Out: ", buf, 11);
-    sscanf(buf, "%x", &component_id_out);
+    sscanf(buf, "%08x", &component_id_out);
 
     // Find the component to swap out
     for (unsigned i = 0; i < flash_status.component_cnt; i++) {
@@ -446,8 +414,7 @@ void attempt_replace() {
             flash_simple_erase_page(FLASH_ADDR);
             flash_simple_write(FLASH_ADDR, (uint32_t*)&flash_status, sizeof(flash_entry));
 
-            print_debug("Replaced 0x%08x with 0x%08x\n", component_id_out,
-                    component_id_in);
+            print_debug("Replaced 0x%08x with 0x%08x\n", component_id_out, component_id_in);
             print_success("Replace\n");
             return;
         }

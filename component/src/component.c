@@ -91,16 +91,16 @@ int secure_receive(uint8_t* buffer) {
 
 /******************************* FUNCTION DEFINITIONS *********************************/
 
-// Example boot sequence
+ // Example boot sequence
 // Your design does not need to change this
 void boot() {
 
-    // POST BOOT FUNCTIONALITY
+     // POST BOOT FUNCTIONALITY
     // DO NOT REMOVE IN YOUR DESIGN
     #ifdef POST_BOOT
         POST_BOOT
     #else
-    // Anything after this macro can be changed by your design
+     // Anything after this macro can be changed by your design
     // but will not be run on provisioned systems
     LED_Off(LED1);
     LED_Off(LED2);
@@ -148,7 +148,7 @@ void component_process_cmd() {
 }
 
 void process_boot() {
-    // The AP requested a boot. Set `component_boot` for the main loop and
+     // The AP requested a boot. Set `component_boot` for the main loop and
     // respond with the boot message
     uint8_t len = strlen(COMPONENT_BOOT_MSG) + 1;
     memcpy((void*)transmit_buffer, COMPONENT_BOOT_MSG, len);
@@ -181,7 +181,7 @@ void process_attest() {
 /*********************************** MAIN *************************************/
 
 int main(void) {
-    //comp started
+     //comp started
     // Enable Global Interrupts
     __enable_irq();
     

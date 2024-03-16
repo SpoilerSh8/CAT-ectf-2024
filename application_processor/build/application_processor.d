@@ -63,9 +63,6 @@
  /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/stdlib.h \
  /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/machine/stdlib.h \
  /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/arm-none-eabi/include/alloca.h \
- /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Include/MAX78000/tmr.h \
- /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/CMSIS/Device/Maxim/MAX78000/Include/tmr_regs.h \
- /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/CMSIS/Device/Maxim/MAX78000/Include/mcr_regs.h \
  inc/board_link.h inc/simple_i2c_controller.h \
  /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Include/MAX78000/mxc_errors.h \
  inc/simple_flash.h inc/host_messaging.h inc/simple_crypto.h \
