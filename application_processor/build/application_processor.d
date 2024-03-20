@@ -91,4 +91,12 @@
  wolfssl/wolfssl/wolfcrypt/random.h wolfssl/wolfssl/wolfcrypt/sha256.h \
  wolfssl/wolfssl/wolfcrypt/hash.h wolfssl/wolfssl/wolfcrypt/md5.h \
  wolfssl/wolfssl/wolfcrypt/sha.h wolfssl/wolfssl/wolfcrypt/md4.h \
- inc/ectf_params.h ../deployment/hello.h
+ inc/ectf_params.h ../deployment/hello.h wolfssl/wolfssl/options.h \
+ wolfssl/wolfssl/ssl.h wolfssl/wolfssl/version.h \
+ wolfssl/wolfssl/wolfcrypt/asn_public.h wolfssl/wolfssl/wolfcrypt/dsa.h \
+ wolfssl/wolfssl/wolfcrypt/wolfmath.h wolfssl/wolfssl/wolfcrypt/sp_int.h \
+ /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/lib/gcc/arm-none-eabi/12.3.1/include-fixed/limits.h \
+ wolfssl/wolfssl/wolfcrypt/error-crypt.h \
+ wolfssl/wolfssl/wolfcrypt/logging.h \
+ wolfssl/wolfssl/openssl/compat_types.h wolfssl/wolfssl/wolfcrypt/hmac.h \
+ wolfssl/wolfssl/callbacks.h wolfssl/wolfssl/wolfio.h

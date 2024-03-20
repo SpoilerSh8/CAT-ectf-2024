@@ -17,7 +17,7 @@
 """
 import subprocess
 import shlex
-from wolfcrypt.hashes import HmacSha
+import hashlib
 import binascii
 from wolfcrypt.ciphers import Aes, MODE_CBC
 from ast import literal_eval
@@ -31,8 +31,8 @@ def pad_message(plaintext):
 
 # Fonction pour chiffrer les paramètres
 def encrypt_Ap_params(params):
-    # Clé de chiffrement
-    keyAP = HmacSha(b'cleAP')
+    # Clé de chiffrement 
+    keyAP = ''
     # Chiffrer chaque paramètre séparément
     for i in range(len(params)):
         if(params[i] == '-c'):
@@ -50,14 +50,12 @@ def encrypt_Ap_params(params):
         if(params[i] == '-p'):
             global pin
             pin = params[i+1]
-            keyAP.update(pin)
-            pin=keyAP.hexdigest().decode('utf-8').strip("b'")
+            pin = hashlib.sha1(pin.encode()).hexdigest()
               
         if(params[i] == '-t'):
             global token
             token = params[i+1]
-            keyAP.update(token)
-            token=keyAP.hexdigest().decode('utf-8').strip("b'")
+            token = hashlib.sha1(token.encode()).hexdigest()
             
     return keyAP
 
@@ -77,6 +75,7 @@ def save_Ap_params():
 # Fonction pour chiffrer les paramètres des composants
 def encrypt_Com_params(params):
     # Clé de chiffrement
+    keyC = ''
     cipher = Aes(key="colombeAcademy-Taskforce", mode=MODE_CBC, IV="mitrEctf2024-cat")
     # Chiffrer chaque paramètre séparément
     for i in range(len(params)):
@@ -172,6 +171,4 @@ if(params[0] == "ectf_build_ap"):
             subprocess.Popen('poetry run python3 deployment/Cp_Cp.py', shell=True)
             os.system(command)
 
-print(f"all Done ! {keyAP.hexdigest()} and {keyC.hexdigest()} are saved.")
-
-
+print("All Done !")

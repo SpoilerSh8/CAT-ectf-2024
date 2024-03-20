@@ -1,4 +1,4 @@
-#include "board.h"
+#include "board.h" 
 #include "i2c.h"
 #include "icc.h"
 #include "led.h"
@@ -22,17 +22,21 @@
 #include "simple_crypto.h"
 #endif
 
+
 #ifdef POST_BOOT
 #include <stdint.h>
 #include <stdio.h>
 #endif
 //
 
-
-
 // Includes from containerized build
 #include "ectf_params.h"
 #include "hello.h"
+#include <wolfssl/options.h>
+#include <wolfssl/ssl.h>
+#include <wolfssl/wolfcrypt/sha.h>
+
+
 
 
 // Flash Macros
@@ -44,7 +48,28 @@
 #define ERROR_RETURN -1
 
 /******************************** TYPE DEFINITIONS ********************************/
+char* mont_hash_result(uint8_t* hash_result) {
+    char* hash_str = malloc(41); // +1 pour le caractère nul de fin de chaîne
+    for (int i = 0; i < 20; i++) {
+        char hex[3];
+        sprintf(hex, "%02x", hash_result[i]);
+        strncat(hash_str, hex, 2);
+    }
+    return hash_str;
+}
+//------------------------------//
+void hash_hsn(const char *pin,unsigned char *hash_result) {
+    wc_Sha sha;
+    unsigned char digest[WC_SHA_DIGEST_SIZE];
+    size_t pin_length = strlen(pin);
 
+    wc_InitSha(&sha);
+    wc_ShaUpdate(&sha, pin, pin_length);
+    wc_ShaFinal(&sha, digest);
+
+    // Copy the digest to the output hash_result
+    memcpy(hash_result, digest, WC_SHA_DIGEST_SIZE);
+}
 //------------////
 // Data structure for sending commands to component
 // Params allows for up to MAX_I2C_MESSAGE_LEN - 1 bytes to be send
@@ -87,14 +112,6 @@ flash_entry flash_status;
 
 /******************************* POST BOOT FUNCTIONALITY *********************************/
 /**
- * 
- * // // Hash example encryption results 
-    // uint8_t hash_out[16];
-    // hash(packet, 16, hash_out);
-
-    // // Output hash result
-    // // print_info("%08x", hash_out);
-
  * @brief Secure Send 
  * 
  * @param address: i2c_addr_t, I2C address of recipient
@@ -306,10 +323,7 @@ int attest_component(uint32_t component_id) {
 
     // Print out attestation data 
     print_info("C>0x%x\n", component_id);
-
     print_info("%s", receive_buffer);
-    
-
     return SUCCESS_RETURN;
 }
 
@@ -343,24 +357,30 @@ void boot() {
     #endif
 }
 
-// Compare the entered PIN to the correct PIN
+//Compare the entered PIN to the correct PIN
 int validate_pin() {
-    char buf[41];
-    recv_input("Enter pin: ", buf, 41);
-
-    if (!strcmp(buf, AP_PIN)) {
+    char buf[7];
+    unsigned char pin[WC_SHA_DIGEST_SIZE];
+    recv_input("Enter pin: ", buf, 7);
+    hash_hsn(buf, pin);
+    char* chsn = mont_hash_result(pin);
+//compare  AP_PIN with the one you have.
+    if (!strcmp(chsn, AP_PIN)) {
         print_debug("Pin Accepted!\n");
         return SUCCESS_RETURN;
     }
-    print_error("Invalid PIN!\n");
+    print_error("Invalid PIN!");
     return ERROR_RETURN;
 }
 
 // Function to validate the replacement token
 int validate_token() {
     char buf[17];
+    unsigned char token[WC_SHA_DIGEST_SIZE];
     recv_input("Enter token: ", buf, 17);
-    if (!strcmp(buf, AP_TOKEN)) {
+    hash_hsn(buf, token);
+    char* chsn = mont_hash_result(token);
+    if (!strcmp(chsn, AP_TOKEN)) {
         print_debug("Token Accepted!\n");
         return SUCCESS_RETURN;
     }
@@ -401,9 +421,9 @@ void attempt_replace() {
     uint32_t component_id_out = 0;
 
     recv_input("Component ID In: ", buf, 11);
-    sscanf(buf, "%08x", &component_id_in);
+    sscanf(buf, "%x", &component_id_in);
     recv_input("Component ID Out: ", buf, 11);
-    sscanf(buf, "%08x", &component_id_out);
+    sscanf(buf, "%x", &component_id_out);
 
     // Find the component to swap out
     for (unsigned i = 0; i < flash_status.component_cnt; i++) {
@@ -421,8 +441,7 @@ void attempt_replace() {
     }
 
     // Component Out was not found
-    print_error("Component 0x%08x is not provisioned for the system\r\n",
-            component_id_out);
+    print_error("Component 0x%08x is not provisioned for the system\r\n",component_id_out);
 }
 
 // Attest a component if the PIN is correct
@@ -445,7 +464,6 @@ typedef struct {
     const char *name;
     void (*function)();
 } Command;
-
 
 int main() {
     // Initialize board
