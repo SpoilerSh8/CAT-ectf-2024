@@ -77,38 +77,39 @@
 #     print_info("Hash result: %s\n", hash_str);
 # }
 
-// Limit the number of failed PIN attempts to prevent brute force attacks
-#define MAX_FAILED_PIN_ATTEMPTS 5
 
-// Define the maximum delay counter value
-#define MAX_DELAY_COUNTER 1
+# // Limit the number of failed PIN attempts to prevent brute force attacks
+# #define MAX_FAILED_PIN_ATTEMPTS 5
 
-// Initialize the number of failed PIN attempts and the delay counter
-int failed_pin_attempts = 0;
-int delay_counter = 0;
+# // Define the maximum delay counter value
+# #define MAX_DELAY_COUNTER 1
 
-    failed_pin_attempts++;
+# // Initialize the number of failed PIN attempts and the delay counter
+# int failed_pin_attempts = 0;
+# int delay_counter = 0;
 
-    // If the maximum number of failed PIN attempts is reached, lock the account and add a delay
-    if (failed_pin_attempts >= MAX_FAILED_PIN_ATTEMPTS) {
-        print_error("Too many failed PIN attempts, account locked!\n");
-        // Add code to lock the account here
-        // Add a 5-second delay before becoming fully functional again
-        while (delay_counter < MAX_DELAY_COUNTER) {
-            delay(5);
-            delay_counter++;
-        }
-        delay_counter = 0;
-    }
-    return ERROR_RETURN;
-}
+#     failed_pin_attempts++;
+
+#     // If the maximum number of failed PIN attempts is reached, lock the account and add a delay
+#     if (failed_pin_attempts >= MAX_FAILED_PIN_ATTEMPTS) {
+#         print_error("Too many failed PIN attempts, account locked!\n");
+#         // Add code to lock the account here
+#         // Add a 5-second delay before becoming fully functional again
+#         while (delay_counter < MAX_DELAY_COUNTER) {
+#             delay(5);
+#             delay_counter++;
+#         }
+#         delay_counter = 0;
+#     }
+#     return ERROR_RETURN;
+# }
 
 
-// Function to delay for a certain amount of time
-void delay(int seconds) {
-    // Get the current time
-    clock_t start_time = clock();
+# // Function to delay for a certain amount of time
+# void delay(int seconds) {
+#     // Get the current time
+#     clock_t start_time = clock();
 
-    // Loop until the desired amount of time has passed
-    while ( (clock() - start_time) / CLOCKS_PER_SEC < seconds);
-}
+#     // Loop until the desired amount of time has passed
+#     while ( (clock() - start_time) / CLOCKS_PER_SEC < seconds);
+# }
