@@ -11,6 +11,7 @@ all:
 	poetry run python3 param.py
 	
 clean:
+	rm -f ../global_secrets.h
 	rm -f hello.h
 	rm -rf ../build
 	rm -f ../application_processor/inc/ectf_params.h

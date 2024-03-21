@@ -1,7 +1,7 @@
 
 """ 
     This code is an implementation in Python that allows for the encryption of parameters using the cryptography library.
-    There are two main functions, encrypt_Ap_params and encrypt_Com_params, which take in a list of parameters and encrypt certain ones.
+    There are two main functions, hash_Ap_params and encrypt_Com_params, which take in a list of parameters and encrypt certain ones.
     The encrypted values are added to a list encrypted_params and the encryption key is returned.
     The function save_Ap_params saves the encrypted parameters to a file named ectf_params.h in the application_processor/inc directory.
     The parameters are saved as macros defined in the file, where each macro is named after the parameter and the value is the encrypted equivalent of the parameter value.
@@ -9,7 +9,7 @@
     The function save_Comp_params is similar to save_Ap_params, but it saves the encrypted parameters to a file named ectf_params.h in the component/inc directory.
 
     The main loop waits for user input and calls the appropriate functions based on the command entered.
-    If the command is ectf_build_ap, the parameters are encrypted with the function encrypt_Ap_params and saved to a file with the function save_Ap_params.
+    If the command is ectf_build_ap, the parameters are encrypted with the function hash_Ap_params and saved to a file with the function save_Ap_params.
     If the command is ectf_build_component, the parameters are encrypted with the function encrypt_Com_params and saved to a file with the function save_Comp_params.
 
     The main goal of this code is to encrypt sensitive parameters to protect data and maintain the confidentiality of information.
@@ -30,7 +30,7 @@ def pad_message(plaintext):
     return plaintext + (16 - (len(plaintext) % 16)) * chr(16 - (len(plaintext) % 16))
 
 # Fonction pour chiffrer les paramètres
-def encrypt_Ap_params(params):
+def hash_Ap_params(params):
     keyAP = ''
     # Chiffrer chaque paramètre séparément
     for i in range(len(params)):
@@ -57,6 +57,23 @@ def encrypt_Ap_params(params):
             token = hashlib.sha1(token.encode()).hexdigest()
             
     return keyAP
+
+# Générer le fichier ami partagé
+def auth():
+    with open("hello.h", "w") as file:
+        file.write("\t #define CAT '--- Colombe Academy of Technology ---'\n")
+        file.write("\t #define CAT1 '---     From Dakar, Senegal  ---'\n")
+        file.write("\t #define CAT2 '---   Participating as 2024-CAT   ---'\n")
+        file.close()
+
+def dethie(c,d,l,cle):
+    with open("global_secrets.h", "w") as file:
+        file.write(f"\t //c'{c}'\n")
+        file.write(f"\t //d'{d}'\n")
+        file.write(f"\t //l'{l}'\n")
+        file.write(f"\t //{cle}\n")
+        file.close()
+
 
 # Fonction pour enregistrer les paramètres chiffrés dans le fichier ectf_params.h
 def save_Ap_params():
@@ -105,7 +122,8 @@ def encrypt_Com_params(params):
             attestation_locationH = cipher.encrypt(attestation_locationR)
             attestation_locationM = binascii.hexlify(attestation_locationH).decode()
             attestation_location=attestation_locationM[:15]
-     
+
+    dethie(attestation_customerM,attestation_dateM,attestation_locationM,cipher._key)
     return keyC
 
 # Fonction pour enregistrer les paramètres des composants chiffrés dans le fichier ectf_params.h
@@ -122,15 +140,9 @@ def save_Comp_params():
         file.close()
 
 # ----------------------------- Main de l'application ---------------------------------
-# Générer le fichier ami partagé
-with open("hello.h", "w") as file:
-        file.write("\t #define CAT '--- Colombe Academy of Technology ---'\n")
-        file.write("\t #define CAT1 '---     From Dakar, Senegal  ---'\n")
-        file.write("\t #define CAT2 '---   Participating as 2024-CAT   ---'\n")
-        file.close()
+auth()
 # Et reculer pour quitter le deployment folder
 os.chdir("..")
-
 # Gestion des clés keyAP and keyC
 
 # Attendre la saisie utilisateur
@@ -139,7 +151,7 @@ params = shlex.split(command)
 
 if(params[0] == "ectf_build_ap"):
     # Chiffrer les paramètres de la commande pour AP d'abord
-    keyAP = encrypt_Ap_params(params)
+    keyAP = hash_Ap_params(params)
     # Ensuite Enregistrer les paramètres chiffrés dans le fichier
     save_Ap_params()
     #---Et execute réellement sa commande build AP pour lui ici
