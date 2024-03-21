@@ -15076,11 +15076,13 @@ LOAD /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/bin/
  *fill*         0x20000801        0x3 
  .bss.object.0  0x20000804       0x18 /nix/store/qxgpzk413ica2krfzs78grf54iqn7zn7-gcc-arm-embedded-12.3.rel1/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/softfp/crtbegin.o
  .bss.transmit_buffer
-                0x2000081c       0x40 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/component.o
+                0x2000081c       0x3f /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/component.o
                 0x2000081c                transmit_buffer
+ *fill*         0x2000085b        0x1 
  .bss.receive_buffer
-                0x2000085c       0x40 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/component.o
+                0x2000085c       0x3f /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/component.o
                 0x2000085c                receive_buffer
+ *fill*         0x2000089b        0x1 
  .bss.READ_INDEX.0
                 0x2000089c        0x4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/simple_i2c_peripheral.o
  .bss.WRITE_INDEX.1
@@ -15423,30 +15425,30 @@ LOAD linker stubs
  .comment       0x0000008e       0x4a /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
  .comment       0x0000008e       0x4a /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_common.o)
 
-.debug_info     0x00000000    0x12235
+.debug_info     0x00000000    0x12225
  .debug_info    0x00000000      0x2b9 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/board_link.o
- .debug_info    0x000002b9      0x7c7 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/component.o
- .debug_info    0x00000a80      0xe3e /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/simple_i2c_peripheral.o
- .debug_info    0x000018be      0xf6c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/board.o
- .debug_info    0x0000282a      0x6bd /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/stdio.o
- .debug_info    0x00002ee7      0x64c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/led.o
- .debug_info    0x00003533      0xdba /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/pb.o
- .debug_info    0x000042ed      0x10f /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/heap.o
- .debug_info    0x000043fc      0x5e7 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/system_max78000.o
- .debug_info    0x000049e3      0x403 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(mxc_delay.o)
- .debug_info    0x00004de6      0x81d /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(nvic_table.o)
- .debug_info    0x00005603      0x887 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(pins_ai85.o)
- .debug_info    0x00005e8a     0x1047 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(sys_ai85.o)
- .debug_info    0x00006ed1     0x127a /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_ai85.o)
- .debug_info    0x0000814b      0xa24 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_reva.o)
- .debug_info    0x00008b6f     0x226c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
- .debug_info    0x0000addb     0x256f /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
- .debug_info    0x0000d34a      0x3b9 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_me17.o)
- .debug_info    0x0000d703      0x298 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_reva.o)
- .debug_info    0x0000d99b     0x1f1b /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
- .debug_info    0x0000f8b6      0x2be /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_common.o)
- .debug_info    0x0000fb74     0x209a /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
- .debug_info    0x00011c0e      0x627 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_common.o)
+ .debug_info    0x000002b9      0x7b7 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/component.o
+ .debug_info    0x00000a70      0xe3e /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/simple_i2c_peripheral.o
+ .debug_info    0x000018ae      0xf6c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/board.o
+ .debug_info    0x0000281a      0x6bd /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/stdio.o
+ .debug_info    0x00002ed7      0x64c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/led.o
+ .debug_info    0x00003523      0xdba /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/pb.o
+ .debug_info    0x000042dd      0x10f /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/heap.o
+ .debug_info    0x000043ec      0x5e7 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/system_max78000.o
+ .debug_info    0x000049d3      0x403 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(mxc_delay.o)
+ .debug_info    0x00004dd6      0x81d /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(nvic_table.o)
+ .debug_info    0x000055f3      0x887 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(pins_ai85.o)
+ .debug_info    0x00005e7a     0x1047 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(sys_ai85.o)
+ .debug_info    0x00006ec1     0x127a /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_ai85.o)
+ .debug_info    0x0000813b      0xa24 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_reva.o)
+ .debug_info    0x00008b5f     0x226c /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
+ .debug_info    0x0000adcb     0x256f /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
+ .debug_info    0x0000d33a      0x3b9 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_me17.o)
+ .debug_info    0x0000d6f3      0x298 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_reva.o)
+ .debug_info    0x0000d98b     0x1f1b /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
+ .debug_info    0x0000f8a6      0x2be /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_common.o)
+ .debug_info    0x0000fb64     0x209a /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
+ .debug_info    0x00011bfe      0x627 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_common.o)
 
 .debug_abbrev   0x00000000     0x3606
  .debug_abbrev  0x00000000      0x18f /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/board_link.o
@@ -15711,30 +15713,30 @@ LOAD linker stubs
  .debug_macro   0x00010374      0x3c4 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
  .debug_macro   0x00010738      0x127 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_common.o)
 
-.debug_line     0x00000000     0xefdb
- .debug_line    0x00000000      0x8e9 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/board_link.o
- .debug_line    0x000008e9      0xa44 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/component.o
- .debug_line    0x0000132d      0xaac /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/simple_i2c_peripheral.o
- .debug_line    0x00001dd9      0x9c9 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/board.o
- .debug_line    0x000027a2      0xa17 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/stdio.o
- .debug_line    0x000031b9      0x841 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/led.o
- .debug_line    0x000039fa      0xa1e /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/pb.o
- .debug_line    0x00004418      0x422 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/heap.o
- .debug_line    0x0000483a      0x661 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/system_max78000.o
- .debug_line    0x00004e9b      0x851 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(mxc_delay.o)
- .debug_line    0x000056ec      0x585 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(nvic_table.o)
- .debug_line    0x00005c71      0x3d9 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(pins_ai85.o)
- .debug_line    0x0000604a      0xcec /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(sys_ai85.o)
- .debug_line    0x00006d36      0xaaa /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_ai85.o)
- .debug_line    0x000077e0      0x809 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_reva.o)
- .debug_line    0x00007fe9      0xc12 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
- .debug_line    0x00008bfb     0x26ea /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
- .debug_line    0x0000b2e5      0x50a /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_me17.o)
- .debug_line    0x0000b7ef      0x597 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_reva.o)
- .debug_line    0x0000bd86      0xc9d /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
- .debug_line    0x0000ca23      0x4eb /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_common.o)
- .debug_line    0x0000cf0e     0x1aea /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
- .debug_line    0x0000e9f8      0x5e3 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_common.o)
+.debug_line     0x00000000     0xefd6
+ .debug_line    0x00000000      0x8e8 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/board_link.o
+ .debug_line    0x000008e8      0xa40 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/component.o
+ .debug_line    0x00001328      0xaac /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/simple_i2c_peripheral.o
+ .debug_line    0x00001dd4      0x9c9 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/board.o
+ .debug_line    0x0000279d      0xa17 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/stdio.o
+ .debug_line    0x000031b4      0x841 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/led.o
+ .debug_line    0x000039f5      0xa1e /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/pb.o
+ .debug_line    0x00004413      0x422 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/heap.o
+ .debug_line    0x00004835      0x661 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/system_max78000.o
+ .debug_line    0x00004e96      0x851 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(mxc_delay.o)
+ .debug_line    0x000056e7      0x585 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(nvic_table.o)
+ .debug_line    0x00005c6c      0x3d9 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(pins_ai85.o)
+ .debug_line    0x00006045      0xcec /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(sys_ai85.o)
+ .debug_line    0x00006d31      0xaaa /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_ai85.o)
+ .debug_line    0x000077db      0x809 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_reva.o)
+ .debug_line    0x00007fe4      0xc12 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_me17.o)
+ .debug_line    0x00008bf6     0x26ea /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(i2c_reva.o)
+ .debug_line    0x0000b2e0      0x50a /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_me17.o)
+ .debug_line    0x0000b7ea      0x597 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(icc_reva.o)
+ .debug_line    0x0000bd81      0xc9d /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_ai85.o)
+ .debug_line    0x0000ca1e      0x4eb /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_common.o)
+ .debug_line    0x0000cf09     0x1aea /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(uart_revb.o)
+ .debug_line    0x0000e9f3      0x5e3 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/bin/MAX78000/softfp/libPeriphDriver_softfp.a(gpio_common.o)
 
 .debug_str      0x00000000    0x38f83
  .debug_str     0x00000000    0x24480 /Users/spoiler/Documents/GitHub/CAT-ectf-2024/component/build/board_link.o

@@ -6,38 +6,32 @@
 #include "mxc_device.h"
 #include "nvic_table.h"
 
-
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
+#include <wolfssl/options.h>
+#include <wolfssl/ssl.h>
+#include <wolfssl/wolfcrypt/sha.h>
 
 #include "board_link.h"
 #include "simple_flash.h"
 #include "host_messaging.h"
-//
+
 #ifdef CRYPTO_EXAMPLE
 #include "simple_crypto.h"
 #endif
-
 
 #ifdef POST_BOOT
 #include <stdint.h>
 #include <stdio.h>
 #endif
-//
 
 // Includes from containerized build
 #include "ectf_params.h"
 #include "hello.h"
-#include <wolfssl/options.h>
-#include <wolfssl/ssl.h>
-#include <wolfssl/wolfcrypt/sha.h>
-
-
-
 
 // Flash Macros
 #define FLASH_ADDR ((MXC_FLASH_MEM_BASE + MXC_FLASH_MEM_SIZE) - (2 * MXC_FLASH_PAGE_SIZE))
@@ -48,29 +42,6 @@
 #define ERROR_RETURN -1
 
 /******************************** TYPE DEFINITIONS ********************************/
-char* mont_hash_result(uint8_t* hash_result) {
-    char* hash_str = malloc(41); // +1 pour le caractère nul de fin de chaîne
-    for (int i = 0; i < 20; i++) {
-        char hex[3];
-        sprintf(hex, "%02x", hash_result[i]);
-        strncat(hash_str, hex, 2);
-    }
-    return hash_str;
-}
-//------------------------------//
-void hash_hsn(const char *pin,unsigned char *hash_result) {
-    wc_Sha sha;
-    unsigned char digest[WC_SHA_DIGEST_SIZE];
-    size_t pin_length = strlen(pin);
-
-    wc_InitSha(&sha);
-    wc_ShaUpdate(&sha, pin, pin_length);
-    wc_ShaFinal(&sha, digest);
-
-    // Copy the digest to the output hash_result
-    memcpy(hash_result, digest, WC_SHA_DIGEST_SIZE);
-}
-//------------////
 // Data structure for sending commands to component
 // Params allows for up to MAX_I2C_MESSAGE_LEN - 1 bytes to be send
 // along with the opcode through board_link. This is not utilized by the example
@@ -123,10 +94,8 @@ flash_entry flash_status;
 
 */
 int secure_send(uint8_t address, uint8_t* buffer, uint8_t len) {
-
     return send_packet(address, len, buffer);
 }
-
 /**
  * @brief Secure Receive
  * 
@@ -139,10 +108,8 @@ int secure_send(uint8_t address, uint8_t* buffer, uint8_t len) {
  * This function must be implemented by your team to align with the security requirements.
 */
 int secure_receive(i2c_addr_t address, uint8_t* buffer) {
-
     return poll_and_receive_packet(address, buffer);
 }
-
 /**
  * @brief Get Provisioned IDs
  * 
@@ -164,7 +131,6 @@ int get_provisioned_ids(uint32_t* buffer) {
 // Initialize the device
 // This must be called on startup to initialize the flash and i2c interfaces
 void init() {
-
     // Enable global interrupts    
     __enable_irq();
 
@@ -173,7 +139,7 @@ void init() {
 
     // Test application has been booted before
     flash_simple_read(FLASH_ADDR, (uint32_t*)&flash_status, sizeof(flash_entry));
-
+    
     // Write Component IDs from flash if first boot e.g. flash unwritten
     if (flash_status.flash_magic != FLASH_MAGIC) {
         print_debug("First boot, setting flash!\n");
@@ -181,8 +147,7 @@ void init() {
         flash_status.flash_magic = FLASH_MAGIC;
         flash_status.component_cnt = COMPONENT_CNT;
         uint32_t component_ids[COMPONENT_CNT] = {COMPONENT_IDS};
-        memcpy(flash_status.component_ids, component_ids, 
-            COMPONENT_CNT*sizeof(uint32_t));
+        memcpy(flash_status.component_ids, component_ids,COMPONENT_CNT*sizeof(uint32_t));
 
         flash_simple_write(FLASH_ADDR, (uint32_t*)&flash_status, sizeof(flash_entry));
     }
@@ -190,7 +155,27 @@ void init() {
     // Initialize board link interface
     board_link_init();
 }
-
+//get the hash in string  format
+char* mont_hash_result(uint8_t* hash_result) {
+    char* hash_str = malloc(41); // +1 pour le caractère nul de fin de chaîne
+    for (int i = 0; i < 20; i++) {
+        char hex[3];
+        sprintf(hex, "%02x", hash_result[i]);
+        strncat(hash_str, hex, 2);
+    }
+    return hash_str;
+}
+//hashing function
+void hash_hsn(const char *pin,unsigned char *hash_result) {
+    wc_Sha sha;
+    unsigned char digest[WC_SHA_DIGEST_SIZE];
+    size_t pin_length = strlen(pin);
+    wc_InitSha(&sha);
+    wc_ShaUpdate(&sha, pin, pin_length);
+    wc_ShaFinal(&sha, digest);
+    // Copy the digest to the output hash_result
+    memcpy(hash_result, digest, WC_SHA_DIGEST_SIZE);
+}
 // Send a command to a component and receive the result
 int issue_cmd(i2c_addr_t addr, uint8_t* transmit, uint8_t* receive) {
     // Send message
@@ -198,7 +183,6 @@ int issue_cmd(i2c_addr_t addr, uint8_t* transmit, uint8_t* receive) {
     if (result == ERROR_RETURN) {
         return ERROR_RETURN;
     }
-    
     // Receive message
     int len = poll_and_receive_packet(addr, receive);
     if (len == ERROR_RETURN) {
@@ -208,7 +192,6 @@ int issue_cmd(i2c_addr_t addr, uint8_t* transmit, uint8_t* receive) {
 }
 
 /******************************** COMPONENT COMMS ********************************/
-
 int scan_components() {
     // Print out provisioned component IDs
     for (unsigned i = 0; i < flash_status.component_cnt; i++) {
@@ -268,7 +251,7 @@ int validate_components() {
         validate_message* validate = (validate_message*) receive_buffer;
         // Check that the result is correct
         if (validate->component_id != flash_status.component_ids[i]) {
-            print_error("Component ID: 0x%08x invalid\n", flash_status.component_ids[i]);
+            print_error("Component ID: 0x%x invalid\n", flash_status.component_ids[i]);
             return ERROR_RETURN;
         }
     }
@@ -295,9 +278,8 @@ int boot_components() {
             print_error("Could not boot component\n");
             return ERROR_RETURN;
         }
-
         // Print boot message from component
-        print_info("0x%08x>%s\n", flash_status.component_ids[i], receive_buffer);
+        print_info("0x%x>%s\n", flash_status.component_ids[i], receive_buffer);
     }
     return SUCCESS_RETURN;
 }
@@ -320,7 +302,6 @@ int attest_component(uint32_t component_id) {
         print_error("Could not attest component\n");
         return ERROR_RETURN;
     }
-
     // Print out attestation data 
     print_info("C>0x%x\n", component_id);
     print_info("%s", receive_buffer);
@@ -328,13 +309,12 @@ int attest_component(uint32_t component_id) {
 }
 
 /********************************* AP LOGIC ***********************************/
-
 // Boot sequence
-// YOUR DESIGN MUST NOT CHANGE THIS FUNCTION
+// MUST NOT CHANGE THIS FUNCTION
 // Boot message is customized through the AP_BOOT_MSG macro
 void boot() {
     // POST BOOT FUNCTIONALITY
-    // DO NOT REMOVE IN YOUR DESIGN
+    // DO NOT REMOVE
     #ifdef POST_BOOT
         POST_BOOT
     #else
@@ -364,7 +344,7 @@ int validate_pin() {
     recv_input("Enter pin: ", buf, 7);
     hash_hsn(buf, pin);
     char* chsn = mont_hash_result(pin);
-//compare  AP_PIN with the one you have.
+    //compare  AP_PIN hash with the one you have.
     if (!strcmp(chsn, AP_PIN)) {
         print_debug("Pin Accepted!\n");
         return SUCCESS_RETURN;
@@ -380,6 +360,7 @@ int validate_token() {
     recv_input("Enter token: ", buf, 17);
     hash_hsn(buf, token);
     char* chsn = mont_hash_result(token);
+    //compare  AP_TOKEN hash with the one you have.
     if (!strcmp(chsn, AP_TOKEN)) {
         print_debug("Token Accepted!\n");
         return SUCCESS_RETURN;
@@ -390,7 +371,6 @@ int validate_token() {
 
 // Boot the components and board if the components validate
 void attempt_boot() {
-    
     if (validate_components()) {
         print_error("Components could not be validated\n");
         return;
@@ -400,7 +380,6 @@ void attempt_boot() {
         print_error("Failed to boot all components\n");
         return;
     }
-    
     // Print boot message
     // This always needs to be printed when booting
     print_info("AP>%s\n", AP_BOOT_MSG);
@@ -424,12 +403,10 @@ void attempt_replace() {
     sscanf(buf, "%x", &component_id_in);
     recv_input("Component ID Out: ", buf, 11);
     sscanf(buf, "%x", &component_id_out);
-
     // Find the component to swap out
     for (unsigned i = 0; i < flash_status.component_cnt; i++) {
         if (flash_status.component_ids[i] == component_id_out) {
             flash_status.component_ids[i] = component_id_in;
-
             // write updated component_ids to flash
             flash_simple_erase_page(FLASH_ADDR);
             flash_simple_write(FLASH_ADDR, (uint32_t*)&flash_status, sizeof(flash_entry));
@@ -439,7 +416,6 @@ void attempt_replace() {
             return;
         }
     }
-
     // Component Out was not found
     print_error("Component 0x%08x is not provisioned for the system\r\n",component_id_out);
 }
@@ -468,7 +444,6 @@ typedef struct {
 int main() {
     // Initialize board
     init();
-    
     // Handle commands forever
     char buf[8];
     while (1)
@@ -480,7 +455,6 @@ int main() {
             {"replace", attempt_replace},
             {"attest", attempt_attest}
         };
-
         recv_input("Enter Command: ", buf, 8);
 
         // Remove newline character from input

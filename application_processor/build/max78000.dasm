@@ -190,11 +190,11 @@ Disassembly of section .text:
 1000e290:	10026ce0 	.word	0x10026ce0
 
 1000e294 <scan_components>:
+    }
     return len;
 }
 
 /******************************** COMPONENT COMMS ********************************/
-
 int scan_components() {
 1000e294:	e92d 47f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
     // Print out provisioned component IDs
@@ -322,104 +322,104 @@ int scan_components() {
 1000e390:	1001f674 	.word	0x1001f674
 1000e394:	1001f680 	.word	0x1001f680
 
-1000e398 <hash_hsn>:
-void hash_hsn(const char *pin,unsigned char *hash_result) {
-1000e398:	b570      	push	{r4, r5, r6, lr}
-1000e39a:	b09e      	sub	sp, #120	@ 0x78
-1000e39c:	460c      	mov	r4, r1
-1000e39e:	4605      	mov	r5, r0
-    size_t pin_length = strlen(pin);
-1000e3a0:	f008 fc0e 	bl	10016bc0 <strlen>
-1000e3a4:	4606      	mov	r6, r0
-    wc_InitSha(&sha);
-1000e3a6:	a805      	add	r0, sp, #20
-1000e3a8:	f001 fdb0 	bl	1000ff0c <wc_InitSha>
-    wc_ShaUpdate(&sha, pin, pin_length);
-1000e3ac:	4632      	mov	r2, r6
-1000e3ae:	4629      	mov	r1, r5
-1000e3b0:	a805      	add	r0, sp, #20
-1000e3b2:	f001 fc7d 	bl	1000fcb0 <wc_ShaUpdate>
-    wc_ShaFinal(&sha, digest);
-1000e3b6:	4669      	mov	r1, sp
-1000e3b8:	a805      	add	r0, sp, #20
-1000e3ba:	f001 fd19 	bl	1000fdf0 <wc_ShaFinal>
-    memcpy(hash_result, digest, WC_SHA_DIGEST_SIZE);
-1000e3be:	46ec      	mov	ip, sp
-1000e3c0:	e8bc 000f 	ldmia.w	ip!, {r0, r1, r2, r3}
-1000e3c4:	6020      	str	r0, [r4, #0]
-1000e3c6:	f8dc 0000 	ldr.w	r0, [ip]
-1000e3ca:	6061      	str	r1, [r4, #4]
-1000e3cc:	60a2      	str	r2, [r4, #8]
-1000e3ce:	60e3      	str	r3, [r4, #12]
-1000e3d0:	6120      	str	r0, [r4, #16]
-}
-1000e3d2:	b01e      	add	sp, #120	@ 0x78
-1000e3d4:	bd70      	pop	{r4, r5, r6, pc}
-1000e3d6:	bf00      	nop
-
-1000e3d8 <init>:
+1000e398 <init>:
 void init() {
-1000e3d8:	b510      	push	{r4, lr}
+1000e398:	b510      	push	{r4, lr}
   \details Enables IRQ interrupts by clearing special-purpose register PRIMASK.
            Can only be executed in Privileged modes.
  */
 __STATIC_FORCEINLINE void __enable_irq(void)
 {
   __ASM volatile ("cpsie i" : : : "memory");
-1000e3da:	b662      	cpsie	i
+1000e39a:	b662      	cpsie	i
     flash_simple_read(FLASH_ADDR, (uint32_t*)&flash_status, sizeof(flash_entry));
-1000e3dc:	4c1a      	ldr	r4, [pc, #104]	@ (1000e448 <init+0x70>)
+1000e39c:	4c1a      	ldr	r4, [pc, #104]	@ (1000e408 <init+0x70>)
     flash_simple_init();
-1000e3de:	f000 fc1d 	bl	1000ec1c <flash_simple_init>
+1000e39e:	f000 fc3d 	bl	1000ec1c <flash_simple_init>
     flash_simple_read(FLASH_ADDR, (uint32_t*)&flash_status, sizeof(flash_entry));
-1000e3e2:	2288      	movs	r2, #136	@ 0x88
-1000e3e4:	4819      	ldr	r0, [pc, #100]	@ (1000e44c <init+0x74>)
-1000e3e6:	4621      	mov	r1, r4
-1000e3e8:	f000 fc32 	bl	1000ec50 <flash_simple_read>
+1000e3a2:	2288      	movs	r2, #136	@ 0x88
+1000e3a4:	4819      	ldr	r0, [pc, #100]	@ (1000e40c <init+0x74>)
+1000e3a6:	4621      	mov	r1, r4
+1000e3a8:	f000 fc52 	bl	1000ec50 <flash_simple_read>
     if (flash_status.flash_magic != FLASH_MAGIC) {
-1000e3ec:	4b18      	ldr	r3, [pc, #96]	@ (1000e450 <init+0x78>)
-1000e3ee:	6822      	ldr	r2, [r4, #0]
-1000e3f0:	429a      	cmp	r2, r3
-1000e3f2:	d01c      	beq.n	1000e42e <init+0x56>
+1000e3ac:	4b18      	ldr	r3, [pc, #96]	@ (1000e410 <init+0x78>)
+1000e3ae:	6822      	ldr	r2, [r4, #0]
+1000e3b0:	429a      	cmp	r2, r3
+1000e3b2:	d01c      	beq.n	1000e3ee <init+0x56>
         print_debug("First boot, setting flash!\n");
-1000e3f4:	4817      	ldr	r0, [pc, #92]	@ (1000e454 <init+0x7c>)
-1000e3f6:	f004 f8c1 	bl	1001257c <printf>
-1000e3fa:	4817      	ldr	r0, [pc, #92]	@ (1000e458 <init+0x80>)
-1000e3fc:	f006 ffea 	bl	100153d4 <puts>
-1000e400:	4816      	ldr	r0, [pc, #88]	@ (1000e45c <init+0x84>)
-1000e402:	f004 f8bb 	bl	1001257c <printf>
-1000e406:	4b16      	ldr	r3, [pc, #88]	@ (1000e460 <init+0x88>)
-1000e408:	681b      	ldr	r3, [r3, #0]
-1000e40a:	6898      	ldr	r0, [r3, #8]
-1000e40c:	f007 fab6 	bl	1001597c <fflush>
+1000e3b4:	4817      	ldr	r0, [pc, #92]	@ (1000e414 <init+0x7c>)
+1000e3b6:	f004 f8e1 	bl	1001257c <printf>
+1000e3ba:	4817      	ldr	r0, [pc, #92]	@ (1000e418 <init+0x80>)
+1000e3bc:	f007 f80a 	bl	100153d4 <puts>
+1000e3c0:	4816      	ldr	r0, [pc, #88]	@ (1000e41c <init+0x84>)
+1000e3c2:	f004 f8db 	bl	1001257c <printf>
+1000e3c6:	4b16      	ldr	r3, [pc, #88]	@ (1000e420 <init+0x88>)
+1000e3c8:	681b      	ldr	r3, [r3, #0]
+1000e3ca:	6898      	ldr	r0, [r3, #8]
+1000e3cc:	f007 fad6 	bl	1001597c <fflush>
         flash_status.flash_magic = FLASH_MAGIC;
-1000e410:	a109      	add	r1, pc, #36	@ (adr r1, 1000e438 <init+0x60>)
-1000e412:	e9d1 0100 	ldrd	r0, r1, [r1]
-1000e416:	a30a      	add	r3, pc, #40	@ (adr r3, 1000e440 <init+0x68>)
-1000e418:	e9d3 2300 	ldrd	r2, r3, [r3]
-1000e41c:	e9c4 0100 	strd	r0, r1, [r4]
-1000e420:	e9c4 2302 	strd	r2, r3, [r4, #8]
+1000e3d0:	a109      	add	r1, pc, #36	@ (adr r1, 1000e3f8 <init+0x60>)
+1000e3d2:	e9d1 0100 	ldrd	r0, r1, [r1]
+1000e3d6:	a30a      	add	r3, pc, #40	@ (adr r3, 1000e400 <init+0x68>)
+1000e3d8:	e9d3 2300 	ldrd	r2, r3, [r3]
+1000e3dc:	e9c4 0100 	strd	r0, r1, [r4]
+1000e3e0:	e9c4 2302 	strd	r2, r3, [r4, #8]
         flash_simple_write(FLASH_ADDR, (uint32_t*)&flash_status, sizeof(flash_entry));
-1000e424:	4809      	ldr	r0, [pc, #36]	@ (1000e44c <init+0x74>)
-1000e426:	2288      	movs	r2, #136	@ 0x88
-1000e428:	4621      	mov	r1, r4
-1000e42a:	f000 fc13 	bl	1000ec54 <flash_simple_write>
+1000e3e4:	4809      	ldr	r0, [pc, #36]	@ (1000e40c <init+0x74>)
+1000e3e6:	2288      	movs	r2, #136	@ 0x88
+1000e3e8:	4621      	mov	r1, r4
+1000e3ea:	f000 fc33 	bl	1000ec54 <flash_simple_write>
 }
-1000e42e:	e8bd 4010 	ldmia.w	sp!, {r4, lr}
+1000e3ee:	e8bd 4010 	ldmia.w	sp!, {r4, lr}
     board_link_init();
-1000e432:	f000 bb63 	b.w	1000eafc <board_link_init>
-1000e436:	bf00      	nop
-1000e438:	deadbeef 	.word	0xdeadbeef
-1000e43c:	00000002 	.word	0x00000002
-1000e440:	11111111 	.word	0x11111111
-1000e444:	11111112 	.word	0x11111112
-1000e448:	20000c20 	.word	0x20000c20
-1000e44c:	1007c000 	.word	0x1007c000
-1000e450:	deadbeef 	.word	0xdeadbeef
-1000e454:	1001f690 	.word	0x1001f690
-1000e458:	1001f69c 	.word	0x1001f69c
-1000e45c:	1001f664 	.word	0x1001f664
-1000e460:	20000598 	.word	0x20000598
+1000e3f2:	f000 bb83 	b.w	1000eafc <board_link_init>
+1000e3f6:	bf00      	nop
+1000e3f8:	deadbeef 	.word	0xdeadbeef
+1000e3fc:	00000002 	.word	0x00000002
+1000e400:	11111111 	.word	0x11111111
+1000e404:	11111112 	.word	0x11111112
+1000e408:	20000c20 	.word	0x20000c20
+1000e40c:	1007c000 	.word	0x1007c000
+1000e410:	deadbeef 	.word	0xdeadbeef
+1000e414:	1001f688 	.word	0x1001f688
+1000e418:	1001f694 	.word	0x1001f694
+1000e41c:	1001f664 	.word	0x1001f664
+1000e420:	20000598 	.word	0x20000598
+
+1000e424 <hash_hsn>:
+void hash_hsn(const char *pin,unsigned char *hash_result) {
+1000e424:	b570      	push	{r4, r5, r6, lr}
+1000e426:	b09e      	sub	sp, #120	@ 0x78
+1000e428:	460c      	mov	r4, r1
+1000e42a:	4605      	mov	r5, r0
+    size_t pin_length = strlen(pin);
+1000e42c:	f008 fbc8 	bl	10016bc0 <strlen>
+1000e430:	4606      	mov	r6, r0
+    wc_InitSha(&sha);
+1000e432:	a805      	add	r0, sp, #20
+1000e434:	f001 fd6a 	bl	1000ff0c <wc_InitSha>
+    wc_ShaUpdate(&sha, pin, pin_length);
+1000e438:	4632      	mov	r2, r6
+1000e43a:	4629      	mov	r1, r5
+1000e43c:	a805      	add	r0, sp, #20
+1000e43e:	f001 fc37 	bl	1000fcb0 <wc_ShaUpdate>
+    wc_ShaFinal(&sha, digest);
+1000e442:	4669      	mov	r1, sp
+1000e444:	a805      	add	r0, sp, #20
+1000e446:	f001 fcd3 	bl	1000fdf0 <wc_ShaFinal>
+    memcpy(hash_result, digest, WC_SHA_DIGEST_SIZE);
+1000e44a:	46ec      	mov	ip, sp
+1000e44c:	e8bc 000f 	ldmia.w	ip!, {r0, r1, r2, r3}
+1000e450:	6020      	str	r0, [r4, #0]
+1000e452:	f8dc 0000 	ldr.w	r0, [ip]
+1000e456:	6061      	str	r1, [r4, #4]
+1000e458:	60a2      	str	r2, [r4, #8]
+1000e45a:	60e3      	str	r3, [r4, #12]
+1000e45c:	6120      	str	r0, [r4, #16]
+}
+1000e45e:	b01e      	add	sp, #120	@ 0x78
+1000e460:	bd70      	pop	{r4, r5, r6, pc}
+1000e462:	bf00      	nop
 
 1000e464 <validate_components>:
 
@@ -488,7 +488,7 @@ int validate_components() {
 1000e4ae:	682b      	ldr	r3, [r5, #0]
 1000e4b0:	429a      	cmp	r2, r3
 1000e4b2:	d0e3      	beq.n	1000e47c <validate_components+0x18>
-            print_error("Component ID: 0x%08x invalid\n", flash_status.component_ids[i]);
+            print_error("Component ID: 0x%x invalid\n", flash_status.component_ids[i]);
 1000e4b4:	3602      	adds	r6, #2
 1000e4b6:	4811      	ldr	r0, [pc, #68]	@ (1000e4fc <validate_components+0x98>)
 1000e4b8:	f004 f860 	bl	1001257c <printf>
@@ -546,12 +546,12 @@ int boot_components() {
     for (unsigned i = 0; i < flash_status.component_cnt; i++) {
 1000e51a:	b3a3      	cbz	r3, 1000e586 <boot_components+0x76>
 1000e51c:	f8df 8098 	ldr.w	r8, [pc, #152]	@ 1000e5b8 <boot_components+0xa8>
+        if (len == ERROR_RETURN) {
             print_error("Could not boot component\n");
             return ERROR_RETURN;
         }
-
         // Print boot message from component
-        print_info("0x%08x>%s\n", flash_status.component_ids[i], receive_buffer);
+        print_info("0x%x>%s\n", flash_status.component_ids[i], receive_buffer);
 1000e520:	f8df 9098 	ldr.w	r9, [pc, #152]	@ 1000e5bc <boot_components+0xac>
 1000e524:	f8df b098 	ldr.w	fp, [pc, #152]	@ 1000e5c0 <boot_components+0xb0>
 1000e528:	f8df a098 	ldr.w	sl, [pc, #152]	@ 1000e5c4 <boot_components+0xb4>
@@ -587,11 +587,11 @@ int boot_components() {
 1000e55a:	4603      	mov	r3, r0
     if (len == ERROR_RETURN) {
 1000e55c:	3301      	adds	r3, #1
-        print_info("0x%08x>%s\n", flash_status.component_ids[i], receive_buffer);
+        print_info("0x%x>%s\n", flash_status.component_ids[i], receive_buffer);
 1000e55e:	4648      	mov	r0, r9
     if (len == ERROR_RETURN) {
 1000e560:	d015      	beq.n	1000e58e <boot_components+0x7e>
-        print_info("0x%08x>%s\n", flash_status.component_ids[i], receive_buffer);
+        print_info("0x%x>%s\n", flash_status.component_ids[i], receive_buffer);
 1000e562:	f004 f80b 	bl	1001257c <printf>
 1000e566:	6831      	ldr	r1, [r6, #0]
 1000e568:	466a      	mov	r2, sp
@@ -630,10 +630,10 @@ int boot_components() {
 1000e5b4:	20000c20 	.word	0x20000c20
 1000e5b8:	20000598 	.word	0x20000598
 1000e5bc:	1001f64c 	.word	0x1001f64c
-1000e5c0:	1001f704 	.word	0x1001f704
+1000e5c0:	1001f700 	.word	0x1001f700
 1000e5c4:	1001f664 	.word	0x1001f664
 1000e5c8:	1001f6b8 	.word	0x1001f6b8
-1000e5cc:	1001f710 	.word	0x1001f710
+1000e5cc:	1001f70c 	.word	0x1001f70c
 
 1000e5d0 <attest_component>:
 
@@ -672,10 +672,10 @@ int attest_component(uint32_t component_id) {
     if (len == ERROR_RETURN) {
 1000e5f6:	3001      	adds	r0, #1
 1000e5f8:	d01f      	beq.n	1000e63a <attest_component+0x6a>
+    if (len == ERROR_RETURN) {
         print_error("Could not attest component\n");
         return ERROR_RETURN;
     }
-
     // Print out attestation data 
     print_info("C>0x%x\n", component_id);
 1000e5fa:	4818      	ldr	r0, [pc, #96]	@ (1000e65c <attest_component+0x8c>)
@@ -720,18 +720,18 @@ int attest_component(uint32_t component_id) {
 1000e656:	f04f 30ff 	mov.w	r0, #4294967295	@ 0xffffffff
 1000e65a:	e7ec      	b.n	1000e636 <attest_component+0x66>
 1000e65c:	1001f64c 	.word	0x1001f64c
-1000e660:	1001f72c 	.word	0x1001f72c
+1000e660:	1001f728 	.word	0x1001f728
 1000e664:	20000598 	.word	0x20000598
 1000e668:	1001f664 	.word	0x1001f664
-1000e66c:	1001f734 	.word	0x1001f734
+1000e66c:	1001f730 	.word	0x1001f730
 1000e670:	1001f6b8 	.word	0x1001f6b8
-1000e674:	1001f738 	.word	0x1001f738
+1000e674:	1001f734 	.word	0x1001f734
 
 1000e678 <boot>:
-/********************************* AP LOGIC ***********************************/
 
+/********************************* AP LOGIC ***********************************/
 // Boot sequence
-// YOUR DESIGN MUST NOT CHANGE THIS FUNCTION
+// MUST NOT CHANGE THIS FUNCTION
 // Boot message is customized through the AP_BOOT_MSG macro
 void boot() {
 1000e678:	b508      	push	{r3, lr}
@@ -791,7 +791,6 @@ void boot() {
 // Boot the components and board if the components validate
 void attempt_boot() {
 1000e6cc:	b510      	push	{r4, lr}
-    
     if (validate_components()) {
 1000e6ce:	f7ff fec9 	bl	1000e464 <validate_components>
 1000e6d2:	b9f8      	cbnz	r0, 1000e714 <attempt_boot+0x48>
@@ -868,18 +867,18 @@ void attempt_boot() {
     boot();
 1000e76a:	f7ff ff85 	bl	1000e678 <boot>
 1000e76e:	bf00      	nop
-1000e770:	1001f690 	.word	0x1001f690
+1000e770:	1001f688 	.word	0x1001f688
 1000e774:	20000598 	.word	0x20000598
-1000e778:	1001f778 	.word	0x1001f778
+1000e778:	1001f774 	.word	0x1001f774
 1000e77c:	1001f664 	.word	0x1001f664
 1000e780:	1001f6b8 	.word	0x1001f6b8
-1000e784:	1001f794 	.word	0x1001f794
-1000e788:	1001f754 	.word	0x1001f754
+1000e784:	1001f790 	.word	0x1001f790
+1000e788:	1001f750 	.word	0x1001f750
 1000e78c:	1001f64c 	.word	0x1001f64c
-1000e790:	1001f7b4 	.word	0x1001f7b4
-1000e794:	1001f7bc 	.word	0x1001f7bc
+1000e790:	1001f7b0 	.word	0x1001f7b0
+1000e794:	1001f7b8 	.word	0x1001f7b8
 1000e798:	1001f674 	.word	0x1001f674
-1000e79c:	1001f7c4 	.word	0x1001f7c4
+1000e79c:	1001f7c0 	.word	0x1001f7c0
 
 1000e7a0 <validate_pin>:
 int validate_pin() {
@@ -896,7 +895,7 @@ int validate_pin() {
     hash_hsn(buf, pin);
 1000e7b0:	a903      	add	r1, sp, #12
 1000e7b2:	a801      	add	r0, sp, #4
-1000e7b4:	f7ff fdf0 	bl	1000e398 <hash_hsn>
+1000e7b4:	f7ff fe36 	bl	1000e424 <hash_hsn>
     char* hash_str = malloc(41); // +1 pour le caractère nul de fin de chaîne
 1000e7b8:	2029      	movs	r0, #41	@ 0x29
 1000e7ba:	f003 fc15 	bl	10011fe8 <malloc>
@@ -955,15 +954,15 @@ int validate_pin() {
     return ERROR_RETURN;
 1000e830:	e7eb      	b.n	1000e80a <validate_pin+0x6a>
 1000e832:	bf00      	nop
-1000e834:	1001f7cc 	.word	0x1001f7cc
-1000e838:	1001f688 	.word	0x1001f688
-1000e83c:	1001f7d8 	.word	0x1001f7d8
-1000e840:	1001f690 	.word	0x1001f690
-1000e844:	1001f804 	.word	0x1001f804
+1000e834:	1001f7c8 	.word	0x1001f7c8
+1000e838:	1001f6b0 	.word	0x1001f6b0
+1000e83c:	1001f7d4 	.word	0x1001f7d4
+1000e840:	1001f688 	.word	0x1001f688
+1000e844:	1001f800 	.word	0x1001f800
 1000e848:	1001f664 	.word	0x1001f664
 1000e84c:	20000598 	.word	0x20000598
 1000e850:	1001f6b8 	.word	0x1001f6b8
-1000e854:	1001f814 	.word	0x1001f814
+1000e854:	1001f810 	.word	0x1001f810
 
 1000e858 <attempt_attest>:
     // Component Out was not found
@@ -1016,10 +1015,10 @@ void attempt_attest() {
 }
 1000e8a2:	b005      	add	sp, #20
 1000e8a4:	f85d fb04 	ldr.w	pc, [sp], #4
-1000e8a8:	1001f824 	.word	0x1001f824
-1000e8ac:	1001f834 	.word	0x1001f834
+1000e8a8:	1001f820 	.word	0x1001f820
+1000e8ac:	1001f830 	.word	0x1001f830
 1000e8b0:	1001f674 	.word	0x1001f674
-1000e8b4:	1001f838 	.word	0x1001f838
+1000e8b4:	1001f834 	.word	0x1001f834
 1000e8b8:	1001f664 	.word	0x1001f664
 1000e8bc:	20000598 	.word	0x20000598
 
@@ -1038,7 +1037,7 @@ int validate_token() {
     hash_hsn(buf, token);
 1000e8d0:	a907      	add	r1, sp, #28
 1000e8d2:	a802      	add	r0, sp, #8
-1000e8d4:	f7ff fd60 	bl	1000e398 <hash_hsn>
+1000e8d4:	f7ff fda6 	bl	1000e424 <hash_hsn>
     char* hash_str = malloc(41); // +1 pour le caractère nul de fin de chaîne
 1000e8d8:	2029      	movs	r0, #41	@ 0x29
 1000e8da:	f003 fb85 	bl	10011fe8 <malloc>
@@ -1097,15 +1096,15 @@ int validate_token() {
     return ERROR_RETURN;
 1000e950:	e7eb      	b.n	1000e92a <validate_token+0x6a>
 1000e952:	bf00      	nop
-1000e954:	1001f840 	.word	0x1001f840
-1000e958:	1001f688 	.word	0x1001f688
-1000e95c:	1001f850 	.word	0x1001f850
-1000e960:	1001f690 	.word	0x1001f690
-1000e964:	1001f87c 	.word	0x1001f87c
+1000e954:	1001f83c 	.word	0x1001f83c
+1000e958:	1001f6b0 	.word	0x1001f6b0
+1000e95c:	1001f84c 	.word	0x1001f84c
+1000e960:	1001f688 	.word	0x1001f688
+1000e964:	1001f878 	.word	0x1001f878
 1000e968:	1001f664 	.word	0x1001f664
 1000e96c:	20000598 	.word	0x20000598
 1000e970:	1001f6b8 	.word	0x1001f6b8
-1000e974:	1001f88c 	.word	0x1001f88c
+1000e974:	1001f888 	.word	0x1001f888
 
 1000e978 <attempt_replace>:
 void attempt_replace() {
@@ -1219,19 +1218,19 @@ void attempt_replace() {
 1000ea46:	b006      	add	sp, #24
 1000ea48:	bd70      	pop	{r4, r5, r6, pc}
 1000ea4a:	bf00      	nop
-1000ea4c:	1001f89c 	.word	0x1001f89c
+1000ea4c:	1001f898 	.word	0x1001f898
 1000ea50:	20000c20 	.word	0x20000c20
-1000ea54:	1001f834 	.word	0x1001f834
-1000ea58:	1001f8b0 	.word	0x1001f8b0
+1000ea54:	1001f830 	.word	0x1001f830
+1000ea58:	1001f8ac 	.word	0x1001f8ac
 1000ea5c:	1007c000 	.word	0x1007c000
 1000ea60:	20000598 	.word	0x20000598
-1000ea64:	1001f690 	.word	0x1001f690
-1000ea68:	1001f8c4 	.word	0x1001f8c4
+1000ea64:	1001f688 	.word	0x1001f688
+1000ea68:	1001f8c0 	.word	0x1001f8c0
 1000ea6c:	1001f664 	.word	0x1001f664
 1000ea70:	1001f674 	.word	0x1001f674
-1000ea74:	1001f8e4 	.word	0x1001f8e4
+1000ea74:	1001f8e0 	.word	0x1001f8e0
 1000ea78:	1001f6b8 	.word	0x1001f6b8
-1000ea7c:	1001f8ec 	.word	0x1001f8ec
+1000ea7c:	1001f8e8 	.word	0x1001f8e8
 
 1000ea80 <main>:
 typedef struct {
@@ -1244,12 +1243,12 @@ int main() {
 1000ea84:	b08a      	sub	sp, #40	@ 0x28
     // Initialize board
     init();
-1000ea86:	f7ff fca7 	bl	1000e3d8 <init>
+1000ea86:	f7ff fc87 	bl	1000e398 <init>
+            {"list", scan_components},
             {"boot", attempt_boot},
             {"replace", attempt_replace},
             {"attest", attempt_attest}
         };
-
         recv_input("Enter Command: ", buf, 8);
 1000ea8a:	f8df 8064 	ldr.w	r8, [pc, #100]	@ 1000eaf0 <main+0x70>
 
@@ -1304,9 +1303,9 @@ int main() {
 1000eaec:	4798      	blx	r3
                     break;
 1000eaee:	e7d0      	b.n	1000ea92 <main+0x12>
-1000eaf0:	1001f924 	.word	0x1001f924
-1000eaf4:	1001f700 	.word	0x1001f700
-1000eaf8:	1001f954 	.word	0x1001f954
+1000eaf0:	1001f920 	.word	0x1001f920
+1000eaf4:	1001f670 	.word	0x1001f670
+1000eaf8:	1001f950 	.word	0x1001f950
 
 1000eafc <board_link_init>:
  * @brief Initialize the board link connection
@@ -1445,7 +1444,6 @@ int poll_and_receive_packet(i2c_addr_t address, uint8_t* packet) {
 1000eb86:	bf00      	nop
 
 1000eb88 <recv_input>:
-
 #include "host_messaging.h"
 
 // Print a message through USB UART and then receive a line over USB UART
@@ -1490,11 +1488,11 @@ void recv_input(const char *msg, char *buf, size_t n) {
 1000ebd0:	4805      	ldr	r0, [pc, #20]	@ (1000ebe8 <recv_input+0x60>)
 1000ebd2:	f006 bbff 	b.w	100153d4 <puts>
 1000ebd6:	bf00      	nop
-1000ebd8:	1001f690 	.word	0x1001f690
+1000ebd8:	1001f688 	.word	0x1001f688
 1000ebdc:	20000598 	.word	0x20000598
 1000ebe0:	1001f664 	.word	0x1001f664
-1000ebe4:	1001f974 	.word	0x1001f974
-1000ebe8:	1001f920 	.word	0x1001f920
+1000ebe4:	1001f970 	.word	0x1001f970
+1000ebe8:	1001f91c 	.word	0x1001f91c
 
 1000ebec <flash_simple_irq>:
  * 
@@ -1535,7 +1533,7 @@ void flash_simple_irq(void) {
 1000ec0e:	f006 bbe1 	b.w	100153d4 <puts>
 1000ec12:	bf00      	nop
 1000ec14:	40029000 	.word	0x40029000
-1000ec18:	1001f980 	.word	0x1001f980
+1000ec18:	1001f97c 	.word	0x1001f97c
 
 1000ec1c <flash_simple_init>:
  * @brief Initialize the Simple Flash Interface
@@ -1669,7 +1667,7 @@ int i2c_simple_controller_init(void) {
 1000eca4:	000186a0 	.word	0x000186a0
 1000eca8:	1000ec61 	.word	0x1000ec61
 1000ecac:	e000e100 	.word	0xe000e100
-1000ecb0:	1001f9a8 	.word	0x1001f9a8
+1000ecb0:	1001f9a4 	.word	0x1001f9a4
 
 1000ecb4 <i2c_simple_read_transmit_done>:
  * @return int: TRANSMIT_DONE value, negative if error
@@ -3916,7 +3914,7 @@ void mxc_assert(const char *expr, const char *file, int line)
 
     while (1) {}
 1000ff66:	e7fe      	b.n	1000ff66 <mxc_assert+0xa>
-1000ff68:	1001f9c4 	.word	0x1001f9c4
+1000ff68:	1001f9c0 	.word	0x1001f9c0
 
 1000ff6c <GPIO0_IRQHandler>:
  * NOTE: This weak definition is included to support Push Button 0 interrupts in
@@ -4006,8 +4004,8 @@ int Console_Init(void)
 1000ffd4:	20000000 	.word	0x20000000
 1000ffd8:	40004400 	.word	0x40004400
 1000ffdc:	00030d40 	.word	0x00030d40
-1000ffe0:	1001f9e0 	.word	0x1001f9e0
-1000ffe4:	1001fa48 	.word	0x1001fa48
+1000ffe0:	1001f9dc 	.word	0x1001f9dc
+1000ffe4:	1001fa44 	.word	0x1001fa44
 
 1000ffe8 <NMI_Handler>:
 }
@@ -4267,8 +4265,8 @@ void LED_Off(unsigned int idx)
 }
 100100f0:	4630      	mov	r0, r6
 100100f2:	bdf8      	pop	{r3, r4, r5, r6, r7, pc}
-100100f4:	1001fa50 	.word	0x1001fa50
-100100f8:	1001fa54 	.word	0x1001fa54
+100100f4:	1001fa4c 	.word	0x1001fa4c
+100100f8:	1001fa50 	.word	0x1001fa50
 
 100100fc <LED_On>:
     MXC_ASSERT(idx < num_leds);
@@ -4296,10 +4294,10 @@ void LED_Off(unsigned int idx)
 10010124:	223b      	movs	r2, #59	@ 0x3b
 10010126:	f7ff ff19 	bl	1000ff5c <mxc_assert>
 1001012a:	e7ed      	b.n	10010108 <LED_On+0xc>
-1001012c:	1001fa50 	.word	0x1001fa50
-10010130:	1001fa54 	.word	0x1001fa54
-10010134:	1001fa94 	.word	0x1001fa94
-10010138:	1001fae8 	.word	0x1001fae8
+1001012c:	1001fa4c 	.word	0x1001fa4c
+10010130:	1001fa50 	.word	0x1001fa50
+10010134:	1001fa90 	.word	0x1001fa90
+10010138:	1001fae4 	.word	0x1001fae4
 
 1001013c <LED_Off>:
     MXC_ASSERT(idx < num_leds);
@@ -4330,10 +4328,10 @@ void LED_Off(unsigned int idx)
 10010164:	2246      	movs	r2, #70	@ 0x46
 10010166:	f7ff fef9 	bl	1000ff5c <mxc_assert>
 1001016a:	e7ed      	b.n	10010148 <LED_Off+0xc>
-1001016c:	1001fa50 	.word	0x1001fa50
-10010170:	1001fa54 	.word	0x1001fa54
-10010174:	1001fa94 	.word	0x1001fa94
-10010178:	1001fae8 	.word	0x1001fae8
+1001016c:	1001fa4c 	.word	0x1001fa4c
+10010170:	1001fa50 	.word	0x1001fa50
+10010174:	1001fa90 	.word	0x1001fa90
+10010178:	1001fae4 	.word	0x1001fae4
 
 1001017c <PB_Init>:
 #include "mxc_assert.h"
@@ -4380,8 +4378,8 @@ int PB_Init(void)
 }
 100101a8:	4630      	mov	r0, r6
 100101aa:	bdf8      	pop	{r3, r4, r5, r6, r7, pc}
-100101ac:	1001fa78 	.word	0x1001fa78
-100101b0:	1001fa7c 	.word	0x1001fa7c
+100101ac:	1001fa74 	.word	0x1001fa74
+100101b0:	1001fa78 	.word	0x1001fa78
 
 100101b4 <Reset_Handler>:
 100101b4:	4847      	ldr	r0, [pc, #284]	@ (100102d4 <LPCMP_IRQHandler+0x2>)
@@ -5325,7 +5323,7 @@ __weak void SystemInit(void)
 10010774:	f06f 0009 	mvn.w	r0, #9
 10010778:	bd10      	pop	{r4, pc}
 1001077a:	bf00      	nop
-1001077c:	1001faf8 	.word	0x1001faf8
+1001077c:	1001faf4 	.word	0x1001faf4
 
 10010780 <MXC_SYS_Reset_Periph>:
 10010780:	283f      	cmp	r0, #63	@ 0x3f
@@ -5893,9 +5891,9 @@ __weak void SystemInit(void)
 10010cb4:	4001d000 	.word	0x4001d000
 10010cb8:	4001e000 	.word	0x4001e000
 10010cbc:	4001f000 	.word	0x4001f000
-10010cc0:	1001fb1c 	.word	0x1001fb1c
-10010cc4:	1001fb04 	.word	0x1001fb04
-10010cc8:	1001fb10 	.word	0x1001fb10
+10010cc0:	1001fb18 	.word	0x1001fb18
+10010cc4:	1001fb00 	.word	0x1001fb00
+10010cc8:	1001fb0c 	.word	0x1001fb0c
 
 10010ccc <MXC_I2C_SetFrequency>:
 10010ccc:	4b03      	ldr	r3, [pc, #12]	@ (10010cdc <MXC_I2C_SetFrequency+0x10>)
@@ -7295,10 +7293,10 @@ __weak void SystemInit(void)
 10011a14:	40043000 	.word	0x40043000
 10011a18:	40044000 	.word	0x40044000
 10011a1c:	40081400 	.word	0x40081400
-10011a20:	1001fb4c 	.word	0x1001fb4c
-10011a24:	1001fb28 	.word	0x1001fb28
-10011a28:	1001fb34 	.word	0x1001fb34
-10011a2c:	1001fb40 	.word	0x1001fb40
+10011a20:	1001fb48 	.word	0x1001fb48
+10011a24:	1001fb24 	.word	0x1001fb24
+10011a28:	1001fb30 	.word	0x1001fb30
+10011a2c:	1001fb3c 	.word	0x1001fb3c
 
 10011a30 <MXC_UART_SetFrequency>:
 10011a30:	4b30      	ldr	r3, [pc, #192]	@ (10011af4 <MXC_UART_SetFrequency+0xc4>)
@@ -7906,8 +7904,8 @@ __weak void SystemInit(void)
 10011fd0:	2000104c 	.word	0x2000104c
 10011fd4:	40080400 	.word	0x40080400
 10011fd8:	40080600 	.word	0x40080600
-10011fdc:	1001fb58 	.word	0x1001fb58
-10011fe0:	1001fbb8 	.word	0x1001fbb8
+10011fdc:	1001fb54 	.word	0x1001fb54
+10011fe0:	1001fbb4 	.word	0x1001fbb4
 10011fe4:	40009000 	.word	0x40009000
 
 10011fe8 <malloc>:
@@ -9063,9 +9061,9 @@ __weak void SystemInit(void)
 10012c44:	e526      	b.n	10012694 <_vfprintf_r+0xf0>
 10012c46:	bf00      	nop
 10012c48:	7fefffff 	.word	0x7fefffff
-10012c4c:	1001fbd8 	.word	0x1001fbd8
-10012c50:	1001fbdc 	.word	0x1001fbdc
-10012c54:	1001fc2c 	.word	0x1001fc2c
+10012c4c:	1001fbd4 	.word	0x1001fbd4
+10012c50:	1001fbd8 	.word	0x1001fbd8
+10012c54:	1001fc28 	.word	0x1001fc28
 10012c58:	e9cd 340e 	strd	r3, r4, [sp, #56]	@ 0x38
 10012c5c:	f049 0910 	orr.w	r9, r9, #16
 10012c60:	f019 0220 	ands.w	r2, r9, #32
@@ -9404,9 +9402,9 @@ __weak void SystemInit(void)
 10012fec:	f10d 08d4 	add.w	r8, sp, #212	@ 0xd4
 10012ff0:	e4a9      	b.n	10012946 <_vfprintf_r+0x3a2>
 10012ff2:	bf00      	nop
-10012ff4:	1001fbe8 	.word	0x1001fbe8
-10012ff8:	1001fc18 	.word	0x1001fc18
-10012ffc:	1001fc1c 	.word	0x1001fc1c
+10012ff4:	1001fbe4 	.word	0x1001fbe4
+10012ff8:	1001fc14 	.word	0x1001fc14
+10012ffc:	1001fc18 	.word	0x1001fc18
 10013000:	9b13      	ldr	r3, [sp, #76]	@ 0x4c
 10013002:	9e33      	ldr	r6, [sp, #204]	@ 0xcc
 10013004:	2b01      	cmp	r3, #1
@@ -9762,9 +9760,9 @@ __weak void SystemInit(void)
 100133ce:	2101      	movs	r1, #1
 100133d0:	e457      	b.n	10012c82 <_vfprintf_r+0x6de>
 100133d2:	bf00      	nop
-100133d4:	1001fc2c 	.word	0x1001fc2c
-100133d8:	1001fc1c 	.word	0x1001fc1c
-100133dc:	1001fc18 	.word	0x1001fc18
+100133d4:	1001fc28 	.word	0x1001fc28
+100133d8:	1001fc18 	.word	0x1001fc18
+100133dc:	1001fc14 	.word	0x1001fc14
 100133e0:	9a1b      	ldr	r2, [sp, #108]	@ 0x6c
 100133e2:	7823      	ldrb	r3, [r4, #0]
 100133e4:	2a00      	cmp	r2, #0
@@ -10117,11 +10115,11 @@ __weak void SystemInit(void)
 100137da:	f77f a8b2 	ble.w	10012942 <_vfprintf_r+0x39e>
 100137de:	f7ff bbfd 	b.w	10012fdc <_vfprintf_r+0xa38>
 100137e2:	bf00      	nop
-100137e4:	1001fbfc 	.word	0x1001fbfc
-100137e8:	1001fbe8 	.word	0x1001fbe8
-100137ec:	1001fc10 	.word	0x1001fc10
+100137e4:	1001fbf8 	.word	0x1001fbf8
+100137e8:	1001fbe4 	.word	0x1001fbe4
+100137ec:	1001fc0c 	.word	0x1001fc0c
 100137f0:	cccccccd 	.word	0xcccccccd
-100137f4:	1001fc1c 	.word	0x1001fc1c
+100137f4:	1001fc18 	.word	0x1001fc18
 100137f8:	9b0d      	ldr	r3, [sp, #52]	@ 0x34
 100137fa:	9a0a      	ldr	r2, [sp, #40]	@ 0x28
 100137fc:	681b      	ldr	r3, [r3, #0]
@@ -10368,9 +10366,9 @@ __weak void SystemInit(void)
 10013a84:	464d      	mov	r5, r9
 10013a86:	e9dd 8910 	ldrd	r8, r9, [sp, #64]	@ 0x40
 10013a8a:	e00b      	b.n	10013aa4 <_vfprintf_r+0x1500>
-10013a8c:	1001fc1c 	.word	0x1001fc1c
+10013a8c:	1001fc18 	.word	0x1001fc18
 10013a90:	cccccccd 	.word	0xcccccccd
-10013a94:	1001fbe8 	.word	0x1001fbe8
+10013a94:	1001fbe4 	.word	0x1001fbe4
 10013a98:	2200      	movs	r2, #0
 10013a9a:	2300      	movs	r3, #0
 10013a9c:	f00b fb48 	bl	1001f130 <__aeabi_dcmpeq>
@@ -10641,8 +10639,8 @@ __weak void SystemInit(void)
 10013d4a:	e00c      	b.n	10013d66 <_vfprintf_r+0x17c2>
 10013d4c:	40300000 	.word	0x40300000
 10013d50:	3fe00000 	.word	0x3fe00000
-10013d54:	1001fbfc 	.word	0x1001fbfc
-10013d58:	1001fc1c 	.word	0x1001fc1c
+10013d54:	1001fbf8 	.word	0x1001fbf8
+10013d58:	1001fc18 	.word	0x1001fc18
 10013d5c:	3c10      	subs	r4, #16
 10013d5e:	2c10      	cmp	r4, #16
 10013d60:	f102 0208 	add.w	r2, r2, #8
@@ -11029,12 +11027,12 @@ __weak void SystemInit(void)
 10014142:	9306      	str	r3, [sp, #24]
 10014144:	e42f      	b.n	100139a6 <_vfprintf_r+0x1402>
 10014146:	bf00      	nop
-10014148:	1001fc2c 	.word	0x1001fc2c
-1001414c:	1001fc1c 	.word	0x1001fc1c
-10014150:	1001fbfc 	.word	0x1001fbfc
-10014154:	1001fbe8 	.word	0x1001fbe8
-10014158:	1001fbe0 	.word	0x1001fbe0
-1001415c:	1001fbe4 	.word	0x1001fbe4
+10014148:	1001fc28 	.word	0x1001fc28
+1001414c:	1001fc18 	.word	0x1001fc18
+10014150:	1001fbf8 	.word	0x1001fbf8
+10014154:	1001fbe4 	.word	0x1001fbe4
+10014158:	1001fbdc 	.word	0x1001fbdc
+1001415c:	1001fbe0 	.word	0x1001fbe0
 10014160:	f1c3 0301 	rsb	r3, r3, #1
 10014164:	449b      	add	fp, r3
 10014166:	ea2b 73eb 	bic.w	r3, fp, fp, asr #31
@@ -11087,7 +11085,7 @@ __weak void SystemInit(void)
 100141e0:	8193      	strh	r3, [r2, #12]
 100141e2:	f7fe bb37 	b.w	10012854 <_vfprintf_r+0x2b0>
 100141e6:	bf00      	nop
-100141e8:	1001fc1c 	.word	0x1001fc1c
+100141e8:	1001fc18 	.word	0x1001fc18
 
 100141ec <__sbprintf>:
 100141ec:	b5f0      	push	{r4, r5, r6, r7, lr}
@@ -12103,8 +12101,8 @@ __weak void SystemInit(void)
 10014c76:	9204      	str	r2, [sp, #16]
 10014c78:	e708      	b.n	10014a8c <_vfiprintf_r+0x794>
 10014c7a:	bf00      	nop
-10014c7c:	1001fbe8 	.word	0x1001fbe8
-10014c80:	1001fc3c 	.word	0x1001fc3c
+10014c7c:	1001fbe4 	.word	0x1001fbe4
+10014c80:	1001fc38 	.word	0x1001fc38
 10014c84:	2d10      	cmp	r5, #16
 10014c86:	f340 82c0 	ble.w	1001520a <_vfiprintf_r+0xf12>
 10014c8a:	4eae      	ldr	r6, [pc, #696]	@ (10014f44 <_vfiprintf_r+0xc4c>)
@@ -12374,9 +12372,9 @@ __weak void SystemInit(void)
 10014f3e:	930d      	str	r3, [sp, #52]	@ 0x34
 10014f40:	e7db      	b.n	10014efa <_vfiprintf_r+0xc02>
 10014f42:	bf00      	nop
-10014f44:	1001fc4c 	.word	0x1001fc4c
-10014f48:	1001fbfc 	.word	0x1001fbfc
-10014f4c:	1001fbe8 	.word	0x1001fbe8
+10014f44:	1001fc48 	.word	0x1001fc48
+10014f48:	1001fbf8 	.word	0x1001fbf8
+10014f4c:	1001fbe4 	.word	0x1001fbe4
 10014f50:	9b0a      	ldr	r3, [sp, #40]	@ 0x28
 10014f52:	681b      	ldr	r3, [r3, #0]
 10014f54:	f88d 30b4 	strb.w	r3, [sp, #180]	@ 0xb4
@@ -12697,9 +12695,9 @@ __weak void SystemInit(void)
 1001528e:	8193      	strh	r3, [r2, #12]
 10015290:	f7ff b98a 	b.w	100145a8 <_vfiprintf_r+0x2b0>
 10015294:	cccccccd 	.word	0xcccccccd
-10015298:	1001fc10 	.word	0x1001fc10
-1001529c:	1001fc4c 	.word	0x1001fc4c
-100152a0:	1001fc3c 	.word	0x1001fc3c
+10015298:	1001fc0c 	.word	0x1001fc0c
+1001529c:	1001fc48 	.word	0x1001fc48
+100152a0:	1001fc38 	.word	0x1001fc38
 
 100152a4 <__sbprintf>:
 100152a4:	b5f0      	push	{r4, r5, r6, r7, lr}
@@ -12830,7 +12828,7 @@ __weak void SystemInit(void)
 100153c8:	4628      	mov	r0, r5
 100153ca:	f000 fcc5 	bl	10015d58 <__sinit>
 100153ce:	e7cc      	b.n	1001536a <_puts_r+0x2e>
-100153d0:	1001f700 	.word	0x1001f700
+100153d0:	1001f670 	.word	0x1001f670
 
 100153d4 <puts>:
 100153d4:	4b02      	ldr	r3, [pc, #8]	@ (100153e0 <puts+0xc>)
@@ -15684,12 +15682,12 @@ __weak void SystemInit(void)
 100170c8:	509f79fb 	.word	0x509f79fb
 100170cc:	3fd34413 	.word	0x3fd34413
 100170d0:	7ff00000 	.word	0x7ff00000
-100170d4:	1001fc19 	.word	0x1001fc19
-100170d8:	1001fc18 	.word	0x1001fc18
+100170d4:	1001fc15 	.word	0x1001fc15
+100170d8:	1001fc14 	.word	0x1001fc14
 100170dc:	3ff80000 	.word	0x3ff80000
 100170e0:	1001ff10 	.word	0x1001ff10
-100170e4:	1001fda4 	.word	0x1001fda4
-100170e8:	1001fdb0 	.word	0x1001fdb0
+100170e4:	1001fda0 	.word	0x1001fda0
+100170e8:	1001fdac 	.word	0x1001fdac
 100170ec:	f1b8 0f00 	cmp.w	r8, #0
 100170f0:	f340 8460 	ble.w	100179b4 <_dtoa_r+0xaf4>
 100170f4:	9010      	str	r0, [sp, #64]	@ 0x40
@@ -16678,7 +16676,7 @@ __weak void SystemInit(void)
 10017ac4:	930f      	str	r3, [sp, #60]	@ 0x3c
 10017ac6:	f43f ad07 	beq.w	100174d8 <_dtoa_r+0x618>
 10017aca:	e4ff      	b.n	100174cc <_dtoa_r+0x60c>
-10017acc:	1001fdb0 	.word	0x1001fdb0
+10017acc:	1001fdac 	.word	0x1001fdac
 10017ad0:	7ff00000 	.word	0x7ff00000
 10017ad4:	1001ff10 	.word	0x1001ff10
 10017ad8:	1001fee8 	.word	0x1001fee8
@@ -16893,9 +16891,9 @@ __weak void SystemInit(void)
 10017cf0:	40240000 	.word	0x40240000
 10017cf4:	3fe00000 	.word	0x3fe00000
 10017cf8:	401c0000 	.word	0x401c0000
-10017cfc:	1001fdb4 	.word	0x1001fdb4
-10017d00:	1001fdc8 	.word	0x1001fdc8
-10017d04:	1001fda4 	.word	0x1001fda4
+10017cfc:	1001fdb0 	.word	0x1001fdb0
+10017d00:	1001fdc4 	.word	0x1001fdc4
+10017d04:	1001fda0 	.word	0x1001fda0
 
 10017d08 <_malloc_trim_r>:
 10017d08:	e92d 43f8 	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
@@ -17754,9 +17752,9 @@ __weak void SystemInit(void)
 10018604:	e547      	b.n	10018096 <_svfprintf_r+0xae>
 10018606:	bf00      	nop
 10018608:	7fefffff 	.word	0x7fefffff
-1001860c:	1001fbd8 	.word	0x1001fbd8
-10018610:	1001fbdc 	.word	0x1001fbdc
-10018614:	1001fe3c 	.word	0x1001fe3c
+1001860c:	1001fbd4 	.word	0x1001fbd4
+10018610:	1001fbd8 	.word	0x1001fbd8
+10018614:	1001fe38 	.word	0x1001fe38
 10018618:	9a0d      	ldr	r2, [sp, #52]	@ 0x34
 1001861a:	940f      	str	r4, [sp, #60]	@ 0x3c
 1001861c:	f852 3b04 	ldr.w	r3, [r2], #4
@@ -18015,9 +18013,9 @@ __weak void SystemInit(void)
 100188c8:	f04f 0a10 	mov.w	sl, #16
 100188cc:	e00b      	b.n	100188e6 <_svfprintf_r+0x8fe>
 100188ce:	bf00      	nop
-100188d0:	1001fbe8 	.word	0x1001fbe8
-100188d4:	1001fc18 	.word	0x1001fc18
-100188d8:	1001fe2c 	.word	0x1001fe2c
+100188d0:	1001fbe4 	.word	0x1001fbe4
+100188d4:	1001fc14 	.word	0x1001fc14
+100188d8:	1001fe28 	.word	0x1001fe28
 100188dc:	3e10      	subs	r6, #16
 100188de:	2e10      	cmp	r6, #16
 100188e0:	f108 0808 	add.w	r8, r8, #8
@@ -18231,9 +18229,9 @@ __weak void SystemInit(void)
 10018b1c:	9c34      	ldr	r4, [sp, #208]	@ 0xd0
 10018b1e:	f7ff bbe9 	b.w	100182f4 <_svfprintf_r+0x30c>
 10018b22:	bf00      	nop
-10018b24:	1001fe2c 	.word	0x1001fe2c
-10018b28:	1001fc18 	.word	0x1001fc18
-10018b2c:	1001fe3c 	.word	0x1001fe3c
+10018b24:	1001fe28 	.word	0x1001fe28
+10018b28:	1001fc14 	.word	0x1001fc14
+10018b2c:	1001fe38 	.word	0x1001fe38
 10018b30:	9a29      	ldr	r2, [sp, #164]	@ 0xa4
 10018b32:	2a00      	cmp	r2, #0
 10018b34:	f77f af0a 	ble.w	1001894c <_svfprintf_r+0x964>
@@ -18546,7 +18544,7 @@ __weak void SystemInit(void)
 10018e98:	03fe03fa 	.word	0x03fe03fa
 10018e9c:	e9cd 340e 	strd	r3, r4, [sp, #56]	@ 0x38
 10018ea0:	f7ff bb61 	b.w	10018566 <_svfprintf_r+0x57e>
-10018ea4:	1001fe2c 	.word	0x1001fe2c
+10018ea4:	1001fe28 	.word	0x1001fe28
 10018ea8:	e9cd 340e 	strd	r3, r4, [sp, #56]	@ 0x38
 10018eac:	464c      	mov	r4, r9
 10018eae:	f7ff bbc9 	b.w	10018644 <_svfprintf_r+0x65c>
@@ -18839,10 +18837,10 @@ __weak void SystemInit(void)
 100191a2:	f8cd c04c 	str.w	ip, [sp, #76]	@ 0x4c
 100191a6:	f7ff bb15 	b.w	100187d4 <_svfprintf_r+0x7ec>
 100191aa:	bf00      	nop
-100191ac:	1001fbfc 	.word	0x1001fbfc
-100191b0:	1001fbe8 	.word	0x1001fbe8
-100191b4:	1001fc10 	.word	0x1001fc10
-100191b8:	1001fe2c 	.word	0x1001fe2c
+100191ac:	1001fbf8 	.word	0x1001fbf8
+100191b0:	1001fbe4 	.word	0x1001fbe4
+100191b4:	1001fc0c 	.word	0x1001fc0c
+100191b8:	1001fe28 	.word	0x1001fe28
 100191bc:	cccccccd 	.word	0xcccccccd
 100191c0:	9909      	ldr	r1, [sp, #36]	@ 0x24
 100191c2:	9807      	ldr	r0, [sp, #28]
@@ -19111,7 +19109,7 @@ __weak void SystemInit(void)
 10019490:	b25b      	sxtb	r3, r3
 10019492:	f7ff b83b 	b.w	1001850c <_svfprintf_r+0x524>
 10019496:	bf00      	nop
-10019498:	1001fe2c 	.word	0x1001fe2c
+10019498:	1001fe28 	.word	0x1001fe28
 1001949c:	9e08      	ldr	r6, [sp, #32]
 1001949e:	2302      	movs	r3, #2
 100194a0:	e9cd 3600 	strd	r3, r6, [sp]
@@ -19442,7 +19440,7 @@ __weak void SystemInit(void)
 100197f4:	f10d 08d4 	add.w	r8, sp, #212	@ 0xd4
 100197f8:	f7ff b9b3 	b.w	10018b62 <_svfprintf_r+0xb7a>
 100197fc:	cccccccd 	.word	0xcccccccd
-10019800:	1001fbfc 	.word	0x1001fbfc
+10019800:	1001fbf8 	.word	0x1001fbf8
 10019804:	40300000 	.word	0x40300000
 10019808:	3fe00000 	.word	0x3fe00000
 1001980c:	2378      	movs	r3, #120	@ 0x78
@@ -19749,12 +19747,12 @@ __weak void SystemInit(void)
 10019b16:	930e      	str	r3, [sp, #56]	@ 0x38
 10019b18:	e651      	b.n	100197be <_svfprintf_r+0x17d6>
 10019b1a:	bf00      	nop
-10019b1c:	1001fbe8 	.word	0x1001fbe8
-10019b20:	1001fe3c 	.word	0x1001fe3c
-10019b24:	1001fe2c 	.word	0x1001fe2c
-10019b28:	1001fbfc 	.word	0x1001fbfc
-10019b2c:	1001fbe0 	.word	0x1001fbe0
-10019b30:	1001fbe4 	.word	0x1001fbe4
+10019b1c:	1001fbe4 	.word	0x1001fbe4
+10019b20:	1001fe38 	.word	0x1001fe38
+10019b24:	1001fe28 	.word	0x1001fe28
+10019b28:	1001fbf8 	.word	0x1001fbf8
+10019b2c:	1001fbdc 	.word	0x1001fbdc
+10019b30:	1001fbe0 	.word	0x1001fbe0
 10019b34:	9b18      	ldr	r3, [sp, #96]	@ 0x60
 10019b36:	f8dd b020 	ldr.w	fp, [sp, #32]
 10019b3a:	1c5f      	adds	r7, r3, #1
@@ -19785,7 +19783,7 @@ __weak void SystemInit(void)
 10019b76:	9314      	str	r3, [sp, #80]	@ 0x50
 10019b78:	9310      	str	r3, [sp, #64]	@ 0x40
 10019b7a:	e782      	b.n	10019a82 <_svfprintf_r+0x1a9a>
-10019b7c:	1001fe2c 	.word	0x1001fe2c
+10019b7c:	1001fe28 	.word	0x1001fe28
 
 10019b80 <__smakebuf_r>:
 10019b80:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
@@ -20066,7 +20064,7 @@ __weak void SystemInit(void)
 10019eb4:	0009      	.short	0x0009
 10019eb6:	bf00      	nop
 10019eb8:	2000042c 	.word	0x2000042c
-10019ebc:	1001fca1 	.word	0x1001fca1
+10019ebc:	1001fc9d 	.word	0x1001fc9d
 10019ec0:	f444 63f0 	orr.w	r3, r4, #1920	@ 0x780
 10019ec4:	6cf8      	ldr	r0, [r7, #76]	@ 0x4c
 10019ec6:	64bb      	str	r3, [r7, #72]	@ 0x48
@@ -20692,9 +20690,9 @@ __weak void SystemInit(void)
 1001a5b4:	f933 2012 	ldrsh.w	r2, [r3, r2, lsl #1]
 1001a5b8:	e636      	b.n	1001a228 <__ssvfscanf_r+0x5cc>
 1001a5ba:	bf00      	nop
-1001a5bc:	1001fca1 	.word	0x1001fca1
+1001a5bc:	1001fc9d 	.word	0x1001fc9d
 1001a5c0:	2000042c 	.word	0x2000042c
-1001a5c4:	1001fe54 	.word	0x1001fe54
+1001a5c4:	1001fe50 	.word	0x1001fe50
 1001a5c8:	6cb9      	ldr	r1, [r7, #72]	@ 0x48
 1001a5ca:	f401 6318 	and.w	r3, r1, #2432	@ 0x980
 1001a5ce:	f5b3 7f80 	cmp.w	r3, #256	@ 0x100
@@ -21030,8 +21028,8 @@ __weak void SystemInit(void)
 1001a944:	643b      	str	r3, [r7, #64]	@ 0x40
 1001a946:	f7ff b9af 	b.w	10019ca8 <__ssvfscanf_r+0x4c>
 1001a94a:	bf00      	nop
-1001a94c:	1001fe54 	.word	0x1001fe54
-1001a950:	1001fca1 	.word	0x1001fca1
+1001a94c:	1001fe50 	.word	0x1001fe50
+1001a950:	1001fc9d 	.word	0x1001fc9d
 1001a954:	1001d1d9 	.word	0x1001d1d9
 1001a958:	1001d311 	.word	0x1001d311
 1001a95c:	2a00      	cmp	r2, #0
@@ -21438,7 +21436,7 @@ __weak void SystemInit(void)
 1001adc0:	e57a      	b.n	1001a8b8 <__ssvfscanf_r+0xc5c>
 1001adc2:	bf00      	nop
 1001adc4:	1001d311 	.word	0x1001d311
-1001adc8:	1001fe4c 	.word	0x1001fe4c
+1001adc8:	1001fe48 	.word	0x1001fe48
 1001adcc:	1001d1d9 	.word	0x1001d1d9
 1001add0:	f004 0310 	and.w	r3, r4, #16
 1001add4:	2d01      	cmp	r5, #1
@@ -21870,8 +21868,8 @@ __weak void SystemInit(void)
 1001b256:	f7fe bf07 	b.w	1001a068 <__ssvfscanf_r+0x40c>
 1001b25a:	bf00      	nop
 1001b25c:	1001d311 	.word	0x1001d311
-1001b260:	1001fca1 	.word	0x1001fca1
-1001b264:	1001f920 	.word	0x1001f920
+1001b260:	1001fc9d 	.word	0x1001fc9d
+1001b264:	1001f91c 	.word	0x1001f91c
 1001b268:	6cbb      	ldr	r3, [r7, #72]	@ 0x48
 1001b26a:	f423 63f0 	bic.w	r3, r3, #1920	@ 0x780
 1001b26e:	64bb      	str	r3, [r7, #72]	@ 0x48
@@ -22224,8 +22222,8 @@ __weak void SystemInit(void)
 1001b5d0:	4642      	mov	r2, r8
 1001b5d2:	21ba      	movs	r1, #186	@ 0xba
 1001b5d4:	f002 fa44 	bl	1001da60 <__assert_func>
-1001b5d8:	1001fdb4 	.word	0x1001fdb4
-1001b5dc:	1001fe78 	.word	0x1001fe78
+1001b5d8:	1001fdb0 	.word	0x1001fdb0
+1001b5dc:	1001fe74 	.word	0x1001fe74
 
 1001b5e0 <__s2b>:
 1001b5e0:	e92d 43f8 	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
@@ -22294,8 +22292,8 @@ __weak void SystemInit(void)
 1001b67e:	21d3      	movs	r1, #211	@ 0xd3
 1001b680:	f002 f9ee 	bl	1001da60 <__assert_func>
 1001b684:	38e38e39 	.word	0x38e38e39
-1001b688:	1001fdb4 	.word	0x1001fdb4
-1001b68c:	1001fe78 	.word	0x1001fe78
+1001b688:	1001fdb0 	.word	0x1001fdb0
+1001b68c:	1001fe74 	.word	0x1001fe74
 
 1001b690 <__hi0bits>:
 1001b690:	f5b0 3f80 	cmp.w	r0, #65536	@ 0x10000
@@ -22416,8 +22414,8 @@ __weak void SystemInit(void)
 1001b782:	6042      	str	r2, [r0, #4]
 1001b784:	6083      	str	r3, [r0, #8]
 1001b786:	e7de      	b.n	1001b746 <__i2b+0x12>
-1001b788:	1001fdb4 	.word	0x1001fdb4
-1001b78c:	1001fe78 	.word	0x1001fe78
+1001b788:	1001fdb0 	.word	0x1001fdb0
+1001b78c:	1001fe74 	.word	0x1001fe74
 
 1001b790 <__multiply>:
 1001b790:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
@@ -22552,8 +22550,8 @@ __weak void SystemInit(void)
 1001b8ea:	f44f 71b1 	mov.w	r1, #354	@ 0x162
 1001b8ee:	f002 f8b7 	bl	1001da60 <__assert_func>
 1001b8f2:	bf00      	nop
-1001b8f4:	1001fdb4 	.word	0x1001fdb4
-1001b8f8:	1001fe78 	.word	0x1001fe78
+1001b8f4:	1001fdb0 	.word	0x1001fdb0
+1001b8f8:	1001fe74 	.word	0x1001fe74
 
 1001b8fc <__pow5mult>:
 1001b8fc:	f012 0303 	ands.w	r3, r2, #3
@@ -22624,9 +22622,9 @@ __weak void SystemInit(void)
 1001b99a:	f240 1145 	movw	r1, #325	@ 0x145
 1001b99e:	f002 f85f 	bl	1001da60 <__assert_func>
 1001b9a2:	bf00      	nop
-1001b9a4:	1001fedc 	.word	0x1001fedc
-1001b9a8:	1001fdb4 	.word	0x1001fdb4
-1001b9ac:	1001fe78 	.word	0x1001fe78
+1001b9a4:	1001fed8 	.word	0x1001fed8
+1001b9a8:	1001fdb0 	.word	0x1001fdb0
+1001b9ac:	1001fe74 	.word	0x1001fe74
 
 1001b9b0 <__lshift>:
 1001b9b0:	e92d 47f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
@@ -22711,8 +22709,8 @@ __weak void SystemInit(void)
 1001ba8e:	f44f 71ef 	mov.w	r1, #478	@ 0x1de
 1001ba92:	f001 ffe5 	bl	1001da60 <__assert_func>
 1001ba96:	bf00      	nop
-1001ba98:	1001fdb4 	.word	0x1001fdb4
-1001ba9c:	1001fe78 	.word	0x1001fe78
+1001ba98:	1001fdb0 	.word	0x1001fdb0
+1001ba9c:	1001fe74 	.word	0x1001fe74
 
 1001baa0 <__mcmp>:
 1001baa0:	690b      	ldr	r3, [r1, #16]
@@ -22870,8 +22868,8 @@ __weak void SystemInit(void)
 1001bc32:	f240 2137 	movw	r1, #567	@ 0x237
 1001bc36:	f001 ff13 	bl	1001da60 <__assert_func>
 1001bc3a:	bf00      	nop
-1001bc3c:	1001fdb4 	.word	0x1001fdb4
-1001bc40:	1001fe78 	.word	0x1001fe78
+1001bc3c:	1001fdb0 	.word	0x1001fdb0
+1001bc40:	1001fe74 	.word	0x1001fe74
 
 1001bc44 <__ulp>:
 1001bc44:	4b11      	ldr	r3, [pc, #68]	@ (1001bc8c <__ulp+0x48>)
@@ -23047,8 +23045,8 @@ __weak void SystemInit(void)
 1001bdfa:	f240 310f 	movw	r1, #783	@ 0x30f
 1001bdfe:	f001 fe2f 	bl	1001da60 <__assert_func>
 1001be02:	bf00      	nop
-1001be04:	1001fdb4 	.word	0x1001fdb4
-1001be08:	1001fe78 	.word	0x1001fe78
+1001be04:	1001fdb0 	.word	0x1001fdb0
+1001be08:	1001fe74 	.word	0x1001fe74
 
 1001be0c <__ratio>:
 1001be0c:	e92d 43f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, lr}
@@ -23627,9 +23625,9 @@ __weak void SystemInit(void)
 1001c3d4:	4696      	mov	lr, r2
 1001c3d6:	f8cd 802c 	str.w	r8, [sp, #44]	@ 0x2c
 1001c3da:	e00e      	b.n	1001c3fa <_strtod_l+0x32a>
-1001c3dc:	1001f9c0 	.word	0x1001f9c0
+1001c3dc:	1001f9bc 	.word	0x1001f9bc
 1001c3e0:	1001ffe4 	.word	0x1001ffe4
-1001c3e4:	1001f920 	.word	0x1001f920
+1001c3e4:	1001f91c 	.word	0x1001f91c
 1001c3e8:	3201      	adds	r2, #1
 1001c3ea:	9219      	str	r2, [sp, #100]	@ 0x64
 1001c3ec:	f89e 7001 	ldrb.w	r7, [lr, #1]
@@ -24406,7 +24404,7 @@ __weak void SystemInit(void)
 1001cc24:	7fefffff 	.word	0x7fefffff
 1001cc28:	bff00000 	.word	0xbff00000
 1001cc2c:	1001fffc 	.word	0x1001fffc
-1001cc30:	1001f9c0 	.word	0x1001f9c0
+1001cc30:	1001f9bc 	.word	0x1001f9bc
 1001cc34:	1001ff10 	.word	0x1001ff10
 1001cc38:	49a4      	ldr	r1, [pc, #656]	@ (1001cecc <_strtod_l+0xdfc>)
 1001cc3a:	a819      	add	r0, sp, #100	@ 0x64
@@ -24948,7 +24946,7 @@ __weak void SystemInit(void)
 1001d1ce:	e7f8      	b.n	1001d1c2 <_strtol_l.constprop.0+0x122>
 1001d1d0:	4648      	mov	r0, r9
 1001d1d2:	e7b2      	b.n	1001d13a <_strtol_l.constprop.0+0x9a>
-1001d1d4:	1001fca1 	.word	0x1001fca1
+1001d1d4:	1001fc9d 	.word	0x1001fc9d
 
 1001d1d8 <_strtol_r>:
 1001d1d8:	f7ff bf62 	b.w	1001d0a0 <_strtol_l.constprop.0>
@@ -25064,7 +25062,7 @@ __weak void SystemInit(void)
 1001d302:	464b      	mov	r3, r9
 1001d304:	e798      	b.n	1001d238 <_strtoul_l.constprop.0+0x5c>
 1001d306:	bf00      	nop
-1001d308:	1001fca1 	.word	0x1001fca1
+1001d308:	1001fc9d 	.word	0x1001fc9d
 1001d30c:	19999999 	.word	0x19999999
 
 1001d310 <_strtoul_r>:
@@ -25434,7 +25432,7 @@ __weak void SystemInit(void)
 1001d666:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
 1001d66a:	e9cd 0100 	strd	r0, r1, [sp]
 1001d66e:	e7ce      	b.n	1001d60e <_strtoll_l.constprop.0+0x116>
-1001d670:	1001fca1 	.word	0x1001fca1
+1001d670:	1001fc9d 	.word	0x1001fc9d
 
 1001d674 <_strtoll_r>:
 1001d674:	f7ff bf40 	b.w	1001d4f8 <_strtoll_l.constprop.0>
@@ -25608,7 +25606,7 @@ __weak void SystemInit(void)
 1001d826:	464e      	mov	r6, r9
 1001d828:	e779      	b.n	1001d71e <_strtoull_l.constprop.0+0x7e>
 1001d82a:	bf00      	nop
-1001d82c:	1001fca1 	.word	0x1001fca1
+1001d82c:	1001fc9d 	.word	0x1001fc9d
 1001d830:	19999999 	.word	0x19999999
 
 1001d834 <_strtoull_r>:
@@ -25651,7 +25649,7 @@ __weak void SystemInit(void)
 1001d880:	bd70      	pop	{r4, r5, r6, pc}
 1001d882:	bf00      	nop
 1001d884:	2000042c 	.word	0x2000042c
-1001d888:	1001f920 	.word	0x1001f920
+1001d888:	1001f91c 	.word	0x1001f91c
 
 1001d88c <_wcsnrtombs_l>:
 1001d88c:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
@@ -25879,7 +25877,7 @@ __weak void SystemInit(void)
 1001da90:	20000598 	.word	0x20000598
 1001da94:	10020038 	.word	0x10020038
 1001da98:	10020048 	.word	0x10020048
-1001da9c:	1001f920 	.word	0x1001f920
+1001da9c:	1001f91c 	.word	0x1001f91c
 
 1001daa0 <__jp2uc>:
 1001daa0:	2902      	cmp	r1, #2
@@ -26485,7 +26483,7 @@ __weak void SystemInit(void)
 1001e0a0:	e729      	b.n	1001def6 <__gethex+0x156>
 1001e0a2:	bf00      	nop
 1001e0a4:	10026ba4 	.word	0x10026ba4
-1001e0a8:	1001f9c0 	.word	0x1001f9c0
+1001e0a8:	1001f9bc 	.word	0x1001f9bc
 1001e0ac:	9b0f      	ldr	r3, [sp, #60]	@ 0x3c
 1001e0ae:	f1c3 0301 	rsb	r3, r3, #1
 1001e0b2:	930f      	str	r3, [sp, #60]	@ 0x3c
@@ -26720,7 +26718,7 @@ __weak void SystemInit(void)
 1001e304:	f8ca 0010 	str.w	r0, [sl, #16]
 1001e308:	e738      	b.n	1001e17c <__gethex+0x3dc>
 1001e30a:	bf00      	nop
-1001e30c:	1001fdb4 	.word	0x1001fdb4
+1001e30c:	1001fdb0 	.word	0x1001fdb0
 1001e310:	10026b38 	.word	0x10026b38
 
 1001e314 <__match>:
@@ -28521,18 +28519,18 @@ __weak void SystemInit(void)
 1001f67c:	00203a73 	.word	0x00203a73
 1001f680:	7473694c 	.word	0x7473694c
 1001f684:	00000000 	.word	0x00000000
-1001f688:	78323025 	.word	0x78323025
-1001f68c:	00000000 	.word	0x00000000
-1001f690:	65642525 	.word	0x65642525
-1001f694:	3a677562 	.word	0x3a677562
-1001f698:	00000020 	.word	0x00000020
-1001f69c:	73726946 	.word	0x73726946
-1001f6a0:	6f622074 	.word	0x6f622074
-1001f6a4:	202c746f 	.word	0x202c746f
-1001f6a8:	74746573 	.word	0x74746573
-1001f6ac:	20676e69 	.word	0x20676e69
-1001f6b0:	73616c66 	.word	0x73616c66
-1001f6b4:	00002168 	.word	0x00002168
+1001f688:	65642525 	.word	0x65642525
+1001f68c:	3a677562 	.word	0x3a677562
+1001f690:	00000020 	.word	0x00000020
+1001f694:	73726946 	.word	0x73726946
+1001f698:	6f622074 	.word	0x6f622074
+1001f69c:	202c746f 	.word	0x202c746f
+1001f6a0:	74746573 	.word	0x74746573
+1001f6a4:	20676e69 	.word	0x20676e69
+1001f6a8:	73616c66 	.word	0x73616c66
+1001f6ac:	00002168 	.word	0x00002168
+1001f6b0:	78323025 	.word	0x78323025
+1001f6b4:	00000000 	.word	0x00000000
 1001f6b8:	72652525 	.word	0x72652525
 1001f6bc:	3a726f72 	.word	0x3a726f72
 1001f6c0:	00000020 	.word	0x00000020
@@ -28548,337 +28546,336 @@ __weak void SystemInit(void)
 1001f6e8:	6e656e6f 	.word	0x6e656e6f
 1001f6ec:	44492074 	.word	0x44492074
 1001f6f0:	7830203a 	.word	0x7830203a
-1001f6f4:	78383025 	.word	0x78383025
-1001f6f8:	766e6920 	.word	0x766e6920
-1001f6fc:	64696c61 	.word	0x64696c61
-1001f700:	0000000a 	.word	0x0000000a
-1001f704:	30257830 	.word	0x30257830
-1001f708:	253e7838 	.word	0x253e7838
-1001f70c:	00000a73 	.word	0x00000a73
-1001f710:	6c756f43 	.word	0x6c756f43
-1001f714:	6f6e2064 	.word	0x6f6e2064
-1001f718:	6f622074 	.word	0x6f622074
-1001f71c:	6320746f 	.word	0x6320746f
-1001f720:	6f706d6f 	.word	0x6f706d6f
-1001f724:	746e656e 	.word	0x746e656e
-1001f728:	00000000 	.word	0x00000000
-1001f72c:	78303e43 	.word	0x78303e43
-1001f730:	000a7825 	.word	0x000a7825
-1001f734:	00007325 	.word	0x00007325
-1001f738:	6c756f43 	.word	0x6c756f43
-1001f73c:	6f6e2064 	.word	0x6f6e2064
-1001f740:	74612074 	.word	0x74612074
-1001f744:	74736574 	.word	0x74736574
-1001f748:	6d6f6320 	.word	0x6d6f6320
-1001f74c:	656e6f70 	.word	0x656e6f70
-1001f750:	0000746e 	.word	0x0000746e
-1001f754:	706d6f43 	.word	0x706d6f43
-1001f758:	6e656e6f 	.word	0x6e656e6f
-1001f75c:	63207374 	.word	0x63207374
-1001f760:	646c756f 	.word	0x646c756f
-1001f764:	746f6e20 	.word	0x746f6e20
-1001f768:	20656220 	.word	0x20656220
-1001f76c:	696c6176 	.word	0x696c6176
-1001f770:	65746164 	.word	0x65746164
-1001f774:	00000064 	.word	0x00000064
-1001f778:	206c6c41 	.word	0x206c6c41
-1001f77c:	706d6f43 	.word	0x706d6f43
-1001f780:	6e656e6f 	.word	0x6e656e6f
-1001f784:	76207374 	.word	0x76207374
-1001f788:	64696c61 	.word	0x64696c61
-1001f78c:	64657461 	.word	0x64657461
-1001f790:	00000000 	.word	0x00000000
-1001f794:	6c696146 	.word	0x6c696146
-1001f798:	74206465 	.word	0x74206465
-1001f79c:	6f62206f 	.word	0x6f62206f
-1001f7a0:	6120746f 	.word	0x6120746f
-1001f7a4:	63206c6c 	.word	0x63206c6c
-1001f7a8:	6f706d6f 	.word	0x6f706d6f
-1001f7ac:	746e656e 	.word	0x746e656e
-1001f7b0:	00000073 	.word	0x00000073
-1001f7b4:	746f6f62 	.word	0x746f6f62
-1001f7b8:	00706120 	.word	0x00706120
-1001f7bc:	253e5041 	.word	0x253e5041
-1001f7c0:	00000a73 	.word	0x00000a73
-1001f7c4:	746f6f42 	.word	0x746f6f42
-1001f7c8:	00000000 	.word	0x00000000
-1001f7cc:	65746e45 	.word	0x65746e45
-1001f7d0:	69702072 	.word	0x69702072
-1001f7d4:	00203a6e 	.word	0x00203a6e
-1001f7d8:	61346337 	.word	0x61346337
-1001f7dc:	39306438 	.word	0x39306438
-1001f7e0:	37336163 	.word	0x37336163
-1001f7e4:	66613236 	.word	0x66613236
-1001f7e8:	35653136 	.word	0x35653136
-1001f7ec:	30323539 	.word	0x30323539
-1001f7f0:	64333439 	.word	0x64333439
-1001f7f4:	34363263 	.word	0x34363263
-1001f7f8:	38663439 	.word	0x38663439
-1001f7fc:	62313439 	.word	0x62313439
-1001f800:	00000000 	.word	0x00000000
-1001f804:	206e6950 	.word	0x206e6950
-1001f808:	65636341 	.word	0x65636341
-1001f80c:	64657470 	.word	0x64657470
-1001f810:	00000021 	.word	0x00000021
-1001f814:	61766e49 	.word	0x61766e49
-1001f818:	2064696c 	.word	0x2064696c
-1001f81c:	214e4950 	.word	0x214e4950
-1001f820:	00000000 	.word	0x00000000
-1001f824:	706d6f43 	.word	0x706d6f43
-1001f828:	6e656e6f 	.word	0x6e656e6f
-1001f82c:	44492074 	.word	0x44492074
-1001f830:	0000203a 	.word	0x0000203a
-1001f834:	00007825 	.word	0x00007825
-1001f838:	65747441 	.word	0x65747441
-1001f83c:	00007473 	.word	0x00007473
-1001f840:	65746e45 	.word	0x65746e45
-1001f844:	6f742072 	.word	0x6f742072
-1001f848:	3a6e656b 	.word	0x3a6e656b
-1001f84c:	00000020 	.word	0x00000020
-1001f850:	35356566 	.word	0x35356566
-1001f854:	38653736 	.word	0x38653736
-1001f858:	39363764 	.word	0x39363764
-1001f85c:	38303535 	.word	0x38303535
-1001f860:	38313235 	.word	0x38313235
-1001f864:	66646332 	.word	0x66646332
-1001f868:	37643936 	.word	0x37643936
-1001f86c:	31626234 	.word	0x31626234
-1001f870:	66666436 	.word	0x66666436
-1001f874:	39326538 	.word	0x39326538
-1001f878:	00000000 	.word	0x00000000
-1001f87c:	656b6f54 	.word	0x656b6f54
-1001f880:	6341206e 	.word	0x6341206e
-1001f884:	74706563 	.word	0x74706563
-1001f888:	00216465 	.word	0x00216465
-1001f88c:	61766e49 	.word	0x61766e49
-1001f890:	2064696c 	.word	0x2064696c
-1001f894:	656b6f54 	.word	0x656b6f54
-1001f898:	0000216e 	.word	0x0000216e
-1001f89c:	706d6f43 	.word	0x706d6f43
-1001f8a0:	6e656e6f 	.word	0x6e656e6f
-1001f8a4:	44492074 	.word	0x44492074
-1001f8a8:	3a6e4920 	.word	0x3a6e4920
-1001f8ac:	00000020 	.word	0x00000020
-1001f8b0:	706d6f43 	.word	0x706d6f43
-1001f8b4:	6e656e6f 	.word	0x6e656e6f
-1001f8b8:	44492074 	.word	0x44492074
-1001f8bc:	74754f20 	.word	0x74754f20
-1001f8c0:	0000203a 	.word	0x0000203a
-1001f8c4:	6c706552 	.word	0x6c706552
-1001f8c8:	64656361 	.word	0x64656361
-1001f8cc:	25783020 	.word	0x25783020
-1001f8d0:	20783830 	.word	0x20783830
-1001f8d4:	68746977 	.word	0x68746977
-1001f8d8:	25783020 	.word	0x25783020
-1001f8dc:	0a783830 	.word	0x0a783830
-1001f8e0:	00000000 	.word	0x00000000
-1001f8e4:	6c706552 	.word	0x6c706552
-1001f8e8:	00656361 	.word	0x00656361
-1001f8ec:	706d6f43 	.word	0x706d6f43
-1001f8f0:	6e656e6f 	.word	0x6e656e6f
-1001f8f4:	78302074 	.word	0x78302074
-1001f8f8:	78383025 	.word	0x78383025
-1001f8fc:	20736920 	.word	0x20736920
-1001f900:	20746f6e 	.word	0x20746f6e
-1001f904:	766f7270 	.word	0x766f7270
-1001f908:	6f697369 	.word	0x6f697369
-1001f90c:	2064656e 	.word	0x2064656e
-1001f910:	20726f66 	.word	0x20726f66
-1001f914:	20656874 	.word	0x20656874
-1001f918:	74737973 	.word	0x74737973
-1001f91c:	0a0d6d65 	.word	0x0a0d6d65
-1001f920:	00000000 	.word	0x00000000
-1001f924:	65746e45 	.word	0x65746e45
-1001f928:	6f432072 	.word	0x6f432072
-1001f92c:	6e616d6d 	.word	0x6e616d6d
-1001f930:	00203a64 	.word	0x00203a64
-1001f934:	7473696c 	.word	0x7473696c
-1001f938:	00000000 	.word	0x00000000
-1001f93c:	746f6f62 	.word	0x746f6f62
-1001f940:	00000000 	.word	0x00000000
-1001f944:	6c706572 	.word	0x6c706572
-1001f948:	00656361 	.word	0x00656361
-1001f94c:	65747461 	.word	0x65747461
-1001f950:	00007473 	.word	0x00007473
-1001f954:	1001f934 	.word	0x1001f934
-1001f958:	1000e295 	.word	0x1000e295
-1001f95c:	1001f93c 	.word	0x1001f93c
-1001f960:	1000e6cd 	.word	0x1000e6cd
-1001f964:	1001f944 	.word	0x1001f944
-1001f968:	1000e979 	.word	0x1000e979
-1001f96c:	1001f94c 	.word	0x1001f94c
-1001f970:	1000e859 	.word	0x1000e859
-1001f974:	63612525 	.word	0x63612525
-1001f978:	0a25256b 	.word	0x0a25256b
-1001f97c:	00000000 	.word	0x00000000
-1001f980:	203e2d20 	.word	0x203e2d20
-1001f984:	65746e49 	.word	0x65746e49
-1001f988:	70757272 	.word	0x70757272
-1001f98c:	28202174 	.word	0x28202174
-1001f990:	73616c46 	.word	0x73616c46
-1001f994:	63612068 	.word	0x63612068
-1001f998:	73736563 	.word	0x73736563
-1001f99c:	69616620 	.word	0x69616620
-1001f9a0:	6572756c 	.word	0x6572756c
-1001f9a4:	00000a29 	.word	0x00000a29
-1001f9a8:	6c696146 	.word	0x6c696146
-1001f9ac:	74206465 	.word	0x74206465
-1001f9b0:	6e69206f 	.word	0x6e69206f
-1001f9b4:	61697469 	.word	0x61697469
-1001f9b8:	657a696c 	.word	0x657a696c
-1001f9bc:	43324920 	.word	0x43324920
-1001f9c0:	0000002e 	.word	0x0000002e
-1001f9c4:	5f43584d 	.word	0x5f43584d
-1001f9c8:	45535341 	.word	0x45535341
-1001f9cc:	25205452 	.word	0x25205452
-1001f9d0:	25232073 	.word	0x25232073
-1001f9d4:	28203a64 	.word	0x28203a64
-1001f9d8:	0a297325 	.word	0x0a297325
-1001f9dc:	00000000 	.word	0x00000000
-1001f9e0:	6573552f 	.word	0x6573552f
-1001f9e4:	732f7372 	.word	0x732f7372
-1001f9e8:	6c696f70 	.word	0x6c696f70
-1001f9ec:	442f7265 	.word	0x442f7265
-1001f9f0:	6d75636f 	.word	0x6d75636f
-1001f9f4:	73746e65 	.word	0x73746e65
-1001f9f8:	7469472f 	.word	0x7469472f
-1001f9fc:	2f627548 	.word	0x2f627548
-1001fa00:	2d544143 	.word	0x2d544143
-1001fa04:	66746365 	.word	0x66746365
-1001fa08:	3230322d 	.word	0x3230322d
-1001fa0c:	736d2f34 	.word	0x736d2f34
-1001fa10:	4c2f6b64 	.word	0x4c2f6b64
-1001fa14:	61726269 	.word	0x61726269
-1001fa18:	73656972 	.word	0x73656972
-1001fa1c:	616f422f 	.word	0x616f422f
-1001fa20:	2f736472 	.word	0x2f736472
-1001fa24:	3758414d 	.word	0x3758414d
-1001fa28:	30303038 	.word	0x30303038
-1001fa2c:	4854462f 	.word	0x4854462f
-1001fa30:	65525f52 	.word	0x65525f52
-1001fa34:	532f4176 	.word	0x532f4176
-1001fa38:	6372756f 	.word	0x6372756f
-1001fa3c:	6f622f65 	.word	0x6f622f65
-1001fa40:	2e647261 	.word	0x2e647261
-1001fa44:	00000063 	.word	0x00000063
-1001fa48:	4c494146 	.word	0x4c494146
-1001fa4c:	00000000 	.word	0x00000000
+1001f6f4:	69207825 	.word	0x69207825
+1001f6f8:	6c61766e 	.word	0x6c61766e
+1001f6fc:	000a6469 	.word	0x000a6469
+1001f700:	78257830 	.word	0x78257830
+1001f704:	0a73253e 	.word	0x0a73253e
+1001f708:	00000000 	.word	0x00000000
+1001f70c:	6c756f43 	.word	0x6c756f43
+1001f710:	6f6e2064 	.word	0x6f6e2064
+1001f714:	6f622074 	.word	0x6f622074
+1001f718:	6320746f 	.word	0x6320746f
+1001f71c:	6f706d6f 	.word	0x6f706d6f
+1001f720:	746e656e 	.word	0x746e656e
+1001f724:	00000000 	.word	0x00000000
+1001f728:	78303e43 	.word	0x78303e43
+1001f72c:	000a7825 	.word	0x000a7825
+1001f730:	00007325 	.word	0x00007325
+1001f734:	6c756f43 	.word	0x6c756f43
+1001f738:	6f6e2064 	.word	0x6f6e2064
+1001f73c:	74612074 	.word	0x74612074
+1001f740:	74736574 	.word	0x74736574
+1001f744:	6d6f6320 	.word	0x6d6f6320
+1001f748:	656e6f70 	.word	0x656e6f70
+1001f74c:	0000746e 	.word	0x0000746e
+1001f750:	706d6f43 	.word	0x706d6f43
+1001f754:	6e656e6f 	.word	0x6e656e6f
+1001f758:	63207374 	.word	0x63207374
+1001f75c:	646c756f 	.word	0x646c756f
+1001f760:	746f6e20 	.word	0x746f6e20
+1001f764:	20656220 	.word	0x20656220
+1001f768:	696c6176 	.word	0x696c6176
+1001f76c:	65746164 	.word	0x65746164
+1001f770:	00000064 	.word	0x00000064
+1001f774:	206c6c41 	.word	0x206c6c41
+1001f778:	706d6f43 	.word	0x706d6f43
+1001f77c:	6e656e6f 	.word	0x6e656e6f
+1001f780:	76207374 	.word	0x76207374
+1001f784:	64696c61 	.word	0x64696c61
+1001f788:	64657461 	.word	0x64657461
+1001f78c:	00000000 	.word	0x00000000
+1001f790:	6c696146 	.word	0x6c696146
+1001f794:	74206465 	.word	0x74206465
+1001f798:	6f62206f 	.word	0x6f62206f
+1001f79c:	6120746f 	.word	0x6120746f
+1001f7a0:	63206c6c 	.word	0x63206c6c
+1001f7a4:	6f706d6f 	.word	0x6f706d6f
+1001f7a8:	746e656e 	.word	0x746e656e
+1001f7ac:	00000073 	.word	0x00000073
+1001f7b0:	746f6f62 	.word	0x746f6f62
+1001f7b4:	00706120 	.word	0x00706120
+1001f7b8:	253e5041 	.word	0x253e5041
+1001f7bc:	00000a73 	.word	0x00000a73
+1001f7c0:	746f6f42 	.word	0x746f6f42
+1001f7c4:	00000000 	.word	0x00000000
+1001f7c8:	65746e45 	.word	0x65746e45
+1001f7cc:	69702072 	.word	0x69702072
+1001f7d0:	00203a6e 	.word	0x00203a6e
+1001f7d4:	61346337 	.word	0x61346337
+1001f7d8:	39306438 	.word	0x39306438
+1001f7dc:	37336163 	.word	0x37336163
+1001f7e0:	66613236 	.word	0x66613236
+1001f7e4:	35653136 	.word	0x35653136
+1001f7e8:	30323539 	.word	0x30323539
+1001f7ec:	64333439 	.word	0x64333439
+1001f7f0:	34363263 	.word	0x34363263
+1001f7f4:	38663439 	.word	0x38663439
+1001f7f8:	62313439 	.word	0x62313439
+1001f7fc:	00000000 	.word	0x00000000
+1001f800:	206e6950 	.word	0x206e6950
+1001f804:	65636341 	.word	0x65636341
+1001f808:	64657470 	.word	0x64657470
+1001f80c:	00000021 	.word	0x00000021
+1001f810:	61766e49 	.word	0x61766e49
+1001f814:	2064696c 	.word	0x2064696c
+1001f818:	214e4950 	.word	0x214e4950
+1001f81c:	00000000 	.word	0x00000000
+1001f820:	706d6f43 	.word	0x706d6f43
+1001f824:	6e656e6f 	.word	0x6e656e6f
+1001f828:	44492074 	.word	0x44492074
+1001f82c:	0000203a 	.word	0x0000203a
+1001f830:	00007825 	.word	0x00007825
+1001f834:	65747441 	.word	0x65747441
+1001f838:	00007473 	.word	0x00007473
+1001f83c:	65746e45 	.word	0x65746e45
+1001f840:	6f742072 	.word	0x6f742072
+1001f844:	3a6e656b 	.word	0x3a6e656b
+1001f848:	00000020 	.word	0x00000020
+1001f84c:	35356566 	.word	0x35356566
+1001f850:	38653736 	.word	0x38653736
+1001f854:	39363764 	.word	0x39363764
+1001f858:	38303535 	.word	0x38303535
+1001f85c:	38313235 	.word	0x38313235
+1001f860:	66646332 	.word	0x66646332
+1001f864:	37643936 	.word	0x37643936
+1001f868:	31626234 	.word	0x31626234
+1001f86c:	66666436 	.word	0x66666436
+1001f870:	39326538 	.word	0x39326538
+1001f874:	00000000 	.word	0x00000000
+1001f878:	656b6f54 	.word	0x656b6f54
+1001f87c:	6341206e 	.word	0x6341206e
+1001f880:	74706563 	.word	0x74706563
+1001f884:	00216465 	.word	0x00216465
+1001f888:	61766e49 	.word	0x61766e49
+1001f88c:	2064696c 	.word	0x2064696c
+1001f890:	656b6f54 	.word	0x656b6f54
+1001f894:	0000216e 	.word	0x0000216e
+1001f898:	706d6f43 	.word	0x706d6f43
+1001f89c:	6e656e6f 	.word	0x6e656e6f
+1001f8a0:	44492074 	.word	0x44492074
+1001f8a4:	3a6e4920 	.word	0x3a6e4920
+1001f8a8:	00000020 	.word	0x00000020
+1001f8ac:	706d6f43 	.word	0x706d6f43
+1001f8b0:	6e656e6f 	.word	0x6e656e6f
+1001f8b4:	44492074 	.word	0x44492074
+1001f8b8:	74754f20 	.word	0x74754f20
+1001f8bc:	0000203a 	.word	0x0000203a
+1001f8c0:	6c706552 	.word	0x6c706552
+1001f8c4:	64656361 	.word	0x64656361
+1001f8c8:	25783020 	.word	0x25783020
+1001f8cc:	20783830 	.word	0x20783830
+1001f8d0:	68746977 	.word	0x68746977
+1001f8d4:	25783020 	.word	0x25783020
+1001f8d8:	0a783830 	.word	0x0a783830
+1001f8dc:	00000000 	.word	0x00000000
+1001f8e0:	6c706552 	.word	0x6c706552
+1001f8e4:	00656361 	.word	0x00656361
+1001f8e8:	706d6f43 	.word	0x706d6f43
+1001f8ec:	6e656e6f 	.word	0x6e656e6f
+1001f8f0:	78302074 	.word	0x78302074
+1001f8f4:	78383025 	.word	0x78383025
+1001f8f8:	20736920 	.word	0x20736920
+1001f8fc:	20746f6e 	.word	0x20746f6e
+1001f900:	766f7270 	.word	0x766f7270
+1001f904:	6f697369 	.word	0x6f697369
+1001f908:	2064656e 	.word	0x2064656e
+1001f90c:	20726f66 	.word	0x20726f66
+1001f910:	20656874 	.word	0x20656874
+1001f914:	74737973 	.word	0x74737973
+1001f918:	0a0d6d65 	.word	0x0a0d6d65
+1001f91c:	00000000 	.word	0x00000000
+1001f920:	65746e45 	.word	0x65746e45
+1001f924:	6f432072 	.word	0x6f432072
+1001f928:	6e616d6d 	.word	0x6e616d6d
+1001f92c:	00203a64 	.word	0x00203a64
+1001f930:	7473696c 	.word	0x7473696c
+1001f934:	00000000 	.word	0x00000000
+1001f938:	746f6f62 	.word	0x746f6f62
+1001f93c:	00000000 	.word	0x00000000
+1001f940:	6c706572 	.word	0x6c706572
+1001f944:	00656361 	.word	0x00656361
+1001f948:	65747461 	.word	0x65747461
+1001f94c:	00007473 	.word	0x00007473
+1001f950:	1001f930 	.word	0x1001f930
+1001f954:	1000e295 	.word	0x1000e295
+1001f958:	1001f938 	.word	0x1001f938
+1001f95c:	1000e6cd 	.word	0x1000e6cd
+1001f960:	1001f940 	.word	0x1001f940
+1001f964:	1000e979 	.word	0x1000e979
+1001f968:	1001f948 	.word	0x1001f948
+1001f96c:	1000e859 	.word	0x1000e859
+1001f970:	63612525 	.word	0x63612525
+1001f974:	0a25256b 	.word	0x0a25256b
+1001f978:	00000000 	.word	0x00000000
+1001f97c:	203e2d20 	.word	0x203e2d20
+1001f980:	65746e49 	.word	0x65746e49
+1001f984:	70757272 	.word	0x70757272
+1001f988:	28202174 	.word	0x28202174
+1001f98c:	73616c46 	.word	0x73616c46
+1001f990:	63612068 	.word	0x63612068
+1001f994:	73736563 	.word	0x73736563
+1001f998:	69616620 	.word	0x69616620
+1001f99c:	6572756c 	.word	0x6572756c
+1001f9a0:	00000a29 	.word	0x00000a29
+1001f9a4:	6c696146 	.word	0x6c696146
+1001f9a8:	74206465 	.word	0x74206465
+1001f9ac:	6e69206f 	.word	0x6e69206f
+1001f9b0:	61697469 	.word	0x61697469
+1001f9b4:	657a696c 	.word	0x657a696c
+1001f9b8:	43324920 	.word	0x43324920
+1001f9bc:	0000002e 	.word	0x0000002e
+1001f9c0:	5f43584d 	.word	0x5f43584d
+1001f9c4:	45535341 	.word	0x45535341
+1001f9c8:	25205452 	.word	0x25205452
+1001f9cc:	25232073 	.word	0x25232073
+1001f9d0:	28203a64 	.word	0x28203a64
+1001f9d4:	0a297325 	.word	0x0a297325
+1001f9d8:	00000000 	.word	0x00000000
+1001f9dc:	6573552f 	.word	0x6573552f
+1001f9e0:	732f7372 	.word	0x732f7372
+1001f9e4:	6c696f70 	.word	0x6c696f70
+1001f9e8:	442f7265 	.word	0x442f7265
+1001f9ec:	6d75636f 	.word	0x6d75636f
+1001f9f0:	73746e65 	.word	0x73746e65
+1001f9f4:	7469472f 	.word	0x7469472f
+1001f9f8:	2f627548 	.word	0x2f627548
+1001f9fc:	2d544143 	.word	0x2d544143
+1001fa00:	66746365 	.word	0x66746365
+1001fa04:	3230322d 	.word	0x3230322d
+1001fa08:	736d2f34 	.word	0x736d2f34
+1001fa0c:	4c2f6b64 	.word	0x4c2f6b64
+1001fa10:	61726269 	.word	0x61726269
+1001fa14:	73656972 	.word	0x73656972
+1001fa18:	616f422f 	.word	0x616f422f
+1001fa1c:	2f736472 	.word	0x2f736472
+1001fa20:	3758414d 	.word	0x3758414d
+1001fa24:	30303038 	.word	0x30303038
+1001fa28:	4854462f 	.word	0x4854462f
+1001fa2c:	65525f52 	.word	0x65525f52
+1001fa30:	532f4176 	.word	0x532f4176
+1001fa34:	6372756f 	.word	0x6372756f
+1001fa38:	6f622f65 	.word	0x6f622f65
+1001fa3c:	2e647261 	.word	0x2e647261
+1001fa40:	00000063 	.word	0x00000063
+1001fa44:	4c494146 	.word	0x4c494146
+1001fa48:	00000000 	.word	0x00000000
 
-1001fa50 <num_leds>:
-1001fa50:	00000003                                ....
+1001fa4c <num_leds>:
+1001fa4c:	00000003                                ....
 
-1001fa54 <led_pin>:
-1001fa54:	40080400 00000001 00010001 40080400     ...@...........@
-1001fa64:	00000002 00010001 40080400 00000004     ...........@....
-1001fa74:	00010001                                ....
+1001fa50 <led_pin>:
+1001fa50:	40080400 00000001 00010001 40080400     ...@...........@
+1001fa60:	00000002 00010001 40080400 00000004     ...........@....
+1001fa70:	00010001                                ....
 
-1001fa78 <num_pbs>:
-1001fa78:	00000002                                ....
+1001fa74 <num_pbs>:
+1001fa74:	00000002                                ....
 
-1001fa7c <pb_pin>:
-1001fa7c:	40008000 00000004 00010100 40009000     ...@...........@
-1001fa8c:	00000080 00010100 6573552f 732f7372     ......../Users/s
-1001fa9c:	6c696f70 442f7265 6d75636f 73746e65     poiler/Documents
-1001faac:	7469472f 2f627548 2d544143 66746365     /GitHub/CAT-ectf
-1001fabc:	3230322d 736d2f34 4c2f6b64 61726269     -2024/msdk/Libra
-1001facc:	73656972 73694d2f 69724463 73726576     ries/MiscDrivers
-1001fadc:	44454c2f 64656c2f 0000632e 20786469     /LED/led.c..idx 
-1001faec:	756e203c 656c5f6d 00007364              < num_leds..
+1001fa78 <pb_pin>:
+1001fa78:	40008000 00000004 00010100 40009000     ...@...........@
+1001fa88:	00000080 00010100 6573552f 732f7372     ......../Users/s
+1001fa98:	6c696f70 442f7265 6d75636f 73746e65     poiler/Documents
+1001faa8:	7469472f 2f627548 2d544143 66746365     /GitHub/CAT-ectf
+1001fab8:	3230322d 736d2f34 4c2f6b64 61726269     -2024/msdk/Libra
+1001fac8:	73656972 73694d2f 69724463 73726576     ries/MiscDrivers
+1001fad8:	44454c2f 64656c2f 0000632e 20786469     /LED/led.c..idx 
+1001fae8:	756e203c 656c5f6d 00007364              < num_leds..
 
-1001faf8 <gpio_cfg_extclk>:
-1001faf8:	40008000 00000008 00000002              ...@........
+1001faf4 <gpio_cfg_extclk>:
+1001faf4:	40008000 00000008 00000002              ...@........
 
-1001fb04 <gpio_cfg_i2c0>:
-1001fb04:	40008000 00000c00 00000002              ...@........
+1001fb00 <gpio_cfg_i2c0>:
+1001fb00:	40008000 00000c00 00000002              ...@........
 
-1001fb10 <gpio_cfg_i2c1>:
-1001fb10:	40008000 00030000 00000002              ...@........
+1001fb0c <gpio_cfg_i2c1>:
+1001fb0c:	40008000 00030000 00000002              ...@........
 
-1001fb1c <gpio_cfg_i2c2>:
-1001fb1c:	40008000 c0000000 00000002              ...@........
+1001fb18 <gpio_cfg_i2c2>:
+1001fb18:	40008000 c0000000 00000002              ...@........
 
-1001fb28 <gpio_cfg_uart0>:
-1001fb28:	40008000 00000003 00000002              ...@........
+1001fb24 <gpio_cfg_uart0>:
+1001fb24:	40008000 00000003 00000002              ...@........
 
-1001fb34 <gpio_cfg_uart1>:
-1001fb34:	40008000 00003000 00000002              ...@.0......
+1001fb30 <gpio_cfg_uart1>:
+1001fb30:	40008000 00003000 00000002              ...@.0......
 
-1001fb40 <gpio_cfg_uart2>:
-1001fb40:	40009000 00000003 00000002              ...@........
+1001fb3c <gpio_cfg_uart2>:
+1001fb3c:	40009000 00000003 00000002              ...@........
 
-1001fb4c <gpio_cfg_uart3>:
-1001fb4c:	40080400 000000c0 00000003 552f3a43     ...@........C:/U
-1001fb5c:	73726573 61434a2f 72657472 65722f33     sers/JCarter3/re
-1001fb6c:	2f736f70 6b726f66 64736d2f 694c2f6b     pos/fork/msdk/Li
-1001fb7c:	72617262 2f736569 49534d43 2e2e2f53     braries/CMSIS/..
-1001fb8c:	7265502f 44687069 65766972 532f7372     /PeriphDrivers/S
-1001fb9c:	6372756f 50472f65 672f4f49 5f6f6970     ource/GPIO/gpio_
-1001fbac:	6d6d6f63 632e6e6f 00000000 74726f70     common.c....port
-1001fbbc:	4d203c20 435f4358 475f4746 5f4f4950      < MXC_CFG_GPIO_
-1001fbcc:	54534e49 45434e41 00000053 00464e49     INSTANCES...INF.
-1001fbdc:	00666e69 004e414e 006e616e 33323130     inf.NAN.nan.0123
-1001fbec:	37363534 62613938 66656463 00000000     456789abcdef....
-1001fbfc:	33323130 37363534 42413938 46454443     0123456789ABCDEF
-1001fc0c:	00000000 6c756e28 0000296c 00000030     ....(null)..0...
+1001fb48 <gpio_cfg_uart3>:
+1001fb48:	40080400 000000c0 00000003 552f3a43     ...@........C:/U
+1001fb58:	73726573 61434a2f 72657472 65722f33     sers/JCarter3/re
+1001fb68:	2f736f70 6b726f66 64736d2f 694c2f6b     pos/fork/msdk/Li
+1001fb78:	72617262 2f736569 49534d43 2e2e2f53     braries/CMSIS/..
+1001fb88:	7265502f 44687069 65766972 532f7372     /PeriphDrivers/S
+1001fb98:	6372756f 50472f65 672f4f49 5f6f6970     ource/GPIO/gpio_
+1001fba8:	6d6d6f63 632e6e6f 00000000 74726f70     common.c....port
+1001fbb8:	4d203c20 435f4358 475f4746 5f4f4950      < MXC_CFG_GPIO_
+1001fbc8:	54534e49 45434e41 00000053 00464e49     INSTANCES...INF.
+1001fbd8:	00666e69 004e414e 006e616e 33323130     inf.NAN.nan.0123
+1001fbe8:	37363534 62613938 66656463 00000000     456789abcdef....
+1001fbf8:	33323130 37363534 42413938 46454443     0123456789ABCDEF
+1001fc08:	00000000 6c756e28 0000296c 00000030     ....(null)..0...
 
-1001fc1c <zeroes.0>:
-1001fc1c:	30303030 30303030 30303030 30303030     0000000000000000
+1001fc18 <zeroes.0>:
+1001fc18:	30303030 30303030 30303030 30303030     0000000000000000
 
-1001fc2c <blanks.1>:
-1001fc2c:	20202020 20202020 20202020 20202020                     
+1001fc28 <blanks.1>:
+1001fc28:	20202020 20202020 20202020 20202020                     
 
-1001fc3c <zeroes.0>:
-1001fc3c:	30303030 30303030 30303030 30303030     0000000000000000
+1001fc38 <zeroes.0>:
+1001fc38:	30303030 30303030 30303030 30303030     0000000000000000
 
-1001fc4c <blanks.1>:
-1001fc4c:	20202020 20202020 20202020 20202020                     
-1001fc5c:	435f434c 414c4c4f 00004554 435f434c     LC_COLLATE..LC_C
-1001fc6c:	45505954 00000000 4d5f434c 54454e4f     TYPE....LC_MONET
-1001fc7c:	00595241 4e5f434c 52454d55 00004349     ARY.LC_NUMERIC..
-1001fc8c:	545f434c 00454d49 4d5f434c 41535345     LC_TIME.LC_MESSA
-1001fc9c:	00534547                                GES.
+1001fc48 <blanks.1>:
+1001fc48:	20202020 20202020 20202020 20202020                     
+1001fc58:	435f434c 414c4c4f 00004554 435f434c     LC_COLLATE..LC_C
+1001fc68:	45505954 00000000 4d5f434c 54454e4f     TYPE....LC_MONET
+1001fc78:	00595241 4e5f434c 52454d55 00004349     ARY.LC_NUMERIC..
+1001fc88:	545f434c 00454d49 4d5f434c 41535345     LC_TIME.LC_MESSA
+1001fc98:	00534547                                GES.
 
-1001fca0 <_ctype_>:
-1001fca0:	20202000 20202020 28282020 20282828     .         ((((( 
-1001fcb0:	20202020 20202020 20202020 20202020                     
-1001fcc0:	10108820 10101010 10101010 10101010      ...............
-1001fcd0:	04040410 04040404 10040404 10101010     ................
-1001fce0:	41411010 41414141 01010101 01010101     ..AAAAAA........
-1001fcf0:	01010101 01010101 01010101 10101010     ................
-1001fd00:	42421010 42424242 02020202 02020202     ..BBBBBB........
-1001fd10:	02020202 02020202 02020202 10101010     ................
-1001fd20:	00000020 00000000 00000000 00000000      ...............
+1001fc9c <_ctype_>:
+1001fc9c:	20202000 20202020 28282020 20282828     .         ((((( 
+1001fcac:	20202020 20202020 20202020 20202020                     
+1001fcbc:	10108820 10101010 10101010 10101010      ...............
+1001fccc:	04040410 04040404 10040404 10101010     ................
+1001fcdc:	41411010 41414141 01010101 01010101     ..AAAAAA........
+1001fcec:	01010101 01010101 01010101 10101010     ................
+1001fcfc:	42421010 42424242 02020202 02020202     ..BBBBBB........
+1001fd0c:	02020202 02020202 02020202 10101010     ................
+1001fd1c:	00000020 00000000 00000000 00000000      ...............
 	...
-1001fda4:	69666e49 7974696e 00000000 004e614e     Infinity....NaN.
-1001fdb4:	6c6c6142 7320636f 65636375 64656465     Balloc succeeded
-1001fdc4:	00000000 6c6f562f 73656d75 7461642f     ..../Volumes/dat
-1001fdd4:	656a2f61 6e696b6e 6f772f73 70736b72     a/jenkins/worksp
-1001fde4:	2f656361 2d554e47 6c6f6f74 69616863     ace/GNU-toolchai
-1001fdf4:	72612f6e 32312d6d 6372732f 77656e2f     n/arm-12/src/new
-1001fe04:	2d62696c 77677963 6e2f6e69 696c7765     lib-cygwin/newli
-1001fe14:	696c2f62 732f6362 696c6474 74642f62     b/libc/stdlib/dt
-1001fe24:	632e616f 00000000                       oa.c....
+1001fda0:	69666e49 7974696e 00000000 004e614e     Infinity....NaN.
+1001fdb0:	6c6c6142 7320636f 65636375 64656465     Balloc succeeded
+1001fdc0:	00000000 6c6f562f 73656d75 7461642f     ..../Volumes/dat
+1001fdd0:	656a2f61 6e696b6e 6f772f73 70736b72     a/jenkins/worksp
+1001fde0:	2f656361 2d554e47 6c6f6f74 69616863     ace/GNU-toolchai
+1001fdf0:	72612f6e 32312d6d 6372732f 77656e2f     n/arm-12/src/new
+1001fe00:	2d62696c 77677963 6e2f6e69 696c7765     lib-cygwin/newli
+1001fe10:	696c2f62 732f6362 696c6474 74642f62     b/libc/stdlib/dt
+1001fe20:	632e616f 00000000                       oa.c....
 
-1001fe2c <zeroes.0>:
-1001fe2c:	30303030 30303030 30303030 30303030     0000000000000000
+1001fe28 <zeroes.0>:
+1001fe28:	30303030 30303030 30303030 30303030     0000000000000000
 
-1001fe3c <blanks.1>:
-1001fe3c:	20202020 20202020 20202020 20202020                     
-1001fe4c:	646c2565 00000000                       e%ld....
+1001fe38 <blanks.1>:
+1001fe38:	20202020 20202020 20202020 20202020                     
+1001fe48:	646c2565 00000000                       e%ld....
 
-1001fe54 <basefix.0>:
-1001fe54:	0001000a 00030002 00050004 00070006     ................
-1001fe64:	00090008 000b000a 000d000c 000f000e     ................
-1001fe74:	00000010 6c6f562f 73656d75 7461642f     ..../Volumes/dat
-1001fe84:	656a2f61 6e696b6e 6f772f73 70736b72     a/jenkins/worksp
-1001fe94:	2f656361 2d554e47 6c6f6f74 69616863     ace/GNU-toolchai
-1001fea4:	72612f6e 32312d6d 6372732f 77656e2f     n/arm-12/src/new
-1001feb4:	2d62696c 77677963 6e2f6e69 696c7765     lib-cygwin/newli
-1001fec4:	696c2f62 732f6362 696c6474 706d2f62     b/libc/stdlib/mp
-1001fed4:	2e636572 00000063                       rec.c...
+1001fe50 <basefix.0>:
+1001fe50:	0001000a 00030002 00050004 00070006     ................
+1001fe60:	00090008 000b000a 000d000c 000f000e     ................
+1001fe70:	00000010 6c6f562f 73656d75 7461642f     ..../Volumes/dat
+1001fe80:	656a2f61 6e696b6e 6f772f73 70736b72     a/jenkins/worksp
+1001fe90:	2f656361 2d554e47 6c6f6f74 69616863     ace/GNU-toolchai
+1001fea0:	72612f6e 32312d6d 6372732f 77656e2f     n/arm-12/src/new
+1001feb0:	2d62696c 77677963 6e2f6e69 696c7765     lib-cygwin/newli
+1001fec0:	696c2f62 732f6362 696c6474 706d2f62     b/libc/stdlib/mp
+1001fed0:	2e636572 00000063                       rec.c...
 
-1001fedc <p05.0>:
-1001fedc:	00000005 00000019 0000007d              ........}...
+1001fed8 <p05.0>:
+1001fed8:	00000005 00000019 0000007d 00000000     ........}.......
 
 1001fee8 <__mprec_bigtens>:
 1001fee8:	37e08000 4341c379 b5056e17 4693b8b5     ...7y.AC.n.....F
@@ -30816,10 +30813,10 @@ Disassembly of section .data:
 	...
 200004ec:	00000043 00000000 00000000 00000000     C...............
 	...
-2000050c:	1001d315 10017fbd 00000000 1001fca0     ................
-2000051c:	1001f9c0 1001f920 1001f920 1001f920     .... ... ... ...
-2000052c:	1001f920 1001f920 1001f920 1001f920      ... ... ... ...
-2000053c:	1001f920 1001f920 ffffffff ffffffff      ... ...........
+2000050c:	1001d315 10017fbd 00000000 1001fc9c     ................
+2000051c:	1001f9bc 1001f91c 1001f91c 1001f91c     ................
+2000052c:	1001f91c 1001f91c 1001f91c 1001f91c     ................
+2000053c:	1001f91c 1001f91c ffffffff ffffffff     ................
 2000054c:	ffffffff 0000ffff 53410001 00494943     ..........ASCII.
 	...
 20000574:	53410000 00494943 00000000 00000000     ..ASCII.........

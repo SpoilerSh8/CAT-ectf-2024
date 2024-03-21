@@ -31,7 +31,6 @@ def pad_message(plaintext):
 
 # Fonction pour chiffrer les paramètres
 def encrypt_Ap_params(params):
-    # Clé de chiffrement 
     keyAP = ''
     # Chiffrer chaque paramètre séparément
     for i in range(len(params)):
@@ -74,7 +73,6 @@ def save_Ap_params():
 
 # Fonction pour chiffrer les paramètres des composants
 def encrypt_Com_params(params):
-    # Clé de chiffrement
     keyC = ''
     cipher = Aes(key="colombeAcademy-Taskforce", mode=MODE_CBC, IV="mitrEctf2024-cat")
     # Chiffrer chaque paramètre séparément

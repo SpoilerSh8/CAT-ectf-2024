@@ -279,9 +279,9 @@ uint8_t wait_and_receive_packet(uint8_t* packet) {
 1000e2e8:	20000018 	.word	0x20000018
 
 1000e2ec <boot>:
-
+    return wait_and_receive_packet(buffer);
+}
 /******************************* FUNCTION DEFINITIONS *********************************/
-
  // Example boot sequence
 // Your design does not need to change this
 void boot() {
@@ -346,7 +346,7 @@ void boot() {
 1000e34c:	0007a120 	.word	0x0007a120
 
 1000e350 <process_boot>:
-
+}
 void process_boot() {
      // The AP requested a boot. Set `component_boot` for the main loop and
     // respond with the boot message
@@ -391,8 +391,8 @@ void component_process_cmd() {
 1000e38e:	e8df f003 	tbb	[pc, r3]
 1000e392:	0202      	.short	0x0202
 1000e394:	0b1a      	.short	0x0b1a
+    send_packet_and_ack(sizeof(scan_message), transmit_buffer);
 }
-
 void process_validate() {
     // The AP requested a validation. Respond with the Component ID
     validate_message* packet = (validate_message*) transmit_buffer;
@@ -405,14 +405,13 @@ void process_validate() {
 }
 1000e39e:	b002      	add	sp, #8
 1000e3a0:	e8bd 4010 	ldmia.w	sp!, {r4, lr}
-
+}
 void process_attest() {
     // The AP requested attestation. Respond with the attestation data
-    uint8_t len = sprintf((char*)transmit_buffer, "LOC>%s\nDATE>%s\nCUST>%s\n",
-                ATTESTATION_LOC, ATTESTATION_DATE, ATTESTATION_CUSTOMER) + 1;
+    uint8_t len = sprintf((char*)transmit_buffer, "LOC>%s\nDATE>%s\nCUST>%s\n",ATTESTATION_LOC, ATTESTATION_DATE, ATTESTATION_CUSTOMER) + 1;
     send_packet_and_ack(len, transmit_buffer);
 1000e3a4:	f7ff bf7a 	b.w	1000e29c <send_packet_and_ack>
-    uint8_t len = sprintf((char*)transmit_buffer, "LOC>%s\nDATE>%s\nCUST>%s\n",
+    uint8_t len = sprintf((char*)transmit_buffer, "LOC>%s\nDATE>%s\nCUST>%s\n",ATTESTATION_LOC, ATTESTATION_DATE, ATTESTATION_CUSTOMER) + 1;
 1000e3a8:	4c0e      	ldr	r4, [pc, #56]	@ (1000e3e4 <component_process_cmd+0x64>)
 1000e3aa:	490f      	ldr	r1, [pc, #60]	@ (1000e3e8 <component_process_cmd+0x68>)
 1000e3ac:	4b0f      	ldr	r3, [pc, #60]	@ (1000e3ec <component_process_cmd+0x6c>)
@@ -451,7 +450,6 @@ void process_attest() {
 }
 
 /*********************************** MAIN *************************************/
-
 int main(void) {
 1000e3f8:	b510      	push	{r4, lr}
   \details Enables IRQ interrupts by clearing special-purpose register PRIMASK.

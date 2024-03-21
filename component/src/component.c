@@ -22,7 +22,6 @@
 #include <string.h>
 #endif
 
-
 /******************************** TYPE DEFINITIONS ********************************/
 // Commands received by Component using 32 bit integer
 typedef enum {
@@ -58,8 +57,8 @@ void process_attest(void);
 
 /********************************* GLOBAL VARIABLES **********************************/
 // Global varaibles
-uint8_t receive_buffer[MAX_I2C_MESSAGE_LEN];
-uint8_t transmit_buffer[MAX_I2C_MESSAGE_LEN];
+uint8_t receive_buffer[MAX_I2C_MESSAGE_LEN-1];
+uint8_t transmit_buffer[MAX_I2C_MESSAGE_LEN-1];
 
 /******************************* POST BOOT FUNCTIONALITY *********************************/
 /**
@@ -88,13 +87,10 @@ void secure_send(uint8_t* buffer, uint8_t len) {
 int secure_receive(uint8_t* buffer) {
     return wait_and_receive_packet(buffer);
 }
-
 /******************************* FUNCTION DEFINITIONS *********************************/
-
  // Example boot sequence
 // Your design does not need to change this
 void boot() {
-
      // POST BOOT FUNCTIONALITY
     // DO NOT REMOVE IN YOUR DESIGN
     #ifdef POST_BOOT
@@ -146,7 +142,6 @@ void component_process_cmd() {
         break;
     }
 }
-
 void process_boot() {
      // The AP requested a boot. Set `component_boot` for the main loop and
     // respond with the boot message
@@ -156,30 +151,25 @@ void process_boot() {
     // Call the boot function
     boot();
 }
-
 void process_scan() {
     // The AP requested a scan. Respond with the Component ID
     scan_message* packet = (scan_message*) transmit_buffer;
     packet->component_id = COMPONENT_ID;
     send_packet_and_ack(sizeof(scan_message), transmit_buffer);
 }
-
 void process_validate() {
     // The AP requested a validation. Respond with the Component ID
     validate_message* packet = (validate_message*) transmit_buffer;
     packet->component_id = COMPONENT_ID;
     send_packet_and_ack(sizeof(validate_message), transmit_buffer);
 }
-
 void process_attest() {
     // The AP requested attestation. Respond with the attestation data
-    uint8_t len = sprintf((char*)transmit_buffer, "LOC>%s\nDATE>%s\nCUST>%s\n",
-                ATTESTATION_LOC, ATTESTATION_DATE, ATTESTATION_CUSTOMER) + 1;
+    uint8_t len = sprintf((char*)transmit_buffer, "LOC>%s\nDATE>%s\nCUST>%s\n",ATTESTATION_LOC, ATTESTATION_DATE, ATTESTATION_CUSTOMER) + 1;
     send_packet_and_ack(len, transmit_buffer);
 }
 
 /*********************************** MAIN *************************************/
-
 int main(void) {
      //comp started
     // Enable Global Interrupts

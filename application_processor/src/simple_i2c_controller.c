@@ -1,17 +1,3 @@
-/**
- * @file "simple_i2c_controller.c"
- * @author Frederich Stine 
- * @brief Simple Synchronous I2C Controller Implementation
- * @date 2024
- *
- * This source file is part of an example system for MITRE's 2024 Embedded System CTF (eCTF).
- * This code is being provided only for educational purposes for the 2024 MITRE eCTF competition,
- * and may not meet MITRE standards for quality. Use this code at your own risk!
- *
- * @copyright Copyright (c) 2024 The MITRE Corporation
- */
-
-
 #include "simple_i2c_controller.h"
 
 /******************************** FUNCTION PROTOTYPES ********************************/
