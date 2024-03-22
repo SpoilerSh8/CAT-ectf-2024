@@ -19,6 +19,7 @@
 #include "board_link.h"
 #include "simple_flash.h"
 #include "host_messaging.h"
+#include "time.h"
 
 #ifdef CRYPTO_EXAMPLE
 #include "simple_crypto.h"
@@ -40,6 +41,10 @@
 // Library call return types
 #define SUCCESS_RETURN 0
 #define ERROR_RETURN -1
+
+// Define the maximum delay counter value
+#define MAX_DELAY_COUNTER 3
+
 
 /******************************** TYPE DEFINITIONS ********************************/
 // Data structure for sending commands to component
@@ -164,6 +169,15 @@ char* mont_hash_result(uint8_t* hash_result) {
         strncat(hash_str, hex, 2);
     }
     return hash_str;
+}
+
+// Function to delay for a certain amount of time
+ void delay(int seconds) {
+     // Get the current time
+     clock_t start_time = clock();
+
+     // Loop until the desired amount of time has passed
+     while ( (clock() - start_time) / CLOCKS_PER_SEC < seconds);
 }
 //hashing function
 void hash_hsn(const char *pin,unsigned char *hash_result) {
@@ -339,6 +353,7 @@ void boot() {
 
 //Compare the entered PIN to the correct PIN
 int validate_pin() {
+    int DELAY_COUNTER = 0;
     char buf[7];
     unsigned char pin[WC_SHA_DIGEST_SIZE];
     recv_input("Enter pin: ", buf, 7);
@@ -349,12 +364,17 @@ int validate_pin() {
         print_debug("Pin Accepted!\n");
         return SUCCESS_RETURN;
     }
-    print_error("Invalid PIN!");
-    return ERROR_RETURN;
+    else{
+        print_error("Invalid PIN! Try again in 15s...! \n");
+        MXC_Delay(15000000);
+        return ERROR_RETURN;
+    }
+    
 }
 
 // Function to validate the replacement token
 int validate_token() {
+    int DELAY_COUNTER = 0;
     char buf[17];
     unsigned char token[WC_SHA_DIGEST_SIZE];
     recv_input("Enter token: ", buf, 17);
@@ -365,8 +385,11 @@ int validate_token() {
         print_debug("Token Accepted!\n");
         return SUCCESS_RETURN;
     }
-    print_error("Invalid Token!\n");
-    return ERROR_RETURN;
+    else{
+        MXC_Delay(15000000);
+        print_error("Invalid Token! Try again in 15s...! \n");
+        return ERROR_RETURN;
+    }
 }
 
 // Boot the components and board if the components validate
@@ -427,6 +450,7 @@ void attempt_attest() {
     if (validate_pin()) {
         return;
     }
+  
     uint32_t component_id;
     recv_input("Component ID: ", buf, 11);
     sscanf(buf, "%x", &component_id);

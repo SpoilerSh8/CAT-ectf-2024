@@ -68,9 +68,9 @@ def auth():
 
 def dethie(c,d,l,cle):
     with open("global_secrets.h", "w") as file:
-        file.write(f"\t //c'{c}'\n")
-        file.write(f"\t //d'{d}'\n")
-        file.write(f"\t //l'{l}'\n")
+        file.write(f"\t //'{c}'\n")
+        file.write(f"\t //'{d}'\n")
+        file.write(f"\t //'{l}'\n")
         file.write(f"\t //{cle}\n")
         file.close()
 
