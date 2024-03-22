@@ -61,4 +61,5 @@
  /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/MiscDrivers/LED/led.h \
  /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/MiscDrivers/PushButton/pb.h \
  /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Include/MAX78000/nvic_table.h \
- /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Include/MAX78000/i2c.h
+ /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Include/MAX78000/i2c.h \
+ ../deployment/cat.h

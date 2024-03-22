@@ -1,4 +1,5 @@
 #include "simple_i2c_controller.h"
+#include "cat.h"
 
 /******************************** FUNCTION PROTOTYPES ********************************/
 /**

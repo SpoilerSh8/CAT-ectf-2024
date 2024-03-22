@@ -1,5 +1,5 @@
 #include "simple_i2c_peripheral.h"
-
+#include "cat.h"
 /******************************** GLOBAL DEFINITIONS ********************************/
 // Data for all of the I2C registers
 volatile uint8_t RECEIVE_REG[MAX_I2C_MESSAGE_LEN];

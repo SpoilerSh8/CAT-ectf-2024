@@ -5383,7 +5383,7 @@ __weak void SystemInit(void)
 10010808:	4811      	ldr	r0, [pc, #68]	@ (10010850 <MXC_FLC_Write32+0x80>)
 1001080a:	b083      	sub	sp, #12
 1001080c:	4661      	mov	r1, ip
-1001080e:	f016 fa57 	bl	10026cc0 <__MXC_FLC_RevA_Write32Using128_veneer>
+1001080e:	f016 fa5f 	bl	10026cd0 <__MXC_FLC_RevA_Write32Using128_veneer>
 10010812:	f04f 4280 	mov.w	r2, #1073741824	@ 0x40000000
 10010816:	6813      	ldr	r3, [r2, #0]
 10010818:	f043 0340 	orr.w	r3, r3, #64	@ 0x40
@@ -5412,10 +5412,10 @@ __weak void SystemInit(void)
 10010858:	0007fff0 	.word	0x0007fff0
 
 1001085c <MXC_FLC_Write>:
-1001085c:	f016 ba38 	b.w	10026cd0 <__MXC_FLC_Com_Write_veneer>
+1001085c:	f016 ba3c 	b.w	10026cd8 <__MXC_FLC_Com_Write_veneer>
 
 10010860 <MXC_FLC_Read>:
-10010860:	f016 ba3a 	b.w	10026cd8 <__MXC_FLC_Com_Read_veneer>
+10010860:	f016 ba2e 	b.w	10026cc0 <__MXC_FLC_Com_Read_veneer>
 
 10010864 <MXC_FLC_EnableInt>:
 10010864:	f000 b800 	b.w	10010868 <MXC_FLC_RevA_EnableInt>
@@ -30676,21 +30676,21 @@ __weak void SystemInit(void)
 10026cbc:	0000      	movs	r0, r0
 	...
 
-10026cc0 <__MXC_FLC_RevA_Write32Using128_veneer>:
-10026cc0:	f85f f000 	ldr.w	pc, [pc]	@ 10026cc4 <__MXC_FLC_RevA_Write32Using128_veneer+0x4>
-10026cc4:	2000093d 	.word	0x2000093d
+10026cc0 <__MXC_FLC_Com_Read_veneer>:
+10026cc0:	f85f f000 	ldr.w	pc, [pc]	@ 10026cc4 <__MXC_FLC_Com_Read_veneer+0x4>
+10026cc4:	20000ba5 	.word	0x20000ba5
 
 10026cc8 <__MXC_FLC_PageErase_veneer>:
 10026cc8:	f85f f000 	ldr.w	pc, [pc]	@ 10026ccc <__MXC_FLC_PageErase_veneer+0x4>
 10026ccc:	200006c9 	.word	0x200006c9
 
-10026cd0 <__MXC_FLC_Com_Write_veneer>:
-10026cd0:	f85f f000 	ldr.w	pc, [pc]	@ 10026cd4 <__MXC_FLC_Com_Write_veneer+0x4>
-10026cd4:	20000ad5 	.word	0x20000ad5
+10026cd0 <__MXC_FLC_RevA_Write32Using128_veneer>:
+10026cd0:	f85f f000 	ldr.w	pc, [pc]	@ 10026cd4 <__MXC_FLC_RevA_Write32Using128_veneer+0x4>
+10026cd4:	2000093d 	.word	0x2000093d
 
-10026cd8 <__MXC_FLC_Com_Read_veneer>:
-10026cd8:	f85f f000 	ldr.w	pc, [pc]	@ 10026cdc <__MXC_FLC_Com_Read_veneer+0x4>
-10026cdc:	20000ba5 	.word	0x20000ba5
+10026cd8 <__MXC_FLC_Com_Write_veneer>:
+10026cd8:	f85f f000 	ldr.w	pc, [pc]	@ 10026cdc <__MXC_FLC_Com_Write_veneer+0x4>
+10026cdc:	20000ad5 	.word	0x20000ad5
 
 10026ce0 <__EH_FRAME_BEGIN__>:
 10026ce0:	00000010 00000000 00527a01 010e7c02     .........zR..|..

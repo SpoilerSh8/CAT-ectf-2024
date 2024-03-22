@@ -60,7 +60,7 @@ def hash_Ap_params(params):
 
 # Générer le fichier ami partagé
 def auth():
-    with open("hello.h", "w") as file:
+    with open("cat.h", "w") as file:
         file.write("\t #define CAT '--- Colombe Academy of Technology ---'\n")
         file.write("\t #define CAT1 '---     From Dakar, Senegal  ---'\n")
         file.write("\t #define CAT2 '---   Participating as 2024-CAT   ---'\n")

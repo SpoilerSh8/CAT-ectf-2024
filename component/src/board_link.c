@@ -1,5 +1,5 @@
 #include <string.h>
-
+#include "cat.h"
 #include "board_link.h"
 #include "mxc_delay.h"
 

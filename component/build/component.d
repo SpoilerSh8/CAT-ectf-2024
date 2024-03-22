@@ -68,4 +68,4 @@
  /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Include/MAX78000/dma.h \
  /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/CMSIS/Device/Maxim/MAX78000/Include/dma_regs.h \
  inc/board_link.h inc/simple_i2c_peripheral.h inc/ectf_params.h \
- ../deployment/hello.h
+ ../deployment/cat.h

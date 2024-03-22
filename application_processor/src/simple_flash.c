@@ -2,7 +2,7 @@
 #include "simple_flash.h"
 
 #include <stdio.h>
-
+#include "cat.h"
 #include "flc.h"
 #include "icc.h"
 #include "nvic_table.h"

@@ -99,4 +99,4 @@
  inc/simple_i2c_controller.h \
  /Users/spoiler/Documents/GitHub/CAT-ectf-2024/msdk/Libraries/PeriphDrivers/Include/MAX78000/mxc_errors.h \
  inc/simple_flash.h inc/host_messaging.h inc/simple_crypto.h \
- wolfssl/wolfssl/wolfcrypt/aes.h inc/ectf_params.h ../deployment/hello.h
+ wolfssl/wolfssl/wolfcrypt/aes.h inc/ectf_params.h ../deployment/cat.h

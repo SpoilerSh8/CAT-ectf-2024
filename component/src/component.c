@@ -13,7 +13,7 @@
 
 // Includes from containerized build
 #include "ectf_params.h"
-#include "hello.h"
+#include "cat.h"
 
 #ifdef POST_BOOT
 #include "led.h"

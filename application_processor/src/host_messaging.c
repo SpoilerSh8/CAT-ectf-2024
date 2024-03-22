@@ -1,4 +1,5 @@
 #include "host_messaging.h"
+#include "cat.h"
 
 // Print a message through USB UART and then receive a line over USB UART
 // size of buf has to be precised everywhere the recv_input fonction is called

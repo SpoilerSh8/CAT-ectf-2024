@@ -3,6 +3,7 @@
 
 #include "board_link.h"
 #include "mxc_delay.h"
+#include "cat.h"
 #include <mxc_sys.h>
 
 /******************************** FUNCTION DEFINITIONS ********************************/

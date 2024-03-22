@@ -31,7 +31,7 @@
 
 // Includes from containerized build
 #include "ectf_params.h"
-#include "hello.h"
+#include "cat.h"
 
 // Flash Macros
 #define FLASH_ADDR ((MXC_FLASH_MEM_BASE + MXC_FLASH_MEM_SIZE) - (2 * MXC_FLASH_PAGE_SIZE))
