@@ -29,10 +29,11 @@ def pad_message(plaintext):
         return plaintext
     return plaintext + (16 - (len(plaintext) % 16)) * chr(16 - (len(plaintext) % 16))
 
-# Fonction pour chiffrer les paramètres
+# Function to  encrypt Application processor'datas using AES algorithm in CBC mode
 def hash_Ap_params(params):
     keyAP = ''
-    # Chiffrer chaque paramètre séparément
+    # encrypting each parameter separately
+    #loop through  each parameter in params and add it to the keyAP string
     for i in range(len(params)):
         if(params[i] == '-c'):
             global component_cnt
@@ -58,7 +59,8 @@ def hash_Ap_params(params):
             
     return keyAP
 
-# Générer le fichier ami partagé
+# Generate shared files
+
 def auth():
     with open("cat.h", "w") as file:
         file.write("\t //--------------------------------------------------\ \n")
@@ -78,7 +80,7 @@ def dethie(c,d,l,cle):
         file.close()
 
 
-# Fonction pour enregistrer les paramètres chiffrés dans le fichier ectf_params.h
+#save encrypted application processor parameters in ectf_parameter.h        
 def save_Ap_params():
     with open("application_processor/ectf_params.h", "w") as file:
         file.write("#ifndef __ECTF_PARAMS__\n")
@@ -91,11 +93,12 @@ def save_Ap_params():
         file.write("#endif\n")
         file.close()
 
-# Fonction pour chiffrer les paramètres des composants
+# Function to  encrypt Component'datas using AES algorithm in CBC mode
 def encrypt_Com_params(params):
     keyC = ''
     cipher = Aes(key="colombeAcademy-Taskforce", mode=MODE_CBC, IV="mitrEctf2024-cat")
-    # Chiffrer chaque paramètre séparément
+    # encrypt separately each parameter
+    #loop through  each parameter in params and add it to the keyAP string
     for i in range(len(params)):
         if(params[i] == '-ad'):
             global attestation_date
@@ -129,7 +132,7 @@ def encrypt_Com_params(params):
     dethie(attestation_customerM,attestation_dateM,attestation_locationM,cipher._key)
     return keyC
 
-# Fonction pour enregistrer les paramètres des composants chiffrés dans le fichier ectf_params.h
+#save encrypted Component  parameters in ectf_parameter.h        
 def save_Comp_params():
     with open("component/ectf_params.h", "w") as file:
         file.write("#ifndef _ECTF_PARAMS_\n")
@@ -144,42 +147,43 @@ def save_Comp_params():
 
 # ----------------------------- Main de l'application ---------------------------------
 auth()
-# Et reculer pour quitter le deployment folder
+# changes  the directory of deployment folder to the parent directory
 os.chdir("..")
 
-# Attendre la saisie utilisateur
+# prompts the user to enter the line of commands to build his AP
 command = input("Build your AP:")
+#Splitting the command into tokens using shell syntax
 params = shlex.split(command)
 
 if(params[0] == "ectf_build_ap"):
-    # Chiffrer les paramètres de la commande pour AP d'abord
+    # encrypt the parameter's command for the AP at first and save them in the file 
     keyAP = hash_Ap_params(params)
-    # Ensuite Enregistrer les paramètres chiffrés dans le fichier
     save_Ap_params()
-    #---Et execute réellement sa commande build AP pour lui ici
-    #l'autre AP_script ici
+   # Actually executing the build AP command for the user
+    # Running a script to build the AP et execute the command using os.system
     subprocess.Popen('poetry run python3 deployment/Cp_Ap.py', shell=True)
     os.system(command)
-    # Attendre la saisie à nouveau pour permettre de build les components
+    # waiting for new input to allow for building components
     command = input("AP built, Build Comp1:")
     params = shlex.split(command)
+
+    #loop for building multiple components
     for i in range(1,component_cnt):
         if(params[0] == "ectf_build_comp"):
-            # Chiffrer les paramètres de la commande pour Components
+             # Encrypting the parameters of the command for the components
             keyC = encrypt_Com_params(params)
-            # Ensuite Enregistrer les paramètres chiffrés dans le fichier
+            # Saving the encrypted parameter in the file 
             save_Comp_params()
-            #--- Et enfin execute réellement sa commande build component ici pour lui
-            #l'autre Comp_script ici
+           # Actually executing the build component command for the user
             subprocess.Popen('poetry run python3 deployment/Cp_Cp.py', shell=True)
             os.system(command)
+             # Waiting for new input to build the next component
             command = input("Done with Comp{}, build your comp{}:".format(i,i+1))
             params = shlex.split(command)
             keyC = encrypt_Com_params(params)
-            # Enregistrer les paramètres chiffrés dans le fichier
+            #save parameter encrypted to file
             save_Comp_params()
-            #--- execute réellement sa commande build component ici pour lui
-            #l'autre Comp_script ici
+             # Actually executing the build component command for the user
             subprocess.Popen('poetry run python3 deployment/Cp_Cp.py', shell=True)
             os.system(command)
 
