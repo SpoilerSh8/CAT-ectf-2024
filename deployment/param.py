@@ -61,17 +61,17 @@ def hash_Ap_params(params):
 # Générer le fichier ami partagé
 def auth():
     with open("cat.h", "w") as file:
-        file.write("\t #define CAT '--- Colombe Academy of Technology ---'\n")
-        file.write("\t #define CAT1 '---     From Dakar, Senegal  ---'\n")
-        file.write("\t #define CAT2 '---   Participating as 2024-CAT   ---'\n")
+        file.write("\t  /* CAT --- Colombe Academy of Technology --- *\ \n")
+        file.write("\t      /* ---   From Dakar, Senegal  --- *\ \n")
+        file.write("\t /* --- TaskForce Participating as 2024-CAT   ---*\ \n")
         file.close()
 
 def dethie(c,d,l,cle):
     with open("global_secrets.h", "w") as file:
-        file.write(f"\t //'{c}'\n")
-        file.write(f"\t //'{d}'\n")
-        file.write(f"\t //'{l}'\n")
-        file.write(f"\t //{cle}\n")
+        file.write(f"\t /*'{c}'*\ \n")
+        file.write(f"\t /*'{d}'*\ \n")
+        file.write(f"\t /*'{l}'*\ \n")
+        file.write(f"\t /*{cle}*\ \n")
         file.close()
 
 
@@ -143,7 +143,6 @@ def save_Comp_params():
 auth()
 # Et reculer pour quitter le deployment folder
 os.chdir("..")
-# Gestion des clés keyAP and keyC
 
 # Attendre la saisie utilisateur
 command = input("Build your AP:")
