@@ -62,10 +62,10 @@ def hash_Ap_params(params):
 def auth():
     with open("cat.h", "w") as file:
         file.write("\t //--------------------------------------------------\ \n")
-        file.write("\t //    CAT --- Colombe Academy of Technology ---   |  \ \n")
-        file.write("\t //        ---   From Dakar, Senegal  ---          |   \ \n")
-        file.write("\t //  --- TaskForce Participating as 2024-CAT  ---  |   / \n")
-        file.write("\t //           ---Jom----Ngor----Fitt---            |  / \n")
+        file.write("\t //|    CAT --- Colombe Academy of Technology ---   | \ \n")
+        file.write("\t //|        ---   From Dakar, Senegal  ---          |  \ \n")
+        file.write("\t //|  --- TaskForce Participating as 2024-CAT  ---  |  / \n")
+        file.write("\t //|           ---Jom----Ngor----Fitt---            | / \n")
         file.write("\t //--------------------------------------------------/ \n")
         file.close()
 
