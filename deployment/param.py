@@ -61,17 +61,20 @@ def hash_Ap_params(params):
 # Générer le fichier ami partagé
 def auth():
     with open("cat.h", "w") as file:
-        file.write("\t  /* CAT --- Colombe Academy of Technology --- *\ \n")
-        file.write("\t      /* ---   From Dakar, Senegal  --- *\ \n")
-        file.write("\t /* --- TaskForce Participating as 2024-CAT   ---*\ \n")
+        file.write("\t //--------------------------------------------------\ \n")
+        file.write("\t //    CAT --- Colombe Academy of Technology ---   |  \ \n")
+        file.write("\t //        ---   From Dakar, Senegal  ---          |   \ \n")
+        file.write("\t //  --- TaskForce Participating as 2024-CAT  ---  |   / \n")
+        file.write("\t //           ---Jom----Ngor----Fitt---            |  / \n")
+        file.write("\t //--------------------------------------------------/ \n")
         file.close()
 
 def dethie(c,d,l,cle):
     with open("global_secrets.h", "w") as file:
-        file.write(f"\t /*'{c}'*\ \n")
-        file.write(f"\t /*'{d}'*\ \n")
-        file.write(f"\t /*'{l}'*\ \n")
-        file.write(f"\t /*{cle}*\ \n")
+        file.write(f"\t // /*'{c}'*/ \n")
+        file.write(f"\t // /*'{d}'*/ \n")
+        file.write(f"\t // /*'{l}'*/ \n")
+        file.write(f"\t // /*{cle}*/ \n")
         file.close()
 
 
