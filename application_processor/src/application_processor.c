@@ -19,7 +19,6 @@
 #include "board_link.h"
 #include "simple_flash.h"
 #include "host_messaging.h"
-#include "time.h"
 
 #ifdef CRYPTO_EXAMPLE
 #include "simple_crypto.h"
@@ -41,9 +40,6 @@
 // Library call return types
 #define SUCCESS_RETURN 0
 #define ERROR_RETURN -1
-
-// Define the maximum delay counter value
-#define MAX_DELAY_COUNTER 3
 
 
 /******************************** TYPE DEFINITIONS ********************************/
@@ -160,7 +156,7 @@ void init() {
     // Initialize board link interface
     board_link_init();
 }
-//get the hash in string  format
+//get the hash in a string format
 char* mont_hash_result(uint8_t* hash_result) {
     char* hash_str = malloc(41); // +1 pour le caractère nul de fin de chaîne
     for (int i = 0; i < 20; i++) {
@@ -171,14 +167,6 @@ char* mont_hash_result(uint8_t* hash_result) {
     return hash_str;
 }
 
-// Function to delay for a certain amount of time
- void delay(int seconds) {
-     // Get the current time
-     clock_t start_time = clock();
-
-     // Loop until the desired amount of time has passed
-     while ( (clock() - start_time) / CLOCKS_PER_SEC < seconds);
-}
 //hashing function
 void hash_hsn(const char *pin,unsigned char *hash_result) {
     wc_Sha sha;
@@ -235,8 +223,9 @@ int scan_components() {
         if (len > 0) {
             scan_message* scan = (scan_message*) receive_buffer;
             print_info("F>0x%08x\n", scan->component_id);
-        } 
+        }
     }
+        
     print_success("List\n");
     return SUCCESS_RETURN;
 }
@@ -274,7 +263,7 @@ int validate_components() {
 
 int boot_components() {
     // Buffers for board link communication
-    uint8_t receive_buffer[MAX_I2C_MESSAGE_LEN];
+     uint8_t receive_buffer[MAX_I2C_MESSAGE_LEN];
     uint8_t transmit_buffer[MAX_I2C_MESSAGE_LEN];
 
     // Send boot command to each component
@@ -353,7 +342,6 @@ void boot() {
 
 //Compare the entered PIN to the correct PIN
 int validate_pin() {
-    int DELAY_COUNTER = 0;
     char buf[7];
     unsigned char pin[WC_SHA_DIGEST_SIZE];
     recv_input("Enter pin: ", buf, 7);
@@ -367,15 +355,12 @@ int validate_pin() {
     else{
         print_error("Invalid PIN! Try again in 15s...! \n");
         MXC_Delay(15000000);
-        print_info("now available");
         return ERROR_RETURN;
-    }
-    
+    }  
 }
 
 // Function to validate the replacement token
 int validate_token() {
-    int DELAY_COUNTER = 0;
     char buf[17];
     unsigned char token[WC_SHA_DIGEST_SIZE];
     recv_input("Enter token: ", buf, 17);
@@ -389,7 +374,6 @@ int validate_token() {
     else{
         print_error("Invalid Token! Try again in 15s...! \n");
         MXC_Delay(15000000);
-        print_info("now available");
         return ERROR_RETURN;
     }
 }
