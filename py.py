@@ -59,3 +59,218 @@
 # ectf_build_comp -d . -on comp1 -od build -id 0x11111111 -b "boot comp1"  -al "Dakar" -ad "02/02/24" -ac "Fatou"
 # ectf_build_comp -d . -on comp2 -od build -id 0x11111112 -b "boot comp2"  -al "Dakar" -ad "02/02/24" -ac "sokhna"
 
+
+
+# propose une implementation correcte des fonctions:secure_send(), secure_receive(), get_provisioned_ids() pour assurer une communication post boot sécuriser entre l'application processor et les differents composants. s'il le faut meme ajouter un systeme de partage de clés pour assurer l'authenticité de l'AP et de components. et propose aussi ce qu'on doit implementer du coté des fichiers board_link impliqués et des components pour que cela correspond
+# 1-
+# The secure_send() function should encrypt the data before sending it to the component. We can use AES encryption for this purpose. Here is a possible implementation:
+# int secure_send(uint8_t address, uint8_t* buffer, uint8_t len) {
+#     // Generate a random encryption key
+#     uint8_t key[AES_BLOCK_SIZE];
+#     generate_random_key(key);
+
+#     // Encrypt the data using AES encryption
+#     uint8_t encrypted_data[len];
+#     aes_encrypt(buffer, encrypted_data, key);
+
+#     // Send the encrypted data over I2C
+#     int sent = send_packet(address, len, encrypted_data);
+#     if (sent == ERROR_RETURN) {
+#         print_error("Error sending data over I2C: %d\n", sent);
+#     }
+#     return sent;
+# }
+
+
+# 2-The secure_receive() function should authenticate the data received from the component. We can use AES encryption with a shared key for this purpose. Here is a possible implementation:
+# int secure_receive(i2c_addr_t address, uint8_t* buffer) {
+#     // Receive the data over I2C
+#     int received = poll_and_receive_packet(address, buffer);
+#     if (received == ERROR_RETURN) {
+#         print_error("Error receiving data over I2C: %d\n", received);
+#         return ERROR_RETURN;
+#     }
+
+#     // Decrypt the data using AES encryption
+#     uint8_t decrypted_data[received];
+#     aes_decrypt(buffer, decrypted_data, key);
+
+#     // Verify the integrity of the data
+#     if (verify_integrity(decrypted_data)) {
+#         print_error("Error verifying data integrity: invalid AES key\n");
+#         return ERROR_RETURN;
+#     }
+
+#     // Copy the decrypted data to the output buffer
+#     memcpy(buffer, decrypted_data, received);
+#     return received;
+# }
+
+# 3-
+# The get_provisioned_ids() function should return the provisioned IDs of the components. We can add a shared key to authenticate the AP with the components. Here is a possible implementation:
+# int get_provisioned_ids(uint32_t* buffer) {
+#     // Verify the shared key with the AP
+#     if (!verify_shared_key()) {
+#         print_error("Error verifying shared key with AP\n");
+#         return ERROR_RETURN;
+#     }
+
+#     // Copy the provisioned IDs to the output buffer
+#     memcpy(buffer, flash_status.component_ids, flash_status.component_cnt * sizeof(uint32_t));
+#     return flash_status.component_cnt;
+# }
+
+# 4-Key Sharing Mechanism:
+# To share the key between the AP and the components, we can use a symmetric key encryption algorithm like AES. We can use the following steps to share the key:
+
+# The AP generates a random AES key and stores it in the flash memory.
+# The AP shares the key with the components using a secure channel.
+# The components store the shared key in their non-volatile memory.
+# To ensure the security of the key, we can use a secure communication channel like SSL/TLS or SSH to share the key. We can also use a public-key encryption algorithm like RSA or ECC to securely share the key.
+
+# Board Link Implementation:
+# The board_link.h and board_link.c files should be modified to include the secure communication functions. Here are the suggested changes:
+
+# Add a function to initialize the secure communication channel.
+# Add a function to send encrypted data over the I2C interface.
+# Add a function to receive encrypted data over the I2C interface.
+
+# 5-Sure, here are the proposed changes to the board_link files to include the secure communication functions:
+
+# board_link.h:
+
+# Add the following function prototypes:
+# int board_link_init(void);
+# int secure_send(uint8_t address, uint8_t* buffer, uint8_t len);
+# int secure_receive(i2c_addr_t address, uint8_t* buffer, uint8_t len);
+
+# board_link.c:
+
+# Implement the following functions:
+
+# 1-board_link_init:
+# Initialize the I2C interface and the flash memory.
+# int board_link_init(void) {
+#     // Initialize the I2C interface
+#     if (i2c_init() < 0) {
+#         print_error("Error initializing I2C\n");
+#         return ERROR_RETURN;
+#     }
+
+#     // Initialize the flash memory
+#     if (flash_init() < 0) {
+#         print_error("Error initializing flash memory\n");
+#         return ERROR_RETURN;
+#     }
+
+#     return SUCCESS_RETURN;
+# }
+
+# 2-secure_send:
+# Encrypt the data using the AES encryption algorithm and send it over the I2C interface.
+# int secure_send(uint8_t address, uint8_t* buffer, uint8_t len) {
+#     // Generate a random encryption key
+#     uint8_t key[AES_BLOCK_SIZE];
+#     generate_random_key(key);
+
+#     // Encrypt the data using AES encryption
+#     uint8_t encrypted_data[len];
+#     aes_encrypt(buffer, encrypted_data, key);
+
+#     // Send the encrypted data over I2C
+#     int sent = send_packet(address, len, encrypted_data);
+#     if (sent == ERROR_RETURN) {
+#         print_error("Error sending data over I2C: %d\n", sent);
+#     }
+#     return sent;
+# }
+
+# 3-secure_receive:
+# Receive the encrypted data over the I2C interface and decrypt it using the AES encryption algorithm.
+# int secure_receive(i2c_addr_t address, uint8_t* buffer, uint8_t len) {
+#     // Receive the encrypted data over I2C
+#     int received = poll_and_receive_packet(address, buffer);
+#     if (received == ERROR_RETURN) {
+#         print_error("Error receiving data over I2C: %d\n", received);
+#         return ERROR_RETURN;
+#     }
+
+#     // Decrypt the data using the AES encryption algorithm
+#     uint8_t decrypted_data[received];
+#     aes_decrypt(buffer, decrypted_data, key);
+
+#     // Copy the decrypted data to the output buffer
+#     memcpy(buffer, decrypted_data, received);
+#     return received;
+# }
+# Note that the key used for encryption and decryption is assumed to be shared securely between the AP and the components.
+
+# 6- In this case, one way to share the encryption key securely is to use a symmetric key encryption algorithm like AES. We can use the following steps to share the key:
+
+# The AP generates a random encryption key and stores it in the flash memory.
+# The AP sends the encrypted key to the component using the secure_send() function.
+# The component decrypts the key using the corresponding decryption key.
+# The component stores the decrypted key in its non-volatile memory.
+# Here is an example of how to share the encryption key securely over the I2C interface using the secure_send() and secure_receive() functions:
+
+# In the AP-side code:
+
+# int share_key_securely(i2c_addr_t component_address) {
+#     uint8_t key[AES_KEY_SIZE];
+#     uint8_t encrypted_key[AES_KEY_SIZE];
+
+#     // Generate a random encryption key
+#     generate_random_key(key);
+
+#     // Encrypt the encryption key using the component's public key
+#     encrypt_key(key, encrypted_key);
+
+#     // Send the encrypted key to the component
+#     secure_send(component_address, encrypted_key, AES_KEY_SIZE);
+
+#     return SUCCESS_RETURN;
+# }
+# In the component-side code:
+
+# int receive_key_securely(i2c_addr_t ap_address) {
+#     uint8_t encrypted_key[AES_KEY_SIZE];
+#     uint8_t key[AES_KEY_SIZE];
+
+#     // Receive the encrypted key from the AP
+#     secure_receive(ap_address, encrypted_key, AES_KEY_SIZE);
+
+#     // Decrypt the encrypted key using the private key
+#     decrypt_key(encrypted_key, key);
+
+#     // Store the decrypted key in the component's non-volatile memory
+#     store_key_in_memory(key);
+
+#     return SUCCESS_RETURN;
+# }
+
+# Note that in this example, we assume that the AP and the components have a public-private key pair and the corresponding public key is known to the other party. The encrypt_key() and decrypt_key() functions are implemented using the public key encryption algorithm.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ectf_build_ap -d . -on ap -p 123456 -c 2 -ids "0x11111111, 0x11111112" -b "boot ap" -t 0123456789abcdef -od build 
+ectf_build_comp -d . -on comp1 -od build -id 0x11111111 -b "boot comp1"  -al "Dakar" -ad "02/02/24" -ac "Fatou"    
+ectf_build_comp -d . -on comp2 -od build -id 0x11111112 -b "boot comp2"  -al "Dakar" -ad "02/02/24" -ac "sokhna"

@@ -354,7 +354,7 @@ int validate_pin() {
     }
     else{
         print_error("Invalid PIN! Try again in 15s...! \n");
-        MXC_Delay(15000000);
+        MXC_Delay(5000000);
         return ERROR_RETURN;
     }  
 }
@@ -373,7 +373,7 @@ int validate_token() {
     }
     else{
         print_error("Invalid Token! Try again in 15s...! \n");
-        MXC_Delay(15000000);
+        MXC_Delay(5000000);
         return ERROR_RETURN;
     }
 }
