@@ -1,8 +1,0 @@
-#ifndef _ECTF_PARAMS_
-#define _ECTF_PARAMS_
-#define COMPONENT_ID 286331154
-#define COMPONENT_BOOT_MSG "boot comp2"
-#define ATTESTATION_LOC "e0c9c858312ca47"
-#define ATTESTATION_DATE "19f58d4bca8e2dc"
-#define ATTESTATION_CUSTOMER "373aed4a56b98d7"
-#endif
