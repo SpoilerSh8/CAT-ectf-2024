@@ -1,16 +1,3 @@
-/**
- * @file "board_link.h"
- * @author Frederich Stine 
- * @brief High Level API for I2C Controller Communications Header
- * @date 2024
- *
- * This source file is part of an example system for MITRE's 2024 Embedded System CTF (eCTF).
- * This code is being provided only for educational purposes for the 2024 MITRE eCTF competition,
- * and may not meet MITRE standards for quality. Use this code at your own risk!
- *
- * @copyright Copyright (c) 2024 The MITRE Corporation
- */
-
 #ifndef __BOARD_LINK__
 #define __BOARD_LINK__
 
@@ -29,6 +16,8 @@
  * Initiailize the underlying i2c simple interface
 */
 void board_link_init(void);
+int secure_send(uint8_t address, uint8_t* buffer, uint8_t len);
+int secure_receive(i2c_addr_t address, uint8_t* buffer, uint8_t len);
 
 /**
  * @brief Convert 4-byte component ID to I2C address

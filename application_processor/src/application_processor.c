@@ -15,6 +15,7 @@
 #include <wolfssl/options.h>
 #include <wolfssl/ssl.h>
 #include <wolfssl/wolfcrypt/sha.h>
+#include <wolfssl/wolfcrypt/rsa.h>
 
 #include "board_link.h"
 #include "simple_flash.h"
@@ -32,6 +33,10 @@
 // Includes from containerized build
 #include "ectf_params.h"
 #include "cat.h"
+
+#define RSA_MODULUS_SIZE 256
+#define RSA_PUBLIC_EXPONENT 65537
+
 
 // Flash Macros
 #define FLASH_ADDR ((MXC_FLASH_MEM_BASE + MXC_FLASH_MEM_SIZE) - (2 * MXC_FLASH_PAGE_SIZE))
@@ -83,6 +88,70 @@ typedef enum {
 flash_entry flash_status;
 
 /******************************* POST BOOT FUNCTIONALITY *********************************/
+uint8_t* read_binary_file(const char* file_path, size_t* file_size) {
+    FILE* binary_file = fopen(file_path, "rb");
+    if (!binary_file) {
+        return NULL;
+    }
+
+    fseek(binary_file, 0, SEEK_END);
+    *file_size = ftell(binary_file);
+    rewind(binary_file);
+
+    uint8_t* file_buffer = malloc(*file_size);
+    if (!file_buffer) {
+        fclose(binary_file);
+        return NULL;
+    }
+
+    size_t bytes_read = fread(file_buffer, 1, *file_size, binary_file);
+    fclose(binary_file);
+
+    if (bytes_read != *file_size) {
+        free(file_buffer);
+        return NULL;
+    }
+
+    return file_buffer;
+}
+
+int auth_component( const char* signature, size_t signature_size) {
+    // Attempt to find the component in the flash status
+   uint32_t component_id;
+    int i;
+    for (i = 0; i < flash_status.component_cnt; i++) {
+        if (flash_status.component_ids[i] == component_id) {
+            break;
+        }
+    }
+
+    // If the component is not found, return an error
+    if (i == flash_status.component_cnt) {
+        return ERROR_RETURN;
+    }
+
+    // Load the public key
+    RsaKey public_key;
+    if (wolfSSL_LoadX509PublicKey("public.pem", &public_key) != SSL_SUCCESS) {
+        return ERROR_RETURN;
+    }
+
+    uint8_t* signature_data = read_binary_file(signature, &signature_size);
+    // Verify the signature of the component
+    int result = wolfSSL_RsaVerifySignature(&public_key, signature_size, (unsigned char*) &component_id, signature_data, signature_size, EVP_sha256());
+
+    // Free the public key
+    wolfSSL_FreeX509PublicKey(&public_key);
+
+    // If the signature is valid, return success
+    if (result == SSL_SUCCESS) {
+        return SUCCESS_RETURN;
+    }
+
+    // If the signature is invalid, return an error
+    return ERROR_RETURN;
+    free(signature_data);
+}
 /**
  * @brief Secure Send 
  * 
@@ -95,7 +164,19 @@ flash_entry flash_status;
 
 */
 int secure_send(uint8_t address, uint8_t* buffer, uint8_t len) {
-    return send_packet(address, len, buffer);
+     // Generate a random encryption key
+     uint8_t key[AES_BLOCK_SIZE]=sunu_thiabi;
+     //generate_random_key(key);
+     // Encrypt the data using AES encryption
+     uint8_t encrypted_data[len];
+     encrypt_sym(buffer,len, key, encrypted_data);
+
+     // Send the encrypted data over I2C
+     int sent = send_packet(address, len, encrypted_data);
+     if (sent == ERROR_RETURN) {
+         print_error("Error sending data over I2C: %d\n", sent);
+     }
+     return sent;
 }
 /**
  * @brief Secure Receive
@@ -108,8 +189,22 @@ int secure_send(uint8_t address, uint8_t* buffer, uint8_t len) {
  * Securely receive data over I2C. This function is utilized in POST_BOOT functionality.
  * This function must be implemented by your team to align with the security requirements.
 */
-int secure_receive(i2c_addr_t address, uint8_t* buffer) {
-    return poll_and_receive_packet(address, buffer);
+int secure_receive(i2c_addr_t address, uint8_t* buffer, uint8_t len) {
+    uint8_t key[AES_BLOCK_SIZE]=sunu_thiabi;
+     // Receive the encrypted data over I2C
+     int received = poll_and_receive_packet(address, buffer);
+     if (received == ERROR_RETURN) {
+         print_error("Error receiving data over I2C: %d\n", received);
+         return ERROR_RETURN;
+     }
+
+     // Decrypt the data using the AES encryption algorithm
+     uint8_t decrypted_data[received];
+     decrypt_sym(buffer,len, key, decrypted_data);
+
+     // Copy the decrypted data to the output buffer
+     memcpy(buffer, decrypted_data, received);
+     return received;
 }
 /**
  * @brief Get Provisioned IDs
@@ -124,7 +219,12 @@ int secure_receive(i2c_addr_t address, uint8_t* buffer) {
 */
 int get_provisioned_ids(uint32_t* buffer) {
     memcpy(buffer, flash_status.component_ids, flash_status.component_cnt * sizeof(uint32_t));
-    return flash_status.component_cnt;
+    // Verify the shared key with the AP
+     if (!auth_component("signature.bin", 256)) {
+         print_error("Error verifying signature with Comps\n");
+         return ERROR_RETURN;
+     }
+    return buffer, flash_status.component_cnt;
 }
 
 /********************************* UTILITIES **********************************/
@@ -168,7 +268,7 @@ char* mont_hash_result(uint8_t* hash_result) {
 }
 
 //hashing function
-void hash_hsn(const char *pin,unsigned char *hash_result) {
+void hash_hsn(char *pin,unsigned char *hash_result) {
     wc_Sha sha;
     unsigned char digest[WC_SHA_DIGEST_SIZE];
     size_t pin_length = strlen(pin);
@@ -353,7 +453,7 @@ int validate_pin() {
         return SUCCESS_RETURN;
     }
     else{
-        print_error("Invalid PIN! Try again in 15s...! \n");
+        print_error("Invalid PIN! Try again in 5s...! \n");
         MXC_Delay(5000000);
         return ERROR_RETURN;
     }  
@@ -372,7 +472,7 @@ int validate_token() {
         return SUCCESS_RETURN;
     }
     else{
-        print_error("Invalid Token! Try again in 15s...! \n");
+        print_error("Invalid Token! Try again in 5s...! \n");
         MXC_Delay(5000000);
         return ERROR_RETURN;
     }

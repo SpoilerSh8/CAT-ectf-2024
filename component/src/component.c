@@ -71,7 +71,15 @@ uint8_t transmit_buffer[MAX_I2C_MESSAGE_LEN-1];
  * This function must be implemented by your team to align with the security requirements.
 */
 void secure_send(uint8_t* buffer, uint8_t len) {
-    send_packet_and_ack(len, buffer); 
+     // Generate a random encryption key
+     uint8_t key[16]=sunu_thiabi;
+     //generate_random_key(key);
+     // Encrypt the data using AES encryption
+     uint8_t encrypted_data[len];
+     encrypt_sym(buffer,len, key, encrypted_data);
+
+     // Send the encrypted data over I2C 
+    send_packet_and_ack(len, encrypted_data); 
 }
 
 /**
@@ -85,7 +93,20 @@ void secure_send(uint8_t* buffer, uint8_t len) {
  * This function must be implemented by your team to align with the security requirements.
 */
 int secure_receive(uint8_t* buffer) {
-    return wait_and_receive_packet(buffer);
+    uint8_t key[16]=sunu_thiabi;
+     // Receive the encrypted data over I2C
+     int received = wait_and_receive_packet(buffer);
+     if (received == ERROR_RETURN) {
+         print_error("Error receiving data over I2C: %d\n", received);
+         return ERROR_RETURN;
+     }
+     // Decrypt the data using the AES encryption algorithm
+     uint8_t decrypted_data[received];
+     decrypt_sym(buffer,65, key, decrypted_data);
+
+     // Copy the decrypted data to the output buffer
+     memcpy(buffer, decrypted_data, received);
+     return received;
 }
 /******************************* FUNCTION DEFINITIONS *********************************/
  // Example boot sequence

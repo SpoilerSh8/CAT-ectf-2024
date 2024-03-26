@@ -20,9 +20,42 @@ import shlex
 import hashlib
 import binascii
 from wolfcrypt.ciphers import Aes, MODE_CBC
+import rsa
 from ast import literal_eval
 import os
 
+def generate_rsa_keys_and_sign(save_directory):
+    # Generate a private key and a public key
+    public_key, private_key= rsa.newkeys(2048)
+
+    # # Save the private key to a file
+    # private_key_filepath = os.path.join(save_directory, "private.pem")
+    # with open(private_key_filepath, "wb") as private_key_file:
+    #     private_key_file.write(private_key.save_pkcs1())
+
+    # Serialize the public key to a PEM-encoded string
+    public_key_pem = rsa.PublicKey.save_pkcs1(public_key)
+  
+    # Save the serialized public key to a file
+    public_key_filepath = os.path.join(save_directory, "public.pem")
+    with open(public_key_filepath, "wb") as public_key_file:
+        public_key_file.write(public_key_pem)
+
+    # Create a hash of the component IDs
+    hash_obj = hashlib.sha256()
+    for id in component_ids:
+        hash_obj.update(id.encode())
+    hashed_component_ids = hash_obj.digest()
+
+    # Sign the component IDs
+    global signature
+    signature = rsa.sign(hashed_component_ids, private_key, 'SHA-256')
+
+    # Save the signature in a .bin file
+    with open('save_directory/signature.bin', "wb") as file:
+        file.write(signature)
+
+    #return signature
 
 def pad_message(plaintext):
     if len(plaintext) % 16 == 0:
@@ -65,18 +98,19 @@ def auth():
     with open("cat.h", "w") as file:
         file.write("\t //--------------------------------------------------\ \n")
         file.write("\t //|    CAT --- Colombe Academy of Technology ---   | \ \n")
-        file.write("\t //|        ---   From Dakar, Senegal  ---          |  \ \n")
+        file.write("\t //|                                                |  \ \n")
         file.write("\t //|  --- TaskForce Participating as 2024-CAT  ---  |  / \n")
         file.write("\t //|           ---Jom----Ngor----Fitt---            | / \n")
         file.write("\t //--------------------------------------------------/ \n")
+        file.write('\t          #define sunu_thiabi "sokhnandeyehabib" \n')
         file.close()
 
-def dethie(c,d,l,cle):
+def dethie(kan,kagn,fann,xalam):
     with open("global_secrets.h", "w") as file:
-        file.write(f"\t // /*'{c}'*/ \n")
-        file.write(f"\t // /*'{d}'*/ \n")
-        file.write(f"\t // /*'{l}'*/ \n")
-        file.write(f"\t // /*{cle}*/ \n")
+        file.write(f"\t // /*'{kan}'*/ \n")
+        file.write(f"\t // /*'{kagn}'*/ \n")
+        file.write(f"\t // /*'{fann}'*/ \n")
+        file.write(f"\t // /*{xalam}*/ \n")
         file.close()
 
 
@@ -159,6 +193,7 @@ if(params[0] == "ectf_build_ap"):
     # encrypt the parameter's command for the AP at first and save them in the file 
     keyAP = hash_Ap_params(params)
     save_Ap_params()
+    generate_rsa_keys_and_sign("save_directory")
    # Actually executing the build AP command for the user
     # Running a script to build the AP et execute the command using os.system
     subprocess.Popen('poetry run python3 deployment/Cp_Ap.py', shell=True)
