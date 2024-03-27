@@ -274,3 +274,54 @@
 ectf_build_ap -d . -on ap -p 123456 -c 2 -ids "0x11111111, 0x11111112" -b "boot ap" -t 0123456789abcdef -od build 
 ectf_build_comp -d . -on comp1 -od build -id 0x11111111 -b "boot comp1"  -al "Dakar" -ad "02/02/24" -ac "Fatou"    
 ectf_build_comp -d . -on comp2 -od build -id 0x11111112 -b "boot comp2"  -al "Dakar" -ad "02/02/24" -ac "sokhna"
+
+# TimeoutError
+# To add a timeout mechanism to the existing code so that if a response to a command (attest, list, etc.) is not received within 3 seconds, the communication is interrupted, you can follow these steps:
+# 1-Introduce a new delay function that accepts time in milliseconds.
+# void mxc_delay(uint32_t milliseconds) {
+#     MXC_Delay(milliseconds * 1000);
+# }
+
+#2- Implement a function for setting timeout and interrupting the communication.
+# enum TimeoutResult {
+#     NOT_TIMEDOUT,
+#     TIMEDOUT,
+#     COMM_ERROR
+# };
+
+# enum TimeoutResult issue_cmd_with_timeout(i2c_addr_t addr, uint8_t* transmit, uint8_t* receive, uint32_t timeout_ms) {
+#     int len = issue_cmd(addr, transmit, receive);
+#     if (len == ERROR_RETURN) {
+#         return COMM_ERROR;
+#     }
+#     if (len > 0) {
+#         return NOT_TIMEDOUT;
+#     }
+#     // Wait until timeout or response arrives
+#     uint32_t start = mxc_millis();
+#     while (!len && ((uint32_t)(mxc_millis() - start) < timeout_ms)) {
+#         mxc_delay(10);
+#         len = poll_and_receive_packet(addr, receive);
+#     }
+#     if (len > 0) {
+#         return NOT_TIMEDOUT;
+#     }
+#     if ((uint32_t)(mxc_millis() - start) < timeout_ms) {
+#         return TIMEDOUT;
+#     }
+#     return COMM_ERROR;
+# }
+
+# 3- Replace any call to issue_cmd in the provided code to issue_cmd_with_timeout with a 3000 (3 seconds) timeout.
+# For example, replace the function call given below:
+# int len = issue_cmd(addr, transmit_buffer, receive_buffer);
+# with:
+# enum TimeoutResult result = issue_cmd_with_timeout(addr, transmit_buffer, receive_buffer, 3000);
+# if (result == NOT_TIMEDOUT) {
+#     // Process the result here
+#     len = receive_buffer;
+# } else {
+#     // Handle the error (either TIMEDOUT or COMM_ERROR)
+#     print_error("Timeout or communication error while issuing '%s' command", commands[i].name);
+#     return EXIT_FAILURE;
+# }

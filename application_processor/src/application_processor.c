@@ -26,6 +26,7 @@
 #endif
 
 #ifdef POST_BOOT
+#include <post_boot.h>
 #include <stdint.h>
 #include <stdio.h>
 #endif
@@ -420,7 +421,8 @@ void boot() {
     // DO NOT REMOVE
     #ifdef POST_BOOT
         POST_BOOT
-    #else
+    #endif
+    // #else
     // Everything after this point is modifiable in your design
     // LED loop to show that boot occurred
     while (1) {
@@ -436,8 +438,7 @@ void boot() {
         MXC_Delay(500000);
         LED_Off(LED3);
         MXC_Delay(500000);
-    }
-    #endif
+    } 
 }
 
 //Compare the entered PIN to the correct PIN
